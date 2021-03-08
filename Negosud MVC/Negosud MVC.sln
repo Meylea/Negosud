@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negosud MVC", "Negosud MVC.csproj", "{076F0EB8-AE75-48F2-8132-0D4838121FF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Negosud MVC", "Negosud MVC.csproj", "{076F0EB8-AE75-48F2-8132-0D4838121FF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negosud Client", "..\Negosud Client\Negosud Client.csproj", "{6E530604-C4E6-4832-A468-4433729ADADA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{076F0EB8-AE75-48F2-8132-0D4838121FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{076F0EB8-AE75-48F2-8132-0D4838121FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{076F0EB8-AE75-48F2-8132-0D4838121FF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E530604-C4E6-4832-A468-4433729ADADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E530604-C4E6-4832-A468-4433729ADADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E530604-C4E6-4832-A468-4433729ADADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E530604-C4E6-4832-A468-4433729ADADA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
