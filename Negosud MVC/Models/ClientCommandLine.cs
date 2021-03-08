@@ -10,6 +10,8 @@ namespace Negosud_MVC.Models
     {
         public int Id { get; set; }
         public int Quantity { get; set; }
+        public double UnitPrice { get; set; }
+        public double TotalPrice { get; set; }
 
         [Required]
         public Item Item { get; set; }

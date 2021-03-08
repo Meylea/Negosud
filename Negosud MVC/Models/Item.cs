@@ -16,9 +16,9 @@ namespace Negosud_MVC.Models
         [Display(Name = "Quantité disponible")]
         public int Quantity { get; set; }
         [Display(Name = "Prix unitaire")]
-        public decimal UnitPrice { get; set; }
+        public double UnitPrice { get; set; }
         [Display(Name = "Prix au carton")]
-        public decimal BoxPrice { get; set; }
+        public double BoxPrice { get; set; }
         [StringLength(4, MinimumLength = 4)]
         [Required]
         [Display(Name = "Année")]
