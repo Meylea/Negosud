@@ -15,7 +15,7 @@ namespace Negosud_MVC.Controllers
             string mailj = "jean-beauno@outlook.fr";
             string mdpj = "JeanBeauno";
             MailMessage objMessage = new MailMessage();
-            System.Net.Mail.MailAddress address = new System.Net.Mail.MailAddress(mailj, from);
+            System.Net.Mail.MailAddress address = new MailAddress(mailj, from);
             objMessage = new MailMessage();
             objMessage.IsBodyHtml = true;
             objMessage.Subject = "Test";
@@ -38,6 +38,8 @@ namespace Negosud_MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Submit(ContactViewModel model)
         {
+
+            SendMail(model.from, model.body);
             /*if (id != item.Id)
             {
                 return NotFound();
