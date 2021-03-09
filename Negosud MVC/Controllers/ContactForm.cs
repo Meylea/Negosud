@@ -19,7 +19,7 @@ namespace Negosud_MVC.Controllers
             System.Net.Mail.MailAddress address = new MailAddress(mailj, from);
             objMessage = new MailMessage();
             objMessage.IsBodyHtml = true;
-            objMessage.Subject = "Test";
+            objMessage.Subject = "Message de Negosud.com";
             objMessage.From = address;
             objMessage.To.Add("cfouquet.web@gmail.com");
             objMessage.Body = body;
