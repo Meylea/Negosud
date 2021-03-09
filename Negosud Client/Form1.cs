@@ -20,6 +20,7 @@ namespace Negosud_Client
             InitializeComponent();
             client1.Visible = false;
             provider1.Visible = false;
+            sale1.Visible = false;
             clickBtn += Form1_clickBtn;
             
         }
@@ -75,6 +76,10 @@ namespace Negosud_Client
             if (touche == "Fournisseur")
             {
                 provider1.Visible = true;
+            }
+            if (touche == "Vente")
+            {
+                sale1.Visible = true;
             }
         }
 
