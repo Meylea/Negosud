@@ -20,10 +20,19 @@ namespace Negosud_MVC.Controllers
         }
 
         // GET: Items
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            var negosudContext = _context.Items.Include(i => i.Producer).Include(i => i.Supplier).Include(i => i.Type);
-            return View(await negosudContext.ToListAsync());
+            var items = from m in _context.Items
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                items = items.Where(s => s.Name.Contains(searchString));
+            }
+
+
+            /*var negosudContext = _context.Items.Include(i => i.Producer).Include(i => i.Supplier).Include(i => i.Type);*/
+            return View(await items.ToListAsync());
         }
 
         // GET: Items/Details/5
@@ -168,5 +177,7 @@ namespace Negosud_MVC.Controllers
         {
             return _context.Items.Any(e => e.Id == id);
         }
+
+       
     }
 }
