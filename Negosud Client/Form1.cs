@@ -7,74 +7,86 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negosud_Client;
 
 namespace Negosud_Client
 {
     public partial class Form1 : Form
     {
-        public delegate void DelegateClickBtn(string touche);
-        public event DelegateClickBtn clickBtn;
+
+        Clients clients = new Clients();
         
         public Form1()
         {
             InitializeComponent();
-            client1.Visible = false;
-            provider1.Visible = false;
-            clickBtn += Form1_clickBtn;
+            clients1.Visible = false;
+            suppliers1.Visible = false;
+            clientsInfo1.Visible = false;
+            clients.clickBtn += Form1_clickBtn;
             
         }
 
+        //Display page Client
         private void BtnClient_Click(object sender, EventArgs e)
         {
-            if (clickBtn != null)
-            {
-                clickBtn(((Button)sender).Text);
-            }
+            AllVisibleFalse();
+            clients1.Visible = true;
         }
 
+        //Display page Fournisseur
         private void BtnFournisseur_Click(object sender, EventArgs e)
         {
-            if (clickBtn != null)
-            {
-                clickBtn(((Button)sender).Text);
-            }
+            AllVisibleFalse();
+            suppliers1.Visible = true;
         }
 
+        //Display page Vente
         private void BtnVente_Click(object sender, EventArgs e)
         {
-            if (clickBtn != null)
-            {
-                clickBtn(((Button)sender).Text);
-            }
+ 
         }
 
+        //Display page Achat
         private void BtnAchat_Click(object sender, EventArgs e)
         {
-            if (clickBtn != null)
-            {
-                clickBtn(((Button)sender).Text);
-            }
+
         }
 
+        //Display page Catalogue
         private void BtnCatalogue_Click(object sender, EventArgs e)
         {
-            if (clickBtn != null)
-            {
-                clickBtn(((Button)sender).Text);
-            }
+
         }
 
+        private void AllVisibleFalse()
+        {
+            clients1.Visible = false;
+            suppliers1.Visible = false;
+            clientsInfo1.Visible = false;
+        }
+
+        //Fonction récupération page 
         private void Form1_clickBtn(string touche)
         {
-            client1.Visible = false;
-            provider1.Visible = false;
             if(touche == "Client")
             {
-                client1.Visible = true;
+                
             }
             if (touche == "Fournisseur")
             {
-                provider1.Visible = true;
+
+            }
+            if (touche == "Supprimer")
+            {
+
+            }
+            if (touche == "Info")
+            {
+                MessageBox.Show("Message");
+            }
+            if (touche == "Command")
+            {
+
             }
         }
 

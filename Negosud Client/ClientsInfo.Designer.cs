@@ -1,7 +1,7 @@
 ﻿
 namespace Negosud_Client
 {
-    partial class CustomerInfo
+    partial class ClientsInfo
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -53,7 +53,7 @@ namespace Negosud_Client
             this.LId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LId.Location = new System.Drawing.Point(81, 27);
             this.LId.Name = "LId";
-            this.LId.Size = new System.Drawing.Size(152, 44);
+            this.LId.Size = new System.Drawing.Size(101, 29);
             this.LId.TabIndex = 0;
             this.LId.Text = "Id Client";
             // 
@@ -63,7 +63,7 @@ namespace Negosud_Client
             this.LSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LSurname.Location = new System.Drawing.Point(81, 90);
             this.LSurname.Name = "LSurname";
-            this.LSurname.Size = new System.Drawing.Size(98, 44);
+            this.LSurname.Size = new System.Drawing.Size(65, 29);
             this.LSurname.TabIndex = 1;
             this.LSurname.Text = "Nom";
             // 
@@ -73,7 +73,7 @@ namespace Negosud_Client
             this.LName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LName.Location = new System.Drawing.Point(81, 160);
             this.LName.Name = "LName";
-            this.LName.Size = new System.Drawing.Size(147, 44);
+            this.LName.Size = new System.Drawing.Size(98, 29);
             this.LName.TabIndex = 2;
             this.LName.Text = "Prénom";
             // 
@@ -204,7 +204,7 @@ namespace Negosud_Client
             this.Controls.Add(this.LSurname);
             this.Controls.Add(this.LId);
             this.Name = "CustomerInfo";
-            this.Size = new System.Drawing.Size(532, 458);
+            this.Size = new System.Drawing.Size(691, 458);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -10,27 +10,21 @@ using System.Windows.Forms;
 
 namespace Negosud_Client
 {
-    public partial class Customer : UserControl
+    public partial class Clients : UserControl
     {
-        public Customer()
+
+        public delegate void DelegateClickBtn(string touche);
+        public event DelegateClickBtn clickBtn;
+
+        public Clients()
         {
             InitializeComponent();
         }
 
         private void GVCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (GVCustomer.Columns[e.ColumnIndex].Name == "")
-            {
-
-            }
-            if (GVCustomer.Columns[e.ColumnIndex].Name == "")
-            {
-
-            }
-            if (GVCustomer.Columns[e.ColumnIndex].Name == "")
-            {
-
-            }
+            //MessageBox.Show(GVCustomer.Columns[e.ColumnIndex].HeaderText);
+            clickBtn(GVCustomer.Columns[e.ColumnIndex].HeaderText);
         }
     }
 }
