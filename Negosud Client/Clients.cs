@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Negosud_Client;
 namespace Negosud_Client
 {
     public partial class Clients : UserControl
@@ -24,7 +24,11 @@ namespace Negosud_Client
         private void GVCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //MessageBox.Show(GVCustomer.Columns[e.ColumnIndex].HeaderText);
-            clickBtn(GVCustomer.Columns[e.ColumnIndex].HeaderText);
+            if (clickBtn != null)
+            {
+                clickBtn(GVCustomer.Columns[e.ColumnIndex].HeaderText);
+            }
+            //Visible = false;
         }
     }
 }

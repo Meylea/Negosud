@@ -8,21 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negosud_Client;
+using static Negosud_Client.Clients;
 
 namespace Negosud_Client
 {
     public partial class Form1 : Form
     {
-
-        Clients clients = new Clients();
-        
         public Form1()
         {
             InitializeComponent();
             clients1.Visible = false;
             suppliers1.Visible = false;
             clientsInfo1.Visible = false;
-            clients.clickBtn += Form1_clickBtn;
+
+            clients1.clickBtn += new DelegateClickBtn(Form1_clickBtn);
             
         }
 
@@ -92,7 +91,13 @@ namespace Negosud_Client
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
+        public void showtest()
+        {
+            MessageBox.Show("ok");
+        }
+
+
     }
 }

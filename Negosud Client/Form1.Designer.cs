@@ -37,8 +37,8 @@ namespace Negosud_Client
             this.BtnCatalogue = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.clients1 = new Negosud_Client.Clients();
-            this.suppliers1 = new Negosud_Client.Provider();
             this.clientsInfo1 = new Negosud_Client.ClientsInfo();
+            this.suppliers1 = new Negosud_Client.Provider();
             this.SuspendLayout();
             // 
             // label1
@@ -130,10 +130,17 @@ namespace Negosud_Client
             // 
             // clients1
             // 
-            this.clients1.Location = new System.Drawing.Point(297, 170);
+            this.clients1.Location = new System.Drawing.Point(368, 199);
             this.clients1.Name = "clients1";
-            this.clients1.Size = new System.Drawing.Size(1147, 401);
-            this.clients1.TabIndex = 7;
+            this.clients1.Size = new System.Drawing.Size(1071, 402);
+            this.clients1.TabIndex = 10;
+            // 
+            // clientsInfo1
+            // 
+            this.clientsInfo1.Location = new System.Drawing.Point(488, 170);
+            this.clientsInfo1.Name = "clientsInfo1";
+            this.clientsInfo1.Size = new System.Drawing.Size(748, 458);
+            this.clientsInfo1.TabIndex = 9;
             // 
             // suppliers1
             // 
@@ -142,21 +149,14 @@ namespace Negosud_Client
             this.suppliers1.Size = new System.Drawing.Size(867, 487);
             this.suppliers1.TabIndex = 8;
             // 
-            // clientsInfo1
-            // 
-            this.clientsInfo1.Location = new System.Drawing.Point(495, 170);
-            this.clientsInfo1.Name = "clientsInfo1";
-            this.clientsInfo1.Size = new System.Drawing.Size(748, 458);
-            this.clientsInfo1.TabIndex = 9;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1585, 1060);
+            this.Controls.Add(this.clients1);
             this.Controls.Add(this.clientsInfo1);
             this.Controls.Add(this.suppliers1);
-            this.Controls.Add(this.clients1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnCatalogue);
             this.Controls.Add(this.BtnAchat);
@@ -182,9 +182,9 @@ namespace Negosud_Client
         private System.Windows.Forms.Button BtnAchat;
         private System.Windows.Forms.Button BtnCatalogue;
         private System.Windows.Forms.Label label2;
-        private Clients clients1;
         private Provider suppliers1;
         public ClientsInfo clientsInfo1;
+        private Clients clients1;
     }
 }
 
