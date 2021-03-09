@@ -73,6 +73,12 @@
     <Compile Include="Provider.Designer.cs">
       <DependentUpon>Provider.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ventes.Designer.cs">
+      <DependentUpon>Ventes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +99,9 @@
     </Compile>
     <EmbeddedResource Include="Provider.resx">
       <DependentUpon>Provider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventes.resx">
+      <DependentUpon>Ventes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
