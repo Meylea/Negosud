@@ -36,7 +36,7 @@ namespace Negosud_Client
             this.BtnAchat = new System.Windows.Forms.Button();
             this.BtnCatalogue = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.client1 = new Negosud_Client.Client();
+            this.client1 = new Negosud_Client.Customer();
             this.provider1 = new Negosud_Client.Provider();
             this.SuspendLayout();
             // 
@@ -173,7 +173,7 @@ namespace Negosud_Client
         private System.Windows.Forms.Button BtnAchat;
         private System.Windows.Forms.Button BtnCatalogue;
         private System.Windows.Forms.Label label2;
-        private Client client1;
+        private Customer client1;
         private Provider provider1;
     }
 }

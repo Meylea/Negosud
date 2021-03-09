@@ -1,7 +1,7 @@
 ﻿
 namespace Negosud_Client
 {
-    partial class Client
+    partial class Customer
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
