@@ -67,37 +67,23 @@ namespace Negosud_Client
         //Fonction récupération page 
         private void Form1_clickBtn(string touche)
         {
-            if(touche == "Client")
-            {
-                
-            }
-            if (touche == "Fournisseur")
-            {
-
-            }
             if (touche == "Supprimer")
             {
-
+                AllVisibleFalse();
             }
             if (touche == "Info")
             {
-                MessageBox.Show("Message");
+                AllVisibleFalse();
+                clientsInfo1.Visible = true;
             }
             if (touche == "Command")
             {
-
+                AllVisibleFalse();
             }
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             
         }
-        public void showtest()
-        {
-            MessageBox.Show("ok");
-        }
-
-
     }
 }

@@ -60,7 +60,7 @@ namespace Negosud_Client
             this.Provider_Update,
             this.Provider_Delete,
             this.Provider_Info});
-            this.dataGridView1.Location = new System.Drawing.Point(33, 149);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 149);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
