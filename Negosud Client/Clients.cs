@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negosud_Client;
+using Negosud_Client.Models;
 namespace Negosud_Client
 {
     public partial class Clients : UserControl
@@ -18,7 +19,15 @@ namespace Negosud_Client
 
         public Clients()
         {
+            
             InitializeComponent();
+            updateList();
+            
+        }
+
+        private async void updateList()
+        {
+            GVCustomer.DataSource = await NegosudDTO.GetClientsAsync();
         }
 
         private void GVCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)

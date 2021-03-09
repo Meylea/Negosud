@@ -29,18 +29,16 @@ namespace Negosud_Client
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BtnCustomer = new System.Windows.Forms.Button();
             this.TBAddCustomer = new System.Windows.Forms.TextBox();
             this.GVCustomer = new System.Windows.Forms.DataGridView();
             this.eventLog1 = new System.Diagnostics.EventLog();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.Id_Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nom_Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client_Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.info_Client = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Command_Client = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GVCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnCustomer
@@ -65,12 +63,6 @@ namespace Negosud_Client
             // GVCustomer
             // 
             this.GVCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GVCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id_Client,
-            this.Nom_Client,
-            this.Client_Delete,
-            this.info_Client,
-            this.Command_Client});
             this.GVCustomer.Location = new System.Drawing.Point(73, 118);
             this.GVCustomer.Name = "GVCustomer";
             this.GVCustomer.RowHeadersWidth = 62;
@@ -91,45 +83,11 @@ namespace Negosud_Client
             this.checkedListBox1.Size = new System.Drawing.Size(8, 4);
             this.checkedListBox1.TabIndex = 3;
             // 
-            // Id_Client
+            // errorProvider1
             // 
-            this.Id_Client.HeaderText = "Id";
-            this.Id_Client.MinimumWidth = 8;
-            this.Id_Client.Name = "Id_Client";
-            this.Id_Client.Width = 150;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // Nom_Client
-            // 
-            this.Nom_Client.HeaderText = "Nom";
-            this.Nom_Client.MinimumWidth = 8;
-            this.Nom_Client.Name = "Nom_Client";
-            this.Nom_Client.Width = 150;
-            // 
-            // Client_Delete
-            // 
-            this.Client_Delete.HeaderText = "Supprimer";
-            this.Client_Delete.MinimumWidth = 8;
-            this.Client_Delete.Name = "Client_Delete";
-            this.Client_Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Client_Delete.Width = 150;
-            // 
-            // info_Client
-            // 
-            this.info_Client.HeaderText = "Info";
-            this.info_Client.MinimumWidth = 8;
-            this.info_Client.Name = "info_Client";
-            this.info_Client.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.info_Client.Width = 150;
-            // 
-            // Command_Client
-            // 
-            this.Command_Client.HeaderText = "Command";
-            this.Command_Client.MinimumWidth = 8;
-            this.Command_Client.Name = "Command_Client";
-            this.Command_Client.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Command_Client.Width = 150;
-            // 
-            // Customer
+            // Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -137,10 +95,11 @@ namespace Negosud_Client
             this.Controls.Add(this.GVCustomer);
             this.Controls.Add(this.TBAddCustomer);
             this.Controls.Add(this.BtnCustomer);
-            this.Name = "Customer";
+            this.Name = "Clients";
             this.Size = new System.Drawing.Size(1071, 402);
             ((System.ComponentModel.ISupportInitialize)(this.GVCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,10 +112,6 @@ namespace Negosud_Client
         private System.Windows.Forms.DataGridView GVCustomer;
         private System.Diagnostics.EventLog eventLog1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Client;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nom_Client;
-        private System.Windows.Forms.DataGridViewButtonColumn Client_Delete;
-        private System.Windows.Forms.DataGridViewButtonColumn info_Client;
-        private System.Windows.Forms.DataGridViewButtonColumn Command_Client;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
