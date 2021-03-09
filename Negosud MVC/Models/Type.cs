@@ -13,5 +13,7 @@ namespace Negosud_MVC.Models
         [Required]
         [StringLength(50, MinimumLength = 3)]
         public string Name { get; set; }
+
+        public ICollection<Item> Items { get; set; }
     }
 }

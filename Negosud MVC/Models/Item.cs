@@ -23,12 +23,14 @@ namespace Negosud_MVC.Models
         [Required]
         [Display(Name = "Année")]
         public string Year { get; set; }
+        public int ProducerId { get; set; }
+        public int TypeId { get; set; }
+        public int SupplierId { get; set; }
 
-        [Required]
         public Producer Producer { get; set; }
-        [Required]
         public Type Type { get; set; }
-        [Required]
         public Supplier Supplier { get; set; }
+        public ICollection<ClientCommandLine> ClientCommandLines { get; set; }
+        public ICollection<SupplierCommandLine> SupplierCommandLines { get; set; }
     }
 }

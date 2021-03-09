@@ -30,6 +30,7 @@ namespace Negosud_MVC.Models
         [Required]
         public string City { get; set; }
 
+
         public ICollection<ClientCommand> ClientCommands {get; set;}
     }
 }

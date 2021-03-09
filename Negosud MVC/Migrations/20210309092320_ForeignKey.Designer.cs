@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Negosud_MVC.Data;
 
 namespace Negosud_MVC.Migrations
 {
     [DbContext(typeof(NegosudContext))]
-    partial class NegosudContextModelSnapshot : ModelSnapshot
+    [Migration("20210309092320_ForeignKey")]
+    partial class ForeignKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,7 +101,7 @@ namespace Negosud_MVC.Migrations
                     b.Property<int?>("ClientCommandId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ItemId")
+                    b.Property<int>("ItemID")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
@@ -115,7 +117,7 @@ namespace Negosud_MVC.Migrations
 
                     b.HasIndex("ClientCommandId");
 
-                    b.HasIndex("ItemId");
+                    b.HasIndex("ItemID");
 
                     b.ToTable("ClientCommandLines");
                 });
@@ -314,7 +316,7 @@ namespace Negosud_MVC.Migrations
 
                     b.HasOne("Negosud_MVC.Models.Item", "Item")
                         .WithMany("ClientCommandLines")
-                        .HasForeignKey("ItemId")
+                        .HasForeignKey("ItemID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

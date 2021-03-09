@@ -29,5 +29,7 @@ namespace Negosud_MVC.Models
         public string ContactPhone { get; set; }
         [StringLength(100)]
         public string ContactMail { get; set; }
+
+        public ICollection<Item> Items { get; set; }
     }
 }

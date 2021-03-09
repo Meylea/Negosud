@@ -14,7 +14,9 @@ namespace Negosud_MVC.Models
         public DateTime Date { get; set; }
         [Required]
         public string Status { get; set; }
+        public int ClientId { get; set; }
 
         public ICollection<ClientCommandLine> ClientCommandLines { get; set; }
+        public Client Client { get; set; }
     }
 }
