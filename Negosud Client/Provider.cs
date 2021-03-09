@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Negosud_Client
 {
-    public partial class Client : UserControl
+    public partial class Provider : UserControl
     {
-        public Client()
+        public Provider()
         {
             InitializeComponent();
         }

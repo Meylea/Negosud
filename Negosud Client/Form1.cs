@@ -19,6 +19,7 @@ namespace Negosud_Client
         {
             InitializeComponent();
             client1.Visible = false;
+            provider1.Visible = false;
             clickBtn += Form1_clickBtn;
             
         }
@@ -65,9 +66,15 @@ namespace Negosud_Client
 
         private void Form1_clickBtn(string touche)
         {
+            client1.Visible = false;
+            provider1.Visible = false;
             if(touche == "Client")
             {
                 client1.Visible = true;
+            }
+            if (touche == "Fournisseur")
+            {
+                provider1.Visible = true;
             }
         }
 

@@ -37,6 +37,7 @@ namespace Negosud_Client
             this.BtnCatalogue = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.client1 = new Negosud_Client.Client();
+            this.provider1 = new Negosud_Client.Provider();
             this.SuspendLayout();
             // 
             // label1
@@ -133,11 +134,19 @@ namespace Negosud_Client
             this.client1.Size = new System.Drawing.Size(1147, 401);
             this.client1.TabIndex = 7;
             // 
+            // provider1
+            // 
+            this.provider1.Location = new System.Drawing.Point(427, 170);
+            this.provider1.Name = "provider1";
+            this.provider1.Size = new System.Drawing.Size(867, 487);
+            this.provider1.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1585, 1060);
+            this.Controls.Add(this.provider1);
             this.Controls.Add(this.client1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnCatalogue);
@@ -165,6 +174,7 @@ namespace Negosud_Client
         private System.Windows.Forms.Button BtnCatalogue;
         private System.Windows.Forms.Label label2;
         private Client client1;
+        private Provider provider1;
     }
 }
 

@@ -29,7 +29,6 @@ namespace Negosud_Client
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client));
             this.BtnCustomer = new System.Windows.Forms.Button();
             this.TBAddCustomer = new System.Windows.Forms.TextBox();
             this.GVCustomer = new System.Windows.Forms.DataGridView();
@@ -37,10 +36,10 @@ namespace Negosud_Client
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.Id_Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nom_Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client_Update = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Client_Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.info_Client = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Command_Client = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Client_Update = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Client_Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.info_Client = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Command_Client = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GVCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +79,7 @@ namespace Negosud_Client
             this.GVCustomer.RowTemplate.Height = 28;
             this.GVCustomer.Size = new System.Drawing.Size(968, 254);
             this.GVCustomer.TabIndex = 2;
+            this.GVCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GVCustomer_CellContentClick);
             // 
             // eventLog1
             // 
@@ -110,7 +110,6 @@ namespace Negosud_Client
             // Client_Update
             // 
             this.Client_Update.HeaderText = "Modifier";
-            this.Client_Update.Image = ((System.Drawing.Image)(resources.GetObject("Client_Update.Image")));
             this.Client_Update.MinimumWidth = 8;
             this.Client_Update.Name = "Client_Update";
             this.Client_Update.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -119,7 +118,6 @@ namespace Negosud_Client
             // Client_Delete
             // 
             this.Client_Delete.HeaderText = "Supprimer";
-            this.Client_Delete.Image = ((System.Drawing.Image)(resources.GetObject("Client_Delete.Image")));
             this.Client_Delete.MinimumWidth = 8;
             this.Client_Delete.Name = "Client_Delete";
             this.Client_Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -128,7 +126,6 @@ namespace Negosud_Client
             // info_Client
             // 
             this.info_Client.HeaderText = "Info";
-            this.info_Client.Image = ((System.Drawing.Image)(resources.GetObject("info_Client.Image")));
             this.info_Client.MinimumWidth = 8;
             this.info_Client.Name = "info_Client";
             this.info_Client.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -137,7 +134,6 @@ namespace Negosud_Client
             // Command_Client
             // 
             this.Command_Client.HeaderText = "Command";
-            this.Command_Client.Image = ((System.Drawing.Image)(resources.GetObject("Command_Client.Image")));
             this.Command_Client.MinimumWidth = 8;
             this.Command_Client.Name = "Command_Client";
             this.Command_Client.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -169,9 +165,9 @@ namespace Negosud_Client
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Client;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nom_Client;
-        private System.Windows.Forms.DataGridViewImageColumn Client_Update;
-        private System.Windows.Forms.DataGridViewImageColumn Client_Delete;
-        private System.Windows.Forms.DataGridViewImageColumn info_Client;
-        private System.Windows.Forms.DataGridViewImageColumn Command_Client;
+        private System.Windows.Forms.DataGridViewButtonColumn Client_Update;
+        private System.Windows.Forms.DataGridViewButtonColumn Client_Delete;
+        private System.Windows.Forms.DataGridViewButtonColumn info_Client;
+        private System.Windows.Forms.DataGridViewButtonColumn Command_Client;
     }
 }

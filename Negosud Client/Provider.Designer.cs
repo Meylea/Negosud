@@ -1,7 +1,7 @@
 ﻿
 namespace Negosud_Client
 {
-    partial class Provider1
+    partial class Provider
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -33,9 +33,9 @@ namespace Negosud_Client
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Provider_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Provider_Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provider_Update = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Provider_Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Provider_Info = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Provider_Update = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Provider_Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Provider_Info = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,6 +86,7 @@ namespace Negosud_Client
             this.Provider_Update.HeaderText = "";
             this.Provider_Update.MinimumWidth = 8;
             this.Provider_Update.Name = "Provider_Update";
+            this.Provider_Update.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Provider_Update.Width = 150;
             // 
             // Provider_Delete
@@ -93,6 +94,7 @@ namespace Negosud_Client
             this.Provider_Delete.HeaderText = "";
             this.Provider_Delete.MinimumWidth = 8;
             this.Provider_Delete.Name = "Provider_Delete";
+            this.Provider_Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Provider_Delete.Width = 150;
             // 
             // Provider_Info
@@ -100,15 +102,16 @@ namespace Negosud_Client
             this.Provider_Info.HeaderText = "";
             this.Provider_Info.MinimumWidth = 8;
             this.Provider_Info.Name = "Provider_Info";
+            this.Provider_Info.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Provider_Info.Width = 150;
             // 
-            // Provider1
+            // Provider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.createProvider);
-            this.Name = "Provider1";
+            this.Name = "Provider";
             this.Size = new System.Drawing.Size(867, 487);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -121,8 +124,8 @@ namespace Negosud_Client
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Provider_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Provider_Nom;
-        private System.Windows.Forms.DataGridViewImageColumn Provider_Update;
-        private System.Windows.Forms.DataGridViewImageColumn Provider_Delete;
-        private System.Windows.Forms.DataGridViewImageColumn Provider_Info;
+        private System.Windows.Forms.DataGridViewButtonColumn Provider_Update;
+        private System.Windows.Forms.DataGridViewButtonColumn Provider_Delete;
+        private System.Windows.Forms.DataGridViewButtonColumn Provider_Info;
     }
 }
