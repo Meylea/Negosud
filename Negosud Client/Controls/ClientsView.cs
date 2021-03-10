@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negosud_Client;
-using Negosud_Client.Models;
+using Negosud_Client.Models; 
 namespace Negosud_Client
 {
     public partial class ClientsView : UserControl
@@ -28,25 +28,51 @@ namespace Negosud_Client
             GVCustomer.DataSource = await Client.GetClientsAsync();
         }
 
+        private async void updateList(string searchElement)
+        {
+            GVCustomer.DataSource = await Client.GetClientsAsync(searchElement);
+        }
+
         private void GVCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (clickBtn != null)
             {
-                clickBtn(GVCustomer.Columns[e.ColumnIndex].HeaderText);
+                object value = GVCustomer.Rows[e.RowIndex].Cells[0].Value;
+                
+                if(GVCustomer.Columns[e.ColumnIndex].HeaderText != "Supprimer")
+                {
+                    Program.FilterValue.ClientsId = value.ToString();
+                    clickBtn(GVCustomer.Columns[e.ColumnIndex].HeaderText);
+                }
+                else
+                {
+                    DeletedRow(value.ToString());
+                }
             }
+        }
+
+        private void DeletedRow(string idUser)
+        {
+                Client.DeleteRowAsync(idUser);
+                updateList();
         }
 
         private void BtnCustomer_Click(object sender, EventArgs e)
         {
             if (clickBtn != null)
             {
-                clickBtn(((Button)sender).Name);
+                clickBtn("CreateClient");
             }
         }
 
         private void ClientsView_VisibleChanged(object sender, EventArgs e)
         {
             updateList();
+        }
+
+        private void BTNSearch_Click(object sender, EventArgs e)
+        {
+            updateList(TBSearchCustomer.Text);
         }
     }
 }

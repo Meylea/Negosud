@@ -17,9 +17,7 @@ namespace Negosud_Client
         public Form1()
         {
             InitializeComponent();
-            clients1.Visible = false;
-            suppliers1.Visible = false;
-            clientsInfo1.Visible = false;
+            AllVisibleFalse();
 
             clients1.clickBtn += new DelegateClickBtn(Form1_clickBtn);
             
@@ -63,6 +61,7 @@ namespace Negosud_Client
             clients1.Visible = false;
             suppliers1.Visible = false;
             clientsInfo1.Visible = false;
+            clientsInformation1.Visible = false;
         }
 
         //Fonction récupération page 
@@ -77,16 +76,23 @@ namespace Negosud_Client
                 AllVisibleFalse();
                 clientsInfo1.Visible = true;
             }
-            if (touche == "Command")
-            {
-                AllVisibleFalse();
-            }
-            if (touche == "BtnCustomer")
+            if (touche == "Supprimer")
             {
                 AllVisibleFalse();
                 clientsInfo1.Visible = true;
             }
+            if (touche == "CreateClient")
+            {
+                AllVisibleFalse();
+                clientsInfo1.Visible = true;
+            }
+            if(touche == "Info")
+            {
+                AllVisibleFalse();
+                clientsInformation1.Visible = true;
+            }
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             

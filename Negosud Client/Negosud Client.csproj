@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ClientsInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ClientsInformation.Designer.cs">
+      <DependentUpon>ClientsInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ClientsView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,7 +78,6 @@
     <Compile Include="Models\ClientCommand.cs" />
     <Compile Include="Models\ClientCommandLine.cs" />
     <Compile Include="Models\Item.cs" />
-    <Compile Include="Models\ClientsDTO.cs" />
     <Compile Include="Models\Producer.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Models\SupplierCommand.cs" />
@@ -86,6 +91,9 @@
     <Compile Include="Controls\Suppliers.Designer.cs">
       <DependentUpon>Suppliers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\ClientsInformation.resx">
+      <DependentUpon>ClientsInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ClientsView.resx">
       <DependentUpon>ClientsView.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,7 +116,6 @@
       <DependentUpon>Suppliers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Negosud_Client.Models.Client.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
