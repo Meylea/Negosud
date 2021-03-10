@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negosud_Client;
-using static Negosud_Client.Clients;
+using static Negosud_Client.ClientsView;
 
 namespace Negosud_Client
 {
@@ -30,6 +30,7 @@ namespace Negosud_Client
         {
             AllVisibleFalse();
             clients1.Visible = true;
+                
         }
 
         //Display page Fournisseur
@@ -79,6 +80,11 @@ namespace Negosud_Client
             if (touche == "Command")
             {
                 AllVisibleFalse();
+            }
+            if (touche == "BtnCustomer")
+            {
+                AllVisibleFalse();
+                clientsInfo1.Visible = true;
             }
         }
         private void Form1_Load(object sender, EventArgs e)

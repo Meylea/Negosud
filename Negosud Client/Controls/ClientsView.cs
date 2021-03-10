@@ -11,33 +11,42 @@ using Negosud_Client;
 using Negosud_Client.Models;
 namespace Negosud_Client
 {
-    public partial class Clients : UserControl
+    public partial class ClientsView : UserControl
     {
 
         public delegate void DelegateClickBtn(string touche);
         public event DelegateClickBtn clickBtn;
 
-        public Clients()
+        public ClientsView()
         {
-            
             InitializeComponent();
             updateList();
-            
         }
 
         private async void updateList()
         {
-            GVCustomer.DataSource = await NegosudDTO.GetClientsAsync();
+            GVCustomer.DataSource = await Client.GetClientsAsync();
         }
 
         private void GVCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //MessageBox.Show(GVCustomer.Columns[e.ColumnIndex].HeaderText);
             if (clickBtn != null)
             {
                 clickBtn(GVCustomer.Columns[e.ColumnIndex].HeaderText);
             }
-            //Visible = false;
+        }
+
+        private void BtnCustomer_Click(object sender, EventArgs e)
+        {
+            if (clickBtn != null)
+            {
+                clickBtn(((Button)sender).Name);
+            }
+        }
+
+        private void ClientsView_VisibleChanged(object sender, EventArgs e)
+        {
+            updateList();
         }
     }
 }

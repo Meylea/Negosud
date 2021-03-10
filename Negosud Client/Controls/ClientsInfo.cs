@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Negosud_Client
+namespace Negosud_Client.Controls
 {
     public partial class ClientsInfo : UserControl
     {
