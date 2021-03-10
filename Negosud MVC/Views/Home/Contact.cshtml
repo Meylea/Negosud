@@ -1,0 +1,22 @@
+﻿@model Negosud_MVC.ViewModel.ContactViewModel
+@{
+    ViewData["Title"] = "Contact";
+}
+<div>
+    <h1>Contact</h1>
+    <form asp-controller="ContactForm" asp-action="Submit" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Adresse Email</label>
+            <input type="email" name="from" class="form-control" id="from" placeholder="name@example.com" asp-for="from">
+            
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Votre Message</label>
+            <textarea class="form-control" id="Body" rows="3" asp-for="body"></textarea>
+            
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Envoyer" class="btn btn-primary" />
+        </div>
+    </form>
+</div>

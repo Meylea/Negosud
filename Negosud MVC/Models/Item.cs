@@ -30,6 +30,9 @@ namespace Negosud_MVC.Models
         public Producer Producer { get; set; }
         public Type Type { get; set; }
         public Supplier Supplier { get; set; }
+        public string imgURL { get; set; }
+
+
         public ICollection<ClientCommandLine> ClientCommandLines { get; set; }
         public ICollection<SupplierCommandLine> SupplierCommandLines { get; set; }
     }
