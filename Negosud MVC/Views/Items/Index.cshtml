@@ -13,34 +13,30 @@
 
     <form asp-controller="Items" asp-action="Index" method="get">
         <p>
-            <span>Affiner recherche : <br /></span>
-            <select asp-for="ListYear" asp-items="Model.Years">
+            <input class="form-control w-50" type="text" name="searchString" placeholder="Chercher">
+            <select asp-for="ListYear" asp-items="Model.Years" class="custom-select custom-select-sm w-25">
                 <option value="">-- Années --</option>
             </select>
-
-            <select asp-for="ListProducer" asp-items="Model.Producers">
+            <select asp-for="ListProducer" asp-items="Model.Producers" class="custom-select custom-select-sm w-25">
                 <option value="">-- Producteurs --</option>
             </select>
-
-            <select asp-for="ListType" asp-items="Model.Types">
+            <select asp-for="ListType" asp-items="Model.Types" class="custom-select custom-select-sm w-25">
                 <option value="">-- Famille de vin --</option>
-            </select>           
-
-            <input class="form-control w-50 float-left" type="text" name="searchString" placeholder="Chercher">
+            </select>
+            <input class="btn btn-secondary btn-violet" type="submit" value="Chercher" />
         </p>
-        <input class="btn btn-secondary" type="submit" value="Chercher" />
+        
     </form>
    
 
         @foreach (var i in Model.Items)
         {
-            <div id="product-list" class="float-left">
-                <div id="pl-img">
-                    <img src="@Html.DisplayFor(modelItem => i.ImgURL)" width="50" height="50" />
-                </div>
-                <div id="pl-details">
-                    <p id="product-name"> @Html.DisplayFor(modelItem => i.Name)</p>
-                    <p id="unit-price">P.U : @Html.DisplayFor(modelItem => i.UnitPrice)</p>
+            <div id="product-list" class="float-left ml-3 border-right pr-3" >
+                <div id="pl-details" class="text-center">
+                    <img src="@Html.DisplayFor(modelItem => i.ImgURL)" width="50" height="50" class="text-center" />
+                    <p id="product-name" class="font-weight-bold"> @Html.DisplayFor(modelItem => i.Name)</p>
+                    <p id="unit-price">Prix Unitaire : @Html.DisplayFor(modelItem => i.UnitPrice) €</p>
+                    <p id="unit-price">Prix Carton : @Html.DisplayFor(modelItem => i.BoxPrice) €</p>
                     <p id="quantity">Stock : @Html.DisplayFor(modelItem => i.Quantity)</p>
                     <p><a asp-action="Details" asp-route-id="@i.Id">Details</a></p>
                 </div>
