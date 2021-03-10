@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Negosud_MVC.Models.Item>
+﻿@*@model IEnumerable<Negosud_MVC.Models.Item>*@
+@model Negosud_MVC.ViewModel.ProductYearViewModel
 
 @{
     ViewData["Title"] = "Negosud - Accueil";
@@ -9,87 +10,107 @@
 
     <h1 class="display-4">Liste des vins</h1>
 
-    
-        <form asp-controller="Items" asp-action="Index">
-            <p>
-                <input class="form-control w-50 float-left" type="text" name="searchString" placeholder="Chercher">
-                <input class="btn btn-secondary" type="submit" value="Chercher" />
-            </p>
-        </form>
-    
-    
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.imgURL)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Quantity)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.UnitPrice)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.BoxPrice)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Year)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Producer)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Type)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Supplier)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-            <tr>
-                <td>
-                    <img src="@Html.DisplayFor(modelItem => item.imgURL)" width="50" height="50" />
-                   @* <img src="https://cdn.pixabay.com/photo/2016/07/26/16/16/wine-1543170_1280.jpg" />*@
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Quantity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UnitPrice)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BoxPrice)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Year)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Producer.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Type.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Supplier.BusinessName)
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-                </td>
-            </tr>
-            }
-        </tbody>
-    </table>
+    <form asp-controller="Items" asp-action="Index">
+        <p>
+            <input class="form-control w-50 float-left" type="text" name="searchString" placeholder="Chercher">
+            <input class="btn btn-secondary" type="submit" value="Chercher" />
+        </p>
+        <p>
+            <span>Affiner recherche : <br /></span>
+            <select asp-for="ListYear" asp-items="Model.Years">
+                <option value="">All</option>
+            </select>
+        </p>
+        
+    </form>
 
-</div>
+    @foreach (var item in Model.Items)
+    {
+        <div id="product-list" class="float-left">
+            <div id="pl-img">
+                <img src="@Html.DisplayFor(modelItem => item.ImgURL)" width="50" height="50" />
+            </div>
+            <div id="pl-details">
+                <p id="product-name"> @Html.DisplayFor(modelItem => item.Name)</p>
+                <p id="unit-price">P.U : @Html.DisplayFor(modelItem => item.UnitPrice)</p>
+                <p id="quantity">Stock : @Html.DisplayFor(modelItem => item.Quantity)</p>
+                <p><a asp-action="Details" asp-route-id="@item.Id">Details</a></p>
+            </div>
+        </div>
+    }
+
+
+        @*<table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.imgURL)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Quantity)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.UnitPrice)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BoxPrice)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Year)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Producer)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Type)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Supplier)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            <img src="@Html.DisplayFor(modelItem => item.imgURL)" width="50" height="50" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UnitPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BoxPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Year)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Producer.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Type.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Supplier.BusinessName)
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>*@
+
+    </div>

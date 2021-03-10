@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Negosud_MVC.Data;
-using Negosud_MVC.Models;
+using Negosud_MVC.ViewModel;
 
 namespace Negosud_MVC.Controllers
 {
@@ -20,8 +20,14 @@ namespace Negosud_MVC.Controllers
         }
 
         // GET: Items
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string searchString, string listYear)
         {
+            //search by type
+            IQueryable<string> yearQuery = from y in _context.Items
+                                           orderby y.Year
+                                           select y.Year;
+
+            //searche by string
             var items = from m in _context.Items
                          select m;
 
@@ -30,9 +36,20 @@ namespace Negosud_MVC.Controllers
                 items = items.Where(s => s.Name.Contains(searchString));
             }
 
+            //search by type
+            if (!string.IsNullOrEmpty(listYear))
+            {
+                items = items.Where(x => x.Year == listYear);
+            }
+
+            var productYearVM = new ProductYearViewModel
+            {
+                Years = new SelectList(await yearQuery.Distinct().ToListAsync()),
+                Items = await items.ToListAsync()
+            };
 
             /*var negosudContext = _context.Items.Include(i => i.Producer).Include(i => i.Supplier).Include(i => i.Type);*/
-            return View(await items.ToListAsync());
+            return View(productYearVM);
         }
 
         // GET: Items/Details/5
