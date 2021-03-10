@@ -1,4 +1,4 @@
-﻿@*@model IEnumerable<Negosud_MVC.Models.Item>*@
+﻿
 @model Negosud_MVC.ViewModel.ProductYearViewModel
 
 @{
@@ -15,24 +15,17 @@
         <p>
             <span>Affiner recherche : <br /></span>
             <select asp-for="ListYear" asp-items="Model.Years">
-                <option value="">Années</option>
+                <option value="">-- Années --</option>
             </select>
 
             <select asp-for="ListProducer" asp-items="Model.Producers">
-                <option value="">Producteurs</option>
+                <option value="">-- Producteurs --</option>
             </select>
 
             <select asp-for="ListType" asp-items="Model.Types">
-                <option value="">Type de vin</option>
+                <option value="">-- Famille de vin --</option>
             </select>           
-            
-            <!--<select--> @*asp-for="ListType"*@ <!--asp-items="Model.Types">
-                <option value="">Type de vin</option>
-                <option value="">Rosée</option>
-                <option value="">Rouge</option>
-                <option value="">Blanc</option>
-                <option value="">Pétillant</option>
-            </select>-->
+
             <input class="form-control w-50 float-left" type="text" name="searchString" placeholder="Chercher">
         </p>
         <input class="btn btn-secondary" type="submit" value="Chercher" />
