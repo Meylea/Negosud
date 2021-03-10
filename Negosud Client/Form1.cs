@@ -58,10 +58,9 @@ namespace Negosud_Client
 
         private void BtnCatalogue_Click(object sender, EventArgs e)
         {
-            if (clickBtn != null)
-            {
-                clickBtn(((Button)sender).Text);
-            }
+            client1.Visible = false;
+            provider1.Visible = false;
+            items1.Visible = true;
         }
 
         private void Form1_clickBtn(string touche)

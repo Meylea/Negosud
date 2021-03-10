@@ -36,17 +36,19 @@ namespace Negosud_Client
             this.BtnAchat = new System.Windows.Forms.Button();
             this.BtnCatalogue = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.client1 = new Negosud_Client.Customer();
+            this.items1 = new Negosud_Client.Items();
             this.provider1 = new Negosud_Client.Provider();
+            this.client1 = new Negosud_Client.Customer();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(92, 43);
+            this.label1.Location = new System.Drawing.Point(61, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 40);
+            this.label1.Size = new System.Drawing.Size(112, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Negosud";
             // 
@@ -56,9 +58,10 @@ namespace Negosud_Client
             this.BtnClient.FlatAppearance.BorderSize = 0;
             this.BtnClient.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnClient.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnClient.Location = new System.Drawing.Point(72, 170);
+            this.BtnClient.Location = new System.Drawing.Point(48, 110);
+            this.BtnClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnClient.Name = "BtnClient";
-            this.BtnClient.Size = new System.Drawing.Size(181, 59);
+            this.BtnClient.Size = new System.Drawing.Size(121, 38);
             this.BtnClient.TabIndex = 1;
             this.BtnClient.Text = "Client";
             this.BtnClient.UseVisualStyleBackColor = false;
@@ -70,9 +73,10 @@ namespace Negosud_Client
             this.BtnFournisseur.FlatAppearance.BorderSize = 0;
             this.BtnFournisseur.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BtnFournisseur.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnFournisseur.Location = new System.Drawing.Point(72, 254);
+            this.BtnFournisseur.Location = new System.Drawing.Point(48, 165);
+            this.BtnFournisseur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnFournisseur.Name = "BtnFournisseur";
-            this.BtnFournisseur.Size = new System.Drawing.Size(181, 59);
+            this.BtnFournisseur.Size = new System.Drawing.Size(121, 38);
             this.BtnFournisseur.TabIndex = 2;
             this.BtnFournisseur.Text = "Fournisseur";
             this.BtnFournisseur.UseVisualStyleBackColor = false;
@@ -83,9 +87,10 @@ namespace Negosud_Client
             this.BtnVente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(21)))), ((int)(((byte)(33)))));
             this.BtnVente.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BtnVente.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnVente.Location = new System.Drawing.Point(72, 339);
+            this.BtnVente.Location = new System.Drawing.Point(48, 220);
+            this.BtnVente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnVente.Name = "BtnVente";
-            this.BtnVente.Size = new System.Drawing.Size(181, 59);
+            this.BtnVente.Size = new System.Drawing.Size(121, 38);
             this.BtnVente.TabIndex = 3;
             this.BtnVente.Text = "Vente";
             this.BtnVente.UseVisualStyleBackColor = false;
@@ -96,9 +101,10 @@ namespace Negosud_Client
             this.BtnAchat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(21)))), ((int)(((byte)(33)))));
             this.BtnAchat.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BtnAchat.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnAchat.Location = new System.Drawing.Point(72, 425);
+            this.BtnAchat.Location = new System.Drawing.Point(48, 276);
+            this.BtnAchat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnAchat.Name = "BtnAchat";
-            this.BtnAchat.Size = new System.Drawing.Size(181, 59);
+            this.BtnAchat.Size = new System.Drawing.Size(121, 38);
             this.BtnAchat.TabIndex = 4;
             this.BtnAchat.Text = "Achat";
             this.BtnAchat.UseVisualStyleBackColor = false;
@@ -109,9 +115,10 @@ namespace Negosud_Client
             this.BtnCatalogue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(21)))), ((int)(((byte)(33)))));
             this.BtnCatalogue.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.BtnCatalogue.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnCatalogue.Location = new System.Drawing.Point(72, 512);
+            this.BtnCatalogue.Location = new System.Drawing.Point(48, 333);
+            this.BtnCatalogue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnCatalogue.Name = "BtnCatalogue";
-            this.BtnCatalogue.Size = new System.Drawing.Size(181, 59);
+            this.BtnCatalogue.Size = new System.Drawing.Size(121, 38);
             this.BtnCatalogue.TabIndex = 5;
             this.BtnCatalogue.Text = "Catalogue";
             this.BtnCatalogue.UseVisualStyleBackColor = false;
@@ -121,31 +128,43 @@ namespace Negosud_Client
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(566, 272);
+            this.label2.Location = new System.Drawing.Point(377, 177);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(273, 67);
+            this.label2.Size = new System.Drawing.Size(187, 46);
             this.label2.TabIndex = 6;
             this.label2.Text = "Bienvenue";
             // 
-            // client1
+            // items1
             // 
-            this.client1.Location = new System.Drawing.Point(297, 170);
-            this.client1.Name = "client1";
-            this.client1.Size = new System.Drawing.Size(1147, 401);
-            this.client1.TabIndex = 7;
+            this.items1.Location = new System.Drawing.Point(223, 81);
+            this.items1.Name = "items1";
+            this.items1.Size = new System.Drawing.Size(759, 428);
+            this.items1.TabIndex = 9;
+            this.items1.Visible = false;
             // 
             // provider1
             // 
-            this.provider1.Location = new System.Drawing.Point(427, 170);
+            this.provider1.Location = new System.Drawing.Point(285, 110);
+            this.provider1.Margin = new System.Windows.Forms.Padding(1);
             this.provider1.Name = "provider1";
-            this.provider1.Size = new System.Drawing.Size(867, 487);
+            this.provider1.Size = new System.Drawing.Size(578, 317);
             this.provider1.TabIndex = 8;
+            // 
+            // client1
+            // 
+            this.client1.Location = new System.Drawing.Point(198, 110);
+            this.client1.Margin = new System.Windows.Forms.Padding(1);
+            this.client1.Name = "client1";
+            this.client1.Size = new System.Drawing.Size(765, 261);
+            this.client1.TabIndex = 7;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1585, 1060);
+            this.ClientSize = new System.Drawing.Size(1057, 689);
+            this.Controls.Add(this.items1);
             this.Controls.Add(this.provider1);
             this.Controls.Add(this.client1);
             this.Controls.Add(this.label2);
@@ -155,6 +174,7 @@ namespace Negosud_Client
             this.Controls.Add(this.BtnFournisseur);
             this.Controls.Add(this.BtnClient);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Negosud";
@@ -175,6 +195,7 @@ namespace Negosud_Client
         private System.Windows.Forms.Label label2;
         private Customer client1;
         private Provider provider1;
+        private Items items1;
     }
 }
 
