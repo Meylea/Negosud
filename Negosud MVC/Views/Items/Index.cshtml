@@ -11,44 +11,48 @@
     <h1 class="display-4">Liste des vins</h1>
 
 
-    <form asp-controller="Items" asp-action="Index">
-        <p>
-            <input class="form-control w-50 float-left" type="text" name="searchString" placeholder="Chercher">
-        </p>
+    <form asp-controller="Items" asp-action="Index" method="get">
         <p>
             <span>Affiner recherche : <br /></span>
             <select asp-for="ListYear" asp-items="Model.Years">
                 <option value="">Années</option>
             </select>
-        </p>
-        <p>
+
             <select asp-for="ListProducer" asp-items="Model.Producers">
                 <option value="">Producteurs</option>
             </select>
-        </p>
 
-        <p>
             <select asp-for="ListType" asp-items="Model.Types">
                 <option value="">Type de vin</option>
-            </select>
+            </select>           
+            
+            <!--<select--> @*asp-for="ListType"*@ <!--asp-items="Model.Types">
+                <option value="">Type de vin</option>
+                <option value="">Rosée</option>
+                <option value="">Rouge</option>
+                <option value="">Blanc</option>
+                <option value="">Pétillant</option>
+            </select>-->
+            <input class="form-control w-50 float-left" type="text" name="searchString" placeholder="Chercher">
         </p>
         <input class="btn btn-secondary" type="submit" value="Chercher" />
     </form>
+   
 
-    @foreach (var i in Model.Items)
-    {
-        <div id="product-list" class="float-left">
-            <div id="pl-img">
-                <img src="@Html.DisplayFor(modelItem => i.ImgURL)" width="50" height="50" />
+        @foreach (var i in Model.Items)
+        {
+            <div id="product-list" class="float-left">
+                <div id="pl-img">
+                    <img src="@Html.DisplayFor(modelItem => i.ImgURL)" width="50" height="50" />
+                </div>
+                <div id="pl-details">
+                    <p id="product-name"> @Html.DisplayFor(modelItem => i.Name)</p>
+                    <p id="unit-price">P.U : @Html.DisplayFor(modelItem => i.UnitPrice)</p>
+                    <p id="quantity">Stock : @Html.DisplayFor(modelItem => i.Quantity)</p>
+                    <p><a asp-action="Details" asp-route-id="@i.Id">Details</a></p>
+                </div>
             </div>
-            <div id="pl-details">
-                <p id="product-name"> @Html.DisplayFor(modelItem => i.Name)</p>
-                <p id="unit-price">P.U : @Html.DisplayFor(modelItem => i.UnitPrice)</p>
-                <p id="quantity">Stock : @Html.DisplayFor(modelItem => i.Quantity)</p>
-                <p><a asp-action="Details" asp-route-id="@i.Id">Details</a></p>
-            </div>
-        </div>
-    }
+        }
 
 
         @*<table class="table">
@@ -123,4 +127,4 @@
                 </tbody>
             </table>*@
 
-    </div>
+</div>

@@ -20,20 +20,21 @@ namespace Negosud_MVC.Controllers
         }
 
         // GET: Items
-        public async Task<IActionResult> Index(string searchString, string listYear, string producer, string type)
+        public async Task<IActionResult> Index(string searchString, string listYear, string listProducer, string listType)
         {
             //search by year
             IQueryable<string> yearQuery = from y in _context.Items
                                            orderby y.Year
                                            select y.Year;
             //search by producer
-            IQueryable<string> producerQuery = from p in _context.Items
+            IQueryable<string> producerQuery = (IQueryable<string>)(from p in _context.Items
                                            orderby p.Producer.Name
-                                               select p.Producer.Name;
+                                               select p.Producer.Name);
 
             IQueryable<string> typeQuery = from t in _context.Items
                                            orderby t.Type.Name
                                                select t.Type.Name;
+
 
             //search by string
             var items = from m in _context.Items
@@ -51,14 +52,14 @@ namespace Negosud_MVC.Controllers
                 items = items.Where(x => x.Year == listYear);
             }
 
-            if (!string.IsNullOrEmpty(producer))
+            if (!string.IsNullOrEmpty(listProducer))
             {
-                items = items.Where(x => x.Producer.Name == producer);
+                items = items.Where(x => x.Producer.Name == listProducer);
             }     
             
-            if (!string.IsNullOrEmpty(type))
+            if (!string.IsNullOrEmpty(listType))
             {
-                items = items.Where(x => x.Type.Name == type);
+                items = items.Where(x => x.Type.Name == listType);
             }
 
             
