@@ -167,7 +167,6 @@ namespace Negosud_Client
             this.createItems1.Size = new System.Drawing.Size(857, 509);
             this.createItems1.TabIndex = 10;
             this.createItems1.Visible = false;
-            this.createItems1.VisibleChanged += new System.EventHandler(this.createItems1_VisibleChanged);
             // 
             // items1
             // 
@@ -237,7 +236,6 @@ namespace Negosud_Client
         private Items items1;
         private CreateItems createItems1;
         private System.Windows.Forms.Label label2;
-        private Provider provider1;
         private System.Windows.Forms.Button BtnCatalogue;
         private ItemInfo itemInfo1;
     }
