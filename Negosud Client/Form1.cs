@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Negosud_Client;
 using static Negosud_Client.ClientsView;
 
 namespace Negosud_Client
@@ -63,6 +55,11 @@ namespace Negosud_Client
 
         //Display page Catalogue
         private void BtnCatalogue_Click(object sender, EventArgs e)
+        {
+            AllVisibleFalse();
+            items1.Visible = true;
+        }
+        private void BtnProducer_Click(object sender, EventArgs e)
         {
             AllVisibleFalse();
             items1.Visible = true;

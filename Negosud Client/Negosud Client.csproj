@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ProducerControll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ProducerControll.Designer.cs">
+      <DependentUpon>ProducerControll.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateItems.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ClientsController\ClientsInfo.resx">
       <DependentUpon>ClientsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ProducerControll.resx">
+      <DependentUpon>ProducerControll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SuppliersController\SuppliersAddUpdate.resx">
       <DependentUpon>SuppliersAddUpdate.cs</DependentUpon>

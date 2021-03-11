@@ -18,7 +18,7 @@ namespace Negosud_Client.Controls
             InitializeComponent();
         }
 
-        /*private async void updateList()
+        private async void updateList()
         {
             if (Program.FilterValue.ClientsId != "")
             {
@@ -32,7 +32,7 @@ namespace Negosud_Client.Controls
                 RueUser.Text = clients.StreetAddress;
                 CPUser.Text = clients.PostalCode;
             }
-        }*/
+        }
 
         private void ClientsInformation_VisibleChanged(object sender, EventArgs e)
         {

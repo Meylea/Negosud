@@ -124,7 +124,7 @@ namespace Negosud_Client
             this.Type.TabIndex = 17;
             this.Type.Text = "Type produits";
             this.Type.UseVisualStyleBackColor = false;
-            this.Type.Click += new System.EventHandler(this.button1_Click);
+            
             // 
             // BtnProducer
             // 
@@ -137,7 +137,7 @@ namespace Negosud_Client
             this.BtnProducer.TabIndex = 18;
             this.BtnProducer.Text = "Domaine";
             this.BtnProducer.UseVisualStyleBackColor = false;
-            this.BtnProducer.Click += new System.EventHandler(this.button1_Click_1);
+            
             // 
             // Form1
             // 
