@@ -24,8 +24,6 @@ namespace Negosud_MVC.Models
         public int ProducerId { get; set; }
         public int TypeId { get; set; }
         public int SupplierId { get; set; }
-        public string ImgURL { get; set; }
-        [Display(Name = " ")]
 
         public Producer Producer { get; set; }
         public Type Type { get; set; }

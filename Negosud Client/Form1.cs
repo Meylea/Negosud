@@ -28,9 +28,7 @@ namespace Negosud_Client
         {
             if (button == "createItem" || button == "Edit")
             {
-                client1.Visible = false;
-                provider1.Visible = false;
-                items1.Visible = false;
+                AllVisibleFalse();
                 createItems1.Visible = true;
                 if (button == "Edit") createItems1.InitializeSelectBoxes();
             }
@@ -66,7 +64,8 @@ namespace Negosud_Client
         //Display page Catalogue
         private void BtnCatalogue_Click(object sender, EventArgs e)
         {
-
+            AllVisibleFalse();
+            items1.Visible = true;
         }
 
         private void AllVisibleFalse()
@@ -77,6 +76,8 @@ namespace Negosud_Client
             clientsInformation1.Visible = false;
             suppliersAddUpdate1.Visible = false;
             suppliersInfo1.Visible = false;
+            items1.Visible = false;
+            createItems1.Visible = false;
         }
 
         //Fonction récupération page 
@@ -98,15 +99,15 @@ namespace Negosud_Client
                 clientsInformation1.Visible = true;
             }
             if (touche == "Modifier")
-            client1.Visible = false;
-            provider1.Visible = false;
-            createItems1.Visible = false;
-            items1.Visible = true;
+            {
+                AllVisibleFalse();
+                clientsInfo1.Visible = true;
+            }
         }
 
         private void SuppliersView1_clickBtn(string touche)
         {
-            client1.Visible = false;
+            clients1.Visible = false;
             provider1.Visible = false;
             if(touche == "Client")
             {
