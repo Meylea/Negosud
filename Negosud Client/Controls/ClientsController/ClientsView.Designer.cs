@@ -33,13 +33,16 @@ namespace Negosud_Client
         {
             this.components = new System.ComponentModel.Container();
             this.BtnCustomer = new System.Windows.Forms.Button();
-            this.TBAddCustomer = new System.Windows.Forms.TextBox();
+            this.TBSearchCustomer = new System.Windows.Forms.TextBox();
             this.GVCustomer = new System.Windows.Forms.DataGridView();
+            this.ClientId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnTest = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.GVBTNDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.GVBTNUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
             this.eventLog1 = new System.Diagnostics.EventLog();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BTNSearch = new System.Windows.Forms.Button();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +51,7 @@ namespace Negosud_Client
             this.postalCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientCommandsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnTest = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.GVBTNDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.GVBTNUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GVCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -70,18 +71,19 @@ namespace Negosud_Client
             this.BtnCustomer.UseVisualStyleBackColor = false;
             this.BtnCustomer.Click += new System.EventHandler(this.BtnCustomer_Click);
             // 
-            // TBAddCustomer
+            // TBSearchCustomer
             // 
-            this.TBAddCustomer.Location = new System.Drawing.Point(362, 45);
-            this.TBAddCustomer.Name = "TBAddCustomer";
-            this.TBAddCustomer.Size = new System.Drawing.Size(330, 26);
-            this.TBAddCustomer.TabIndex = 1;
+            this.TBSearchCustomer.Location = new System.Drawing.Point(711, 46);
+            this.TBSearchCustomer.Name = "TBSearchCustomer";
+            this.TBSearchCustomer.Size = new System.Drawing.Size(330, 26);
+            this.TBSearchCustomer.TabIndex = 1;
             // 
             // GVCustomer
             // 
             this.GVCustomer.AutoGenerateColumns = false;
             this.GVCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GVCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClientId,
             this.lastNameDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
@@ -94,25 +96,54 @@ namespace Negosud_Client
             this.GVBTNDelete,
             this.GVBTNUpdate});
             this.GVCustomer.DataSource = this.clientBindingSource;
-            this.GVCustomer.Location = new System.Drawing.Point(73, 118);
+            this.GVCustomer.Location = new System.Drawing.Point(73, 116);
             this.GVCustomer.Name = "GVCustomer";
             this.GVCustomer.RowHeadersWidth = 62;
             this.GVCustomer.RowTemplate.Height = 28;
-            this.GVCustomer.Size = new System.Drawing.Size(968, 254);
+            this.GVCustomer.Size = new System.Drawing.Size(1047, 254);
             this.GVCustomer.TabIndex = 2;
             this.GVCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GVCustomer_CellContentClick);
+            // 
+            // ClientId
+            // 
+            this.ClientId.DataPropertyName = "Id";
+            this.ClientId.HeaderText = "Id";
+            this.ClientId.MinimumWidth = 8;
+            this.ClientId.Name = "ClientId";
+            this.ClientId.Width = 150;
+            // 
+            // BtnTest
+            // 
+            this.BtnTest.HeaderText = "Info";
+            this.BtnTest.MinimumWidth = 8;
+            this.BtnTest.Name = "BtnTest";
+            this.BtnTest.Text = "Test";
+            this.BtnTest.UseColumnTextForButtonValue = true;
+            this.BtnTest.Width = 150;
+            // 
+            // GVBTNDelete
+            // 
+            this.GVBTNDelete.HeaderText = "Supprimer";
+            this.GVBTNDelete.MinimumWidth = 8;
+            this.GVBTNDelete.Name = "GVBTNDelete";
+            this.GVBTNDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GVBTNDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.GVBTNDelete.Text = "Supprimer";
+            this.GVBTNDelete.UseColumnTextForButtonValue = true;
+            this.GVBTNDelete.Width = 150;
+            // 
+            // GVBTNUpdate
+            // 
+            this.GVBTNUpdate.HeaderText = "Modifier";
+            this.GVBTNUpdate.MinimumWidth = 8;
+            this.GVBTNUpdate.Name = "GVBTNUpdate";
+            this.GVBTNUpdate.Text = "Modifier";
+            this.GVBTNUpdate.UseColumnTextForButtonValue = true;
+            this.GVBTNUpdate.Width = 150;
             // 
             // eventLog1
             // 
             this.eventLog1.SynchronizingObject = this;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(532, 283);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(8, 4);
-            this.checkedListBox1.TabIndex = 3;
             // 
             // errorProvider1
             // 
@@ -126,9 +157,15 @@ namespace Negosud_Client
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.Width = 150;
             // 
-            // clientBindingSource
+            // BTNSearch
             // 
-            this.clientBindingSource.DataSource = typeof(Negosud_Client.Models.Client);
+            this.BTNSearch.Location = new System.Drawing.Point(570, 37);
+            this.BTNSearch.Name = "BTNSearch";
+            this.BTNSearch.Size = new System.Drawing.Size(111, 45);
+            this.BTNSearch.TabIndex = 3;
+            this.BTNSearch.Text = "Rechercher";
+            this.BTNSearch.UseVisualStyleBackColor = true;
+            this.BTNSearch.Click += new System.EventHandler(this.BTNSearch_Click);
             // 
             // lastNameDataGridViewTextBoxColumn
             // 
@@ -194,39 +231,20 @@ namespace Negosud_Client
             this.clientCommandsDataGridViewTextBoxColumn.Name = "clientCommandsDataGridViewTextBoxColumn";
             this.clientCommandsDataGridViewTextBoxColumn.Width = 150;
             // 
-            // BtnTest
+            // clientBindingSource
             // 
-            this.BtnTest.HeaderText = "Info";
-            this.BtnTest.MinimumWidth = 8;
-            this.BtnTest.Name = "BtnTest";
-            this.BtnTest.Width = 150;
-            // 
-            // GVBTNDelete
-            // 
-            this.GVBTNDelete.HeaderText = "Supprimer";
-            this.GVBTNDelete.MinimumWidth = 8;
-            this.GVBTNDelete.Name = "GVBTNDelete";
-            this.GVBTNDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.GVBTNDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.GVBTNDelete.Width = 150;
-            // 
-            // GVBTNUpdate
-            // 
-            this.GVBTNUpdate.HeaderText = "Modifier";
-            this.GVBTNUpdate.MinimumWidth = 8;
-            this.GVBTNUpdate.Name = "GVBTNUpdate";
-            this.GVBTNUpdate.Width = 150;
+            this.clientBindingSource.DataSource = typeof(Negosud_Client.Models.Client);
             // 
             // ClientsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.BTNSearch);
             this.Controls.Add(this.GVCustomer);
-            this.Controls.Add(this.TBAddCustomer);
+            this.Controls.Add(this.TBSearchCustomer);
             this.Controls.Add(this.BtnCustomer);
             this.Name = "ClientsView";
-            this.Size = new System.Drawing.Size(1071, 402);
+            this.Size = new System.Drawing.Size(1216, 402);
             this.VisibleChanged += new System.EventHandler(this.ClientsView_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.GVCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
@@ -240,13 +258,13 @@ namespace Negosud_Client
         #endregion
 
         private System.Windows.Forms.Button BtnCustomer;
-        private System.Windows.Forms.TextBox TBAddCustomer;
+        private System.Windows.Forms.TextBox TBSearchCustomer;
         private System.Windows.Forms.DataGridView GVCustomer;
         private System.Diagnostics.EventLog eventLog1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private BindingSource clientBindingSource;
+        private DataGridViewTextBoxColumn ClientId;
         private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
@@ -258,5 +276,6 @@ namespace Negosud_Client
         private DataGridViewButtonColumn BtnTest;
         private DataGridViewButtonColumn GVBTNDelete;
         private DataGridViewButtonColumn GVBTNUpdate;
+        private Button BTNSearch;
     }
 }

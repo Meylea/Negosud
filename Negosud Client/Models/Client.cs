@@ -11,7 +11,7 @@ namespace Negosud_Client.Models
 {
     public class Client
     {
-        static HttpClient client = new HttpClient();
+        static HttpClient httpClient = new HttpClient();
         public int Id { get; set; }
         //[Required]
         //[StringLength(50)]
@@ -40,7 +40,7 @@ namespace Negosud_Client.Models
         {
             List<Client> clients = new List<Client>();
 
-            HttpResponseMessage response = await client.GetAsync("https://localhost:44311/api/Clients");
+            HttpResponseMessage response = await httpClient.GetAsync("https://localhost:44311/api/Clients");
             if (response.IsSuccessStatusCode)
             {
                 string data = await response.Content.ReadAsStringAsync();
@@ -49,7 +49,49 @@ namespace Negosud_Client.Models
             return clients;
         }
 
-        public static async Task<bool> CreateProductAsync(ClientsView clients)
+        public static async Task<List<Client>> GetClientsAsync(string Search)
+        {
+            List<Client> clients = new List<Client>();
+
+            HttpResponseMessage response = await httpClient.GetAsync("https://localhost:44311/api/Clients");
+            if (response.IsSuccessStatusCode)
+            {
+                string data = await response.Content.ReadAsStringAsync();
+                clients = JsonConvert.DeserializeObject<List<Client>>(data);
+            }
+            return clients;
+        }
+
+        public static async Task<Client> GetOneClientsAsync(string GetUrl)
+        {
+            Client client = new Client();
+            string url = "https://localhost:44311/api/Clients";
+            url += "/"+GetUrl;
+            HttpResponseMessage response = await httpClient.GetAsync(url);
+            if (response.IsSuccessStatusCode)
+            {
+                string data = await response.Content.ReadAsStringAsync();
+                client = JsonConvert.DeserializeObject<Client>(data);
+            }
+            return client;
+        }
+        
+        public static async void DeleteRowAsync(string GetUrl)
+        {
+            string url = "https://localhost:44311/api/Clients";
+            url += "/"+GetUrl;
+            HttpResponseMessage response = await httpClient.DeleteAsync(url);
+            if (response.IsSuccessStatusCode)
+            {
+                string data = await response.Content.ReadAsStringAsync();
+                
+            }
+            
+        }
+
+
+
+        public static async Task<bool> CreateProductAsync(Client clients)
         {
             string clientJs = JsonConvert.SerializeObject(clients);
             StringContent data = new StringContent(clientJs, Encoding.UTF8, "application/json");
@@ -61,6 +103,26 @@ namespace Negosud_Client.Models
                 Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 HttpResponseMessage response = await Client.PostAsync("Clients", data);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static async Task<bool> UpdateProductAsync(Client clients,string idUser)
+        {
+            string clientJs = JsonConvert.SerializeObject(clients);
+            StringContent data = new StringContent(clientJs, Encoding.UTF8, "application/json");
+
+            using (var Client = new HttpClient())
+            {
+                Client.BaseAddress = new Uri("https://localhost:44311/api/Clients/"+idUser);
+                Client.DefaultRequestHeaders.Accept.Clear();
+                Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = await Client.PutAsync(idUser, data);
                 if (response.IsSuccessStatusCode)
                 {
                     return true;

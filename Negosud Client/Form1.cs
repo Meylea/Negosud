@@ -17,12 +17,10 @@ namespace Negosud_Client
         public Form1()
         {
             InitializeComponent();
-            clients1.Visible = false;
-            suppliers1.Visible = false;
-            clientsInfo1.Visible = false;
+            AllVisibleFalse();
 
             clients1.clickBtn += new DelegateClickBtn(Form1_clickBtn);
-            
+            //suppliers1.clickBtn += new DelegateClickBtn(Form1_clickBtn);
         }
 
         //Display page Client
@@ -30,7 +28,7 @@ namespace Negosud_Client
         {
             AllVisibleFalse();
             clients1.Visible = true;
-                
+            Program.FilterValue.ClientsId = "";
         }
 
         //Display page Fournisseur
@@ -63,6 +61,9 @@ namespace Negosud_Client
             clients1.Visible = false;
             suppliers1.Visible = false;
             clientsInfo1.Visible = false;
+            clientsInformation1.Visible = false;
+            suppliersAddUpdate1.Visible = false;
+            suppliersInfo1.Visible = false;
         }
 
         //Fonction récupération page 
@@ -71,22 +72,32 @@ namespace Negosud_Client
             if (touche == "Supprimer")
             {
                 AllVisibleFalse();
+                clientsInfo1.Visible = true;
             }
-            if (touche == "Info")
+            if (touche == "CreateClient")
             {
                 AllVisibleFalse();
                 clientsInfo1.Visible = true;
             }
-            if (touche == "Command")
+            if(touche == "Info")
             {
                 AllVisibleFalse();
+                clientsInformation1.Visible = true;
             }
-            if (touche == "BtnCustomer")
+            if (touche == "Modifier")
             {
+
                 AllVisibleFalse();
                 clientsInfo1.Visible = true;
+            }            
+            if (touche == "CreateSuppliers")
+            {
+
+                AllVisibleFalse();
+                suppliersAddUpdate1.Visible = true;
             }
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             

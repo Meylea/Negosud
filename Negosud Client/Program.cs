@@ -18,5 +18,11 @@ namespace Negosud_Client
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+
+        public static class FilterValue
+        {
+            public static string ClientsId { get; set; }
+            public static string SuppliersId { get; set; }
+        }
     }
 }
