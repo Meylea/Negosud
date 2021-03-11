@@ -35,20 +35,18 @@ namespace Negosud_Client
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clientCommandBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnRechercheVente = new System.Windows.Forms.Button();
+            this.RechercheVente = new System.Windows.Forms.TextBox();
+            this.CréerVente = new System.Windows.Forms.Button();
+            this.Update = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientCommandLinesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Information = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.clientCommandBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnRechercheVente = new System.Windows.Forms.Button();
-            this.RechercheVente = new System.Windows.Forms.TextBox();
-            this.CréerVente = new System.Windows.Forms.Button();
-            this.Update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientCommandBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -64,9 +62,7 @@ namespace Negosud_Client
             this.statusDataGridViewTextBoxColumn,
             this.clientIdDataGridViewTextBoxColumn,
             this.clientCommandLinesDataGridViewTextBoxColumn,
-            this.Editer,
-            this.Information,
-            this.Supprimer});
+            this.Information});
             this.dataGridView1.DataSource = this.clientCommandBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 66);
             this.dataGridView1.Name = "dataGridView1";
@@ -75,82 +71,6 @@ namespace Negosud_Client
             this.dataGridView1.Size = new System.Drawing.Size(1090, 496);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ClientName
-            // 
-            this.ClientName.DataPropertyName = "ClientName";
-            this.ClientName.HeaderText = "ClientName";
-            this.ClientName.MinimumWidth = 6;
-            this.ClientName.Name = "ClientName";
-            this.ClientName.Width = 125;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // clientIdDataGridViewTextBoxColumn
-            // 
-            this.clientIdDataGridViewTextBoxColumn.DataPropertyName = "ClientId";
-            this.clientIdDataGridViewTextBoxColumn.HeaderText = "ClientId";
-            this.clientIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.clientIdDataGridViewTextBoxColumn.Name = "clientIdDataGridViewTextBoxColumn";
-            this.clientIdDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // clientCommandLinesDataGridViewTextBoxColumn
-            // 
-            this.clientCommandLinesDataGridViewTextBoxColumn.DataPropertyName = "ClientCommandLines";
-            this.clientCommandLinesDataGridViewTextBoxColumn.HeaderText = "ClientCommandLines";
-            this.clientCommandLinesDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.clientCommandLinesDataGridViewTextBoxColumn.Name = "clientCommandLinesDataGridViewTextBoxColumn";
-            this.clientCommandLinesDataGridViewTextBoxColumn.Visible = false;
-            this.clientCommandLinesDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // Editer
-            // 
-            this.Editer.HeaderText = "";
-            this.Editer.MinimumWidth = 6;
-            this.Editer.Name = "Editer";
-            this.Editer.Text = "Editer";
-            this.Editer.UseColumnTextForButtonValue = true;
-            this.Editer.Width = 125;
-            // 
-            // Information
-            // 
-            this.Information.HeaderText = "";
-            this.Information.MinimumWidth = 6;
-            this.Information.Name = "Information";
-            this.Information.Text = "Information";
-            this.Information.UseColumnTextForButtonValue = true;
-            this.Information.Width = 125;
-            // 
-            // Supprimer
-            // 
-            this.Supprimer.HeaderText = "";
-            this.Supprimer.MinimumWidth = 6;
-            this.Supprimer.Name = "Supprimer";
-            this.Supprimer.Text = "Supprimer";
-            this.Supprimer.UseColumnTextForButtonValue = true;
-            this.Supprimer.Width = 125;
             // 
             // clientCommandBindingSource
             // 
@@ -202,6 +122,64 @@ namespace Negosud_Client
             this.Update.UseVisualStyleBackColor = false;
             this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ClientName
+            // 
+            this.ClientName.DataPropertyName = "ClientName";
+            this.ClientName.HeaderText = "ClientName";
+            this.ClientName.MinimumWidth = 6;
+            this.ClientName.Name = "ClientName";
+            this.ClientName.Width = 125;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // clientIdDataGridViewTextBoxColumn
+            // 
+            this.clientIdDataGridViewTextBoxColumn.DataPropertyName = "ClientId";
+            this.clientIdDataGridViewTextBoxColumn.HeaderText = "ClientId";
+            this.clientIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.clientIdDataGridViewTextBoxColumn.Name = "clientIdDataGridViewTextBoxColumn";
+            this.clientIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // clientCommandLinesDataGridViewTextBoxColumn
+            // 
+            this.clientCommandLinesDataGridViewTextBoxColumn.DataPropertyName = "ClientCommandLines";
+            this.clientCommandLinesDataGridViewTextBoxColumn.HeaderText = "ClientCommandLines";
+            this.clientCommandLinesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.clientCommandLinesDataGridViewTextBoxColumn.Name = "clientCommandLinesDataGridViewTextBoxColumn";
+            this.clientCommandLinesDataGridViewTextBoxColumn.Visible = false;
+            this.clientCommandLinesDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Information
+            // 
+            this.Information.HeaderText = "Information";
+            this.Information.MinimumWidth = 6;
+            this.Information.Name = "Information";
+            this.Information.Text = "Information";
+            this.Information.UseColumnTextForButtonValue = true;
+            this.Information.Width = 125;
+            // 
             // Sale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -228,15 +206,13 @@ namespace Negosud_Client
         private System.Windows.Forms.TextBox RechercheVente;
         private System.Windows.Forms.Button CréerVente;
         private System.Windows.Forms.BindingSource clientCommandBindingSource;
+        private System.Windows.Forms.Button Update;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientCommandLinesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Editer;
         private System.Windows.Forms.DataGridViewButtonColumn Information;
-        private System.Windows.Forms.DataGridViewButtonColumn Supprimer;
-        private System.Windows.Forms.Button Update;
     }
 }

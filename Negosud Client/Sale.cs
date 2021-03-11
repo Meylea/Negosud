@@ -13,6 +13,8 @@ namespace Negosud_Client
 {
     public partial class Sale : UserControl
     {
+        public delegate void DelegateClickBtn(string button);
+        public event DelegateClickBtn ClickBtn;
         public Sale()
         {
             InitializeComponent();
@@ -54,7 +56,10 @@ namespace Negosud_Client
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (ClickBtn != null)
+            {
+                ClickBtn(dataGridView1.Columns[e.ColumnIndex].HeaderText);
+            }
         }
     }
     

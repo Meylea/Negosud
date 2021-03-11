@@ -15,6 +15,19 @@ namespace Negosud_Client
         public SaleDetail()
         {
             InitializeComponent();
+            UpdateList();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void UpdateList()
+        {
+            dataGridView1.DataSource = await Item.GetItemsAsync();
+        }
+
+       
     }
 }

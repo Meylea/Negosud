@@ -43,15 +43,18 @@ namespace Negosud_Client.Models
         public static async Task<ClientCommand> GetOneClientCommandAsync(int id)
         {
             ClientCommand cliCommand = new ClientCommand();
-          /*  HttpResponseMessage response = await httpClient.GetAsync("https://localhost:44311/api/ClientCommands/" + id);
-            if (response.IsSuccessStatusCode)
+            using (var HttpClient = new HttpClient())
             {
-                string data = await response.Content.ReadAsStringAsync();
-                cliCommand = JsonConvert.DeserializeObject<ClientCommand>(data);
+                HttpResponseMessage response = await HttpClient.GetAsync("https://localhost:44311/api/ClientCommands/" + id);
+                if (response.IsSuccessStatusCode)
+                {
+                    string data = await response.Content.ReadAsStringAsync();
+                    cliCommand = JsonConvert.DeserializeObject<ClientCommand>(data);
                 
-                Client client = await Client.GetOneClientAsync(cliCommand.ClientId);
-                cliCommand.ClientName = client.LastName + " " + client.FirstName;
-            } */
+                    Client client = await Client.GetOneClientAsync(cliCommand.ClientId);
+                    cliCommand.ClientName = client.LastName + " " + client.FirstName;
+                }
+            }
             return cliCommand;
         }
 
