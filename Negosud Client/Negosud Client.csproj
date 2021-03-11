@@ -49,11 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\ProducerControll.cs">
+    <Compile Include="Controls\ProducerControll\ProducerControll.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ProducerControll.Designer.cs">
+    <Compile Include="Controls\ProducerControll\ProducerControll.Designer.cs">
       <DependentUpon>ProducerControll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProducerControll\ProducerInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ProducerControll\ProducerInfo.Designer.cs">
+      <DependentUpon>ProducerInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateItems.cs">
       <SubType>UserControl</SubType>
@@ -148,8 +154,11 @@
     <EmbeddedResource Include="Controls\ClientsController\ClientsInfo.resx">
       <DependentUpon>ClientsInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ProducerControll.resx">
+    <EmbeddedResource Include="Controls\ProducerControll\ProducerControll.resx">
       <DependentUpon>ProducerControll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ProducerControll\ProducerInfo.resx">
+      <DependentUpon>ProducerInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SuppliersController\SuppliersAddUpdate.resx">
       <DependentUpon>SuppliersAddUpdate.cs</DependentUpon>
@@ -190,6 +199,7 @@
     <None Include="Negosud_Client.Models.Supplier.datasource" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Negosud_Client.Models.Item.datasource" />
+    <None Include="Properties\DataSources\Negosud_Client.Models.Producer.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

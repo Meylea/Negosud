@@ -4,13 +4,12 @@ using Negosud_Client.Models;
 
 namespace Negosud_Client.Controls
 {
-    public partial class ProducerControll : UserControl
+    public partial class ProducerUC : UserControl
     {
         public delegate void DelegateClickBtn(string touche);
         public event DelegateClickBtn clickBtn;
 
-
-        public ProducerControll()
+        public ProducerUC()
         {
             InitializeComponent();
             updateList();

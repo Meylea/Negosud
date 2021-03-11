@@ -45,9 +45,10 @@ namespace Negosud_Client
             this.items1 = new Negosud_Client.Items();
             this.clients1 = new Negosud_Client.ClientsView();
             this.inventory1 = new Negosud_Client.Inventory();
-            this.BtnCatalogue = new System.Windows.Forms.Button();
             this.Type = new System.Windows.Forms.Button();
             this.BtnProducer = new System.Windows.Forms.Button();
+            this.ProducerControll = new Negosud_Client.Controls.ProducerUC();
+            this.producerInfo1 = new Negosud_Client.Controls.ProducerControll.ProducerInfo();
             this.SuspendLayout();
             // 
             // label1
@@ -127,6 +128,7 @@ namespace Negosud_Client
             // itemInfo1
             // 
             this.itemInfo1.Location = new System.Drawing.Point(273, 109);
+            this.itemInfo1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.itemInfo1.Name = "itemInfo1";
             this.itemInfo1.Size = new System.Drawing.Size(773, 464);
             this.itemInfo1.TabIndex = 17;
@@ -135,7 +137,7 @@ namespace Negosud_Client
             // suppliersInfo1
             // 
             this.suppliersInfo1.Location = new System.Drawing.Point(384, 163);
-            this.suppliersInfo1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.suppliersInfo1.Margin = new System.Windows.Forms.Padding(2);
             this.suppliersInfo1.Name = "suppliersInfo1";
             this.suppliersInfo1.Size = new System.Drawing.Size(559, 579);
             this.suppliersInfo1.TabIndex = 15;
@@ -143,7 +145,7 @@ namespace Negosud_Client
             // suppliersAddUpdate1
             // 
             this.suppliersAddUpdate1.Location = new System.Drawing.Point(337, 82);
-            this.suppliersAddUpdate1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.suppliersAddUpdate1.Margin = new System.Windows.Forms.Padding(2);
             this.suppliersAddUpdate1.Name = "suppliersAddUpdate1";
             this.suppliersAddUpdate1.Size = new System.Drawing.Size(779, 708);
             this.suppliersAddUpdate1.TabIndex = 14;
@@ -151,7 +153,7 @@ namespace Negosud_Client
             // suppliers1
             // 
             this.suppliers1.Location = new System.Drawing.Point(292, 119);
-            this.suppliers1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.suppliers1.Margin = new System.Windows.Forms.Padding(2);
             this.suppliers1.Name = "suppliers1";
             this.suppliers1.Size = new System.Drawing.Size(1120, 597);
             this.suppliers1.TabIndex = 13;
@@ -159,7 +161,7 @@ namespace Negosud_Client
             // clientsInformation1
             // 
             this.clientsInformation1.Location = new System.Drawing.Point(357, 82);
-            this.clientsInformation1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clientsInformation1.Margin = new System.Windows.Forms.Padding(2);
             this.clientsInformation1.Name = "clientsInformation1";
             this.clientsInformation1.Size = new System.Drawing.Size(843, 660);
             this.clientsInformation1.TabIndex = 12;
@@ -167,7 +169,7 @@ namespace Negosud_Client
             // clientsInfo1
             // 
             this.clientsInfo1.Location = new System.Drawing.Point(273, 64);
-            this.clientsInfo1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clientsInfo1.Margin = new System.Windows.Forms.Padding(2);
             this.clientsInfo1.Name = "clientsInfo1";
             this.clientsInfo1.Size = new System.Drawing.Size(755, 702);
             this.clientsInfo1.TabIndex = 11;
@@ -175,6 +177,7 @@ namespace Negosud_Client
             // createItems1
             // 
             this.createItems1.Location = new System.Drawing.Point(337, 64);
+            this.createItems1.Margin = new System.Windows.Forms.Padding(4);
             this.createItems1.Name = "createItems1";
             this.createItems1.Size = new System.Drawing.Size(857, 509);
             this.createItems1.TabIndex = 10;
@@ -183,6 +186,7 @@ namespace Negosud_Client
             // items1
             // 
             this.items1.Location = new System.Drawing.Point(315, 64);
+            this.items1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.items1.Name = "items1";
             this.items1.Size = new System.Drawing.Size(858, 428);
             this.items1.TabIndex = 9;
@@ -191,7 +195,7 @@ namespace Negosud_Client
             // clients1
             // 
             this.clients1.Location = new System.Drawing.Point(292, 179);
-            this.clients1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clients1.Margin = new System.Windows.Forms.Padding(2);
             this.clients1.Name = "clients1";
             this.clients1.Size = new System.Drawing.Size(1071, 402);
             this.clients1.TabIndex = 10;
@@ -199,6 +203,7 @@ namespace Negosud_Client
             // inventory1
             // 
             this.inventory1.Location = new System.Drawing.Point(259, 82);
+            this.inventory1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.inventory1.Name = "inventory1";
             this.inventory1.Size = new System.Drawing.Size(868, 532);
             this.inventory1.TabIndex = 18;
@@ -215,7 +220,6 @@ namespace Negosud_Client
             this.Type.TabIndex = 17;
             this.Type.Text = "Type produits";
             this.Type.UseVisualStyleBackColor = false;
-            
             // 
             // BtnProducer
             // 
@@ -228,14 +232,29 @@ namespace Negosud_Client
             this.BtnProducer.TabIndex = 18;
             this.BtnProducer.Text = "Domaine";
             this.BtnProducer.UseVisualStyleBackColor = false;
-            
+            this.BtnProducer.Click += new System.EventHandler(this.BtnProducer_Click_1);
+            // 
+            // ProducerControll
+            // 
+            this.ProducerControll.Location = new System.Drawing.Point(315, 69);
+            this.ProducerControll.Name = "ProducerControll";
+            this.ProducerControll.Size = new System.Drawing.Size(812, 438);
+            this.ProducerControll.TabIndex = 19;
+            // 
+            // producerInfo1
+            // 
+            this.producerInfo1.Location = new System.Drawing.Point(384, 119);
+            this.producerInfo1.Name = "producerInfo1";
+            this.producerInfo1.Size = new System.Drawing.Size(541, 172);
+            this.producerInfo1.TabIndex = 20;
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(1584, 761);
+            this.ClientSize = new System.Drawing.Size(1585, 1060);
+            this.Controls.Add(this.producerInfo1);
+            this.Controls.Add(this.ProducerControll);
             this.Controls.Add(this.inventory1);
             this.Controls.Add(this.itemInfo1);
-            this.ClientSize = new System.Drawing.Size(1585, 1060);
             this.Controls.Add(this.BtnProducer);
             this.Controls.Add(this.Type);
             this.Controls.Add(this.BtnCatalogue);
@@ -283,6 +302,8 @@ namespace Negosud_Client
         private Inventory inventory1;
         private System.Windows.Forms.Button Type;
         private System.Windows.Forms.Button BtnProducer;
+        private Controls.ProducerUC ProducerControll;
+        private Controls.ProducerControll.ProducerInfo producerInfo1;
     }
 }
 
