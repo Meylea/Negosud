@@ -7,20 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negosud_Client;
+using static Negosud_Client.ClientsView;
 
 namespace Negosud_Client
 {
     public partial class Form1 : Form
     {
-        public delegate void DelegateClickBtn(string touche);
-        public event DelegateClickBtn clickBtn;
-        
         public Form1()
         {
             InitializeComponent();
-            client1.Visible = false;
-            provider1.Visible = false;
-            clickBtn += Form1_clickBtn;
+            AllVisibleFalse();
+
+            clients1.clickBtn += new DelegateClickBtn(Clients1_clickBtn);
+            //suppliers1.clickBtn += new DelegateClickBtn(SuppliersView1_clickBtn);
             items1.ClickBtn += Items1_ClickBtn;
         }
 
@@ -36,57 +36,89 @@ namespace Negosud_Client
             }
         }
 
+        //Display page Client
         private void BtnClient_Click(object sender, EventArgs e)
         {
-            if (clickBtn != null)
-            {
-                clickBtn(((Button)sender).Text);
-            }
+            AllVisibleFalse();
+            clients1.Visible = true;
+            Program.FilterValue.ClientsId = "";
         }
 
+        //Display page Fournisseur
         private void BtnFournisseur_Click(object sender, EventArgs e)
         {
-            if (clickBtn != null)
-            {
-                clickBtn(((Button)sender).Text);
-            }
+            AllVisibleFalse();
+            suppliers1.Visible = true;
         }
 
+        //Display page Vente
         private void BtnVente_Click(object sender, EventArgs e)
         {
-            if (clickBtn != null)
-            {
-                clickBtn(((Button)sender).Text);
-            }
+ 
         }
 
+        //Display page Achat
         private void BtnAchat_Click(object sender, EventArgs e)
         {
-            if (clickBtn != null)
-            {
-                clickBtn(((Button)sender).Text);
-            }
+
         }
 
+        //Display page Catalogue
         private void BtnCatalogue_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void AllVisibleFalse()
+        {
+            clients1.Visible = false;
+            suppliers1.Visible = false;
+            clientsInfo1.Visible = false;
+            clientsInformation1.Visible = false;
+            suppliersAddUpdate1.Visible = false;
+            suppliersInfo1.Visible = false;
+        }
+
+        //Fonction récupération page 
+        private void Clients1_clickBtn(string touche)
+        {
+            if (touche == "Supprimer")
+            {
+                AllVisibleFalse();
+                clientsInfo1.Visible = true;
+            }
+            if (touche == "CreateClient")
+            {
+                AllVisibleFalse();
+                clientsInfo1.Visible = true;
+            }
+            if(touche == "Info")
+            {
+                AllVisibleFalse();
+                clientsInformation1.Visible = true;
+            }
+            if (touche == "Modifier")
             client1.Visible = false;
             provider1.Visible = false;
             createItems1.Visible = false;
             items1.Visible = true;
         }
 
-        private void Form1_clickBtn(string touche)
+        private void SuppliersView1_clickBtn(string touche)
         {
             client1.Visible = false;
             provider1.Visible = false;
             if(touche == "Client")
             {
-                client1.Visible = true;
-            }
-            if (touche == "Fournisseur")
+
+                AllVisibleFalse();
+                clientsInfo1.Visible = true;
+            }            
+            if (touche == "CreateSuppliers")
             {
-                provider1.Visible = true;
+
+                AllVisibleFalse();
+                suppliersAddUpdate1.Visible = true;
             }
         }
 
