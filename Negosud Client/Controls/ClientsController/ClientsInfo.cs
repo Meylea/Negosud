@@ -55,6 +55,7 @@ namespace Negosud_Client.Controls
             else
             {
                 Client client = new Client();
+                client.Id = Int32.Parse(Program.FilterValue.ClientsId)  ;
                 client.FirstName = TBName.Text;
                 client.LastName = TBSurname.Text;
                 client.City = TBCity.Text;

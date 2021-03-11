@@ -26,7 +26,7 @@ namespace Negosud_Client.Models
 
         public ICollection<ClientCommand> ClientCommands { get; set; }
 
-        public static async Task<List<Supplier>> GetClientsAsync()
+        public static async Task<List<Supplier>> GetSuppliersAsync()
         {
             List<Supplier> clients = new List<Supplier>();
 
@@ -39,7 +39,7 @@ namespace Negosud_Client.Models
             return clients;
         }
 
-        public static async Task<List<Supplier>> GetClientsAsync(string Search)
+        public static async Task<List<Supplier>> GetSuppliersAsync(string Search)
         {
             List<Supplier> suppliers = new List<Supplier>();
 
@@ -108,11 +108,11 @@ namespace Negosud_Client.Models
 
             using (var Client = new HttpClient())
             {
-                Client.BaseAddress = new Uri("https://localhost:44311/api/Clients/" + idUser);
+                Client.BaseAddress = new Uri("https://localhost:44311/api/Clients/");
                 Client.DefaultRequestHeaders.Accept.Clear();
                 Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await Client.PutAsync(idUser, data);
+                HttpResponseMessage response = await Client.PutAsync("Clients", data);
                 if (response.IsSuccessStatusCode)
                 {
                     return true;
