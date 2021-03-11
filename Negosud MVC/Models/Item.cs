@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Negosud_MVC.Models
 {
@@ -26,14 +23,14 @@ namespace Negosud_MVC.Models
         public int ProducerId { get; set; }
         public int TypeId { get; set; }
         public int SupplierId { get; set; }
+        public string ImgURL { get; set; }
+        [Display(Name = " ")]
 
         public Producer Producer { get; set; }
         public Type Type { get; set; }
         public Supplier Supplier { get; set; }
-        public string imgURL { get; set; }
-
-
         public ICollection<ClientCommandLine> ClientCommandLines { get; set; }
         public ICollection<SupplierCommandLine> SupplierCommandLines { get; set; }
     }
+
 }
