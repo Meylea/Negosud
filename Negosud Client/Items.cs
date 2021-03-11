@@ -53,7 +53,7 @@ namespace Negosud_Client
             }
         }
 
-        private void createItem_Click(object sender, EventArgs e)
+        private void button_Click(object sender, EventArgs e)
         {
             if (ClickBtn != null)
             {

@@ -31,8 +31,6 @@ namespace Negosud_Client
         {
             this.components = new System.ComponentModel.Container();
             this.ItemsView = new System.Windows.Forms.DataGridView();
-            this.createItem = new System.Windows.Forms.Button();
-            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +46,9 @@ namespace Negosud_Client
             this.Info = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.createItem = new System.Windows.Forms.Button();
+            this.InventoryBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -78,20 +79,6 @@ namespace Negosud_Client
             this.ItemsView.Size = new System.Drawing.Size(895, 338);
             this.ItemsView.TabIndex = 0;
             this.ItemsView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemsView_CellContentClick);
-            // 
-            // createItem
-            // 
-            this.createItem.Location = new System.Drawing.Point(21, 39);
-            this.createItem.Name = "createItem";
-            this.createItem.Size = new System.Drawing.Size(108, 30);
-            this.createItem.TabIndex = 1;
-            this.createItem.Text = "Ajouter";
-            this.createItem.UseVisualStyleBackColor = true;
-            this.createItem.Click += new System.EventHandler(this.createItem_Click);
-            // 
-            // itemBindingSource
-            // 
-            this.itemBindingSource.DataSource = typeof(Negosud_Client.Models.Item);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -213,10 +200,33 @@ namespace Negosud_Client
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
             // 
+            // itemBindingSource
+            // 
+            this.itemBindingSource.DataSource = typeof(Negosud_Client.Models.Item);
+            // 
+            // createItem
+            // 
+            this.createItem.Location = new System.Drawing.Point(21, 39);
+            this.createItem.Name = "createItem";
+            this.createItem.Size = new System.Drawing.Size(108, 30);
+            this.createItem.TabIndex = 1;
+            this.createItem.Text = "Ajouter";
+            this.createItem.UseVisualStyleBackColor = true;
+            // 
+            // InventoryBtn
+            // 
+            this.InventoryBtn.Location = new System.Drawing.Point(135, 39);
+            this.InventoryBtn.Name = "InventoryBtn";
+            this.InventoryBtn.Size = new System.Drawing.Size(108, 30);
+            this.InventoryBtn.TabIndex = 2;
+            this.InventoryBtn.Text = "Faire l\'inventaire";
+            this.InventoryBtn.UseVisualStyleBackColor = true;
+            // 
             // Items
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.InventoryBtn);
             this.Controls.Add(this.createItem);
             this.Controls.Add(this.ItemsView);
             this.Name = "Items";
@@ -253,5 +263,6 @@ namespace Negosud_Client
         private System.Windows.Forms.DataGridViewButtonColumn Info;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.Button InventoryBtn;
     }
 }
