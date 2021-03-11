@@ -38,6 +38,12 @@ namespace Negosud_Client
                 itemInfo1.Visible = true;
                 itemInfo1.UpdateInfo();
             }
+            if (button == "InventoryBtn")
+            {
+                AllVisibleFalse();
+                inventory1.Visible = true;
+                inventory1.UpdateList();
+            }
         }
 
         //Display page Client
@@ -85,6 +91,7 @@ namespace Negosud_Client
             items1.Visible = false;
             createItems1.Visible = false;
             itemInfo1.Visible = false;
+            inventory1.Visible = false;
         }
 
         //Fonction récupération page 

@@ -24,9 +24,26 @@ namespace Negosud_Client
             InventoryView.DataSource = await Item.GetItemsAsync();
         }
 
-        private void Inventory_VisibleChanged(object sender, EventArgs e)
+        private async void Validate_Click(object sender, EventArgs e)
         {
-
+            string message = "Les champs ont été modifiés avec succès";
+            foreach(DataGridViewRow row in InventoryView.Rows)
+            {
+                int id = int.Parse(row.Cells[0].Value.ToString());
+                if (row.Cells[6].Value != null)
+                {
+                    string value = row.Cells[6].Value.ToString();
+                    if (int.TryParse(value, out int result))
+                    {
+                        Item item = await Item.GetOneItemAsync(id);
+                        item.Quantity = result;
+                        bool success = await Item.UpdateItemAsync(item);
+                        if (!success) message = "Une erreur a été rencontrée lors de la mise à jour des champs";
+                    }
+                }
+            }
+            MessageLabel.Text = message;
+            UpdateList();
         }
     }
 }

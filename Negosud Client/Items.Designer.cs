@@ -31,24 +31,24 @@ namespace Negosud_Client
         {
             this.components = new System.ComponentModel.Container();
             this.ItemsView = new System.Windows.Forms.DataGridView();
+            this.TypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProducerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Info = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.createItem = new System.Windows.Forms.Button();
+            this.InventoryBtn = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boxPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.producerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplierIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProducerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Info = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.createItem = new System.Windows.Forms.Button();
-            this.InventoryBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +80,71 @@ namespace Negosud_Client
             this.ItemsView.TabIndex = 0;
             this.ItemsView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemsView_CellContentClick);
             // 
+            // TypeName
+            // 
+            this.TypeName.DataPropertyName = "TypeName";
+            this.TypeName.HeaderText = "Type";
+            this.TypeName.Name = "TypeName";
+            this.TypeName.ReadOnly = true;
+            // 
+            // SupplierName
+            // 
+            this.SupplierName.DataPropertyName = "SupplierName";
+            this.SupplierName.HeaderText = "Fournisseur";
+            this.SupplierName.Name = "SupplierName";
+            this.SupplierName.ReadOnly = true;
+            this.SupplierName.Width = 150;
+            // 
+            // ProducerName
+            // 
+            this.ProducerName.DataPropertyName = "ProducerName";
+            this.ProducerName.HeaderText = "Producteur";
+            this.ProducerName.Name = "ProducerName";
+            this.ProducerName.ReadOnly = true;
+            this.ProducerName.Width = 150;
+            // 
+            // Info
+            // 
+            this.Info.HeaderText = "Info";
+            this.Info.Name = "Info";
+            this.Info.ReadOnly = true;
+            this.Info.Width = 30;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Edit.Width = 30;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Supprimer";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            // 
+            // createItem
+            // 
+            this.createItem.Location = new System.Drawing.Point(21, 39);
+            this.createItem.Name = "createItem";
+            this.createItem.Size = new System.Drawing.Size(108, 30);
+            this.createItem.TabIndex = 1;
+            this.createItem.Text = "Ajouter";
+            this.createItem.UseVisualStyleBackColor = true;
+            this.createItem.Click += new System.EventHandler(this.button_Click);
+            // 
+            // InventoryBtn
+            // 
+            this.InventoryBtn.Location = new System.Drawing.Point(135, 39);
+            this.InventoryBtn.Name = "InventoryBtn";
+            this.InventoryBtn.Size = new System.Drawing.Size(108, 30);
+            this.InventoryBtn.TabIndex = 2;
+            this.InventoryBtn.Text = "Faire l\'inventaire";
+            this.InventoryBtn.UseVisualStyleBackColor = true;
+            this.InventoryBtn.Click += new System.EventHandler(this.button_Click);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -103,13 +168,6 @@ namespace Negosud_Client
             this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
             this.yearDataGridViewTextBoxColumn.ReadOnly = true;
             this.yearDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // TypeName
-            // 
-            this.TypeName.DataPropertyName = "TypeName";
-            this.TypeName.HeaderText = "Type";
-            this.TypeName.Name = "TypeName";
-            this.TypeName.ReadOnly = true;
             // 
             // quantityDataGridViewTextBoxColumn
             // 
@@ -162,65 +220,9 @@ namespace Negosud_Client
             this.supplierIdDataGridViewTextBoxColumn.ReadOnly = true;
             this.supplierIdDataGridViewTextBoxColumn.Visible = false;
             // 
-            // SupplierName
-            // 
-            this.SupplierName.DataPropertyName = "SupplierName";
-            this.SupplierName.HeaderText = "Fournisseur";
-            this.SupplierName.Name = "SupplierName";
-            this.SupplierName.ReadOnly = true;
-            this.SupplierName.Width = 150;
-            // 
-            // ProducerName
-            // 
-            this.ProducerName.DataPropertyName = "ProducerName";
-            this.ProducerName.HeaderText = "Producteur";
-            this.ProducerName.Name = "ProducerName";
-            this.ProducerName.ReadOnly = true;
-            this.ProducerName.Width = 150;
-            // 
-            // Info
-            // 
-            this.Info.HeaderText = "Info";
-            this.Info.Name = "Info";
-            this.Info.ReadOnly = true;
-            this.Info.Width = 30;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Edit.Width = 30;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Supprimer";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            // 
             // itemBindingSource
             // 
             this.itemBindingSource.DataSource = typeof(Negosud_Client.Models.Item);
-            // 
-            // createItem
-            // 
-            this.createItem.Location = new System.Drawing.Point(21, 39);
-            this.createItem.Name = "createItem";
-            this.createItem.Size = new System.Drawing.Size(108, 30);
-            this.createItem.TabIndex = 1;
-            this.createItem.Text = "Ajouter";
-            this.createItem.UseVisualStyleBackColor = true;
-            // 
-            // InventoryBtn
-            // 
-            this.InventoryBtn.Location = new System.Drawing.Point(135, 39);
-            this.InventoryBtn.Name = "InventoryBtn";
-            this.InventoryBtn.Size = new System.Drawing.Size(108, 30);
-            this.InventoryBtn.TabIndex = 2;
-            this.InventoryBtn.Text = "Faire l\'inventaire";
-            this.InventoryBtn.UseVisualStyleBackColor = true;
             // 
             // Items
             // 

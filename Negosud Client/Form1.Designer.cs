@@ -199,6 +199,7 @@ namespace Negosud_Client
             this.inventory1.Name = "inventory1";
             this.inventory1.Size = new System.Drawing.Size(868, 532);
             this.inventory1.TabIndex = 18;
+            this.inventory1.Visible = false;
             // 
             // Form1
             // 

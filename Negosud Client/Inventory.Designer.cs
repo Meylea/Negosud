@@ -32,22 +32,23 @@ namespace Negosud_Client
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.InventoryView = new System.Windows.Forms.DataGridView();
+            this.Validate = new System.Windows.Forms.Button();
+            this.NewQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boxPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imgUrlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.producerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplierIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplierNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.producerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NewQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imgUrlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boxPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.MessageLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.InventoryView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -70,27 +71,43 @@ namespace Negosud_Client
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.yearDataGridViewTextBoxColumn,
-            this.unitPriceDataGridViewTextBoxColumn,
-            this.boxPriceDataGridViewTextBoxColumn,
-            this.imgUrlDataGridViewTextBoxColumn,
-            this.producerIdDataGridViewTextBoxColumn,
-            this.typeIdDataGridViewTextBoxColumn,
-            this.supplierIdDataGridViewTextBoxColumn,
-            this.supplierNameDataGridViewTextBoxColumn,
             this.typeNameDataGridViewTextBoxColumn,
             this.producerNameDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn,
-            this.NewQuantity});
+            this.NewQuantity,
+            this.supplierNameDataGridViewTextBoxColumn,
+            this.typeIdDataGridViewTextBoxColumn,
+            this.imgUrlDataGridViewTextBoxColumn,
+            this.supplierIdDataGridViewTextBoxColumn,
+            this.boxPriceDataGridViewTextBoxColumn,
+            this.producerIdDataGridViewTextBoxColumn,
+            this.unitPriceDataGridViewTextBoxColumn});
             this.InventoryView.DataSource = this.itemBindingSource;
             this.InventoryView.Location = new System.Drawing.Point(44, 83);
             this.InventoryView.Name = "InventoryView";
             this.InventoryView.Size = new System.Drawing.Size(725, 363);
             this.InventoryView.TabIndex = 1;
             // 
+            // Validate
+            // 
+            this.Validate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Validate.Location = new System.Drawing.Point(633, 452);
+            this.Validate.Name = "Validate";
+            this.Validate.Size = new System.Drawing.Size(136, 35);
+            this.Validate.TabIndex = 2;
+            this.Validate.Text = "Valider";
+            this.Validate.UseVisualStyleBackColor = true;
+            this.Validate.Click += new System.EventHandler(this.Validate_Click);
+            // 
+            // NewQuantity
+            // 
+            this.NewQuantity.HeaderText = "Nouvelle quantité";
+            this.NewQuantity.Name = "NewQuantity";
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 30;
@@ -98,7 +115,7 @@ namespace Negosud_Client
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Nom";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 200;
@@ -106,52 +123,33 @@ namespace Negosud_Client
             // yearDataGridViewTextBoxColumn
             // 
             this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
-            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
+            this.yearDataGridViewTextBoxColumn.HeaderText = "Année";
             this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
             this.yearDataGridViewTextBoxColumn.ReadOnly = true;
             this.yearDataGridViewTextBoxColumn.Width = 50;
             // 
-            // unitPriceDataGridViewTextBoxColumn
+            // typeNameDataGridViewTextBoxColumn
             // 
-            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
-            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
-            this.unitPriceDataGridViewTextBoxColumn.Visible = false;
+            this.typeNameDataGridViewTextBoxColumn.DataPropertyName = "TypeName";
+            this.typeNameDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeNameDataGridViewTextBoxColumn.Name = "typeNameDataGridViewTextBoxColumn";
+            this.typeNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // boxPriceDataGridViewTextBoxColumn
+            // producerNameDataGridViewTextBoxColumn
             // 
-            this.boxPriceDataGridViewTextBoxColumn.DataPropertyName = "BoxPrice";
-            this.boxPriceDataGridViewTextBoxColumn.HeaderText = "BoxPrice";
-            this.boxPriceDataGridViewTextBoxColumn.Name = "boxPriceDataGridViewTextBoxColumn";
-            this.boxPriceDataGridViewTextBoxColumn.Visible = false;
+            this.producerNameDataGridViewTextBoxColumn.DataPropertyName = "ProducerName";
+            this.producerNameDataGridViewTextBoxColumn.HeaderText = "Producteur";
+            this.producerNameDataGridViewTextBoxColumn.Name = "producerNameDataGridViewTextBoxColumn";
+            this.producerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.producerNameDataGridViewTextBoxColumn.Width = 150;
             // 
-            // imgUrlDataGridViewTextBoxColumn
+            // quantityDataGridViewTextBoxColumn
             // 
-            this.imgUrlDataGridViewTextBoxColumn.DataPropertyName = "ImgUrl";
-            this.imgUrlDataGridViewTextBoxColumn.HeaderText = "ImgUrl";
-            this.imgUrlDataGridViewTextBoxColumn.Name = "imgUrlDataGridViewTextBoxColumn";
-            this.imgUrlDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // producerIdDataGridViewTextBoxColumn
-            // 
-            this.producerIdDataGridViewTextBoxColumn.DataPropertyName = "ProducerId";
-            this.producerIdDataGridViewTextBoxColumn.HeaderText = "ProducerId";
-            this.producerIdDataGridViewTextBoxColumn.Name = "producerIdDataGridViewTextBoxColumn";
-            this.producerIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // typeIdDataGridViewTextBoxColumn
-            // 
-            this.typeIdDataGridViewTextBoxColumn.DataPropertyName = "TypeId";
-            this.typeIdDataGridViewTextBoxColumn.HeaderText = "TypeId";
-            this.typeIdDataGridViewTextBoxColumn.Name = "typeIdDataGridViewTextBoxColumn";
-            this.typeIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // supplierIdDataGridViewTextBoxColumn
-            // 
-            this.supplierIdDataGridViewTextBoxColumn.DataPropertyName = "SupplierId";
-            this.supplierIdDataGridViewTextBoxColumn.HeaderText = "SupplierId";
-            this.supplierIdDataGridViewTextBoxColumn.Name = "supplierIdDataGridViewTextBoxColumn";
-            this.supplierIdDataGridViewTextBoxColumn.Visible = false;
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantité";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.quantityDataGridViewTextBoxColumn.Width = 50;
             // 
             // supplierNameDataGridViewTextBoxColumn
             // 
@@ -160,54 +158,66 @@ namespace Negosud_Client
             this.supplierNameDataGridViewTextBoxColumn.Name = "supplierNameDataGridViewTextBoxColumn";
             this.supplierNameDataGridViewTextBoxColumn.Visible = false;
             // 
-            // typeNameDataGridViewTextBoxColumn
+            // typeIdDataGridViewTextBoxColumn
             // 
-            this.typeNameDataGridViewTextBoxColumn.DataPropertyName = "TypeName";
-            this.typeNameDataGridViewTextBoxColumn.HeaderText = "TypeName";
-            this.typeNameDataGridViewTextBoxColumn.Name = "typeNameDataGridViewTextBoxColumn";
-            this.typeNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.typeIdDataGridViewTextBoxColumn.DataPropertyName = "TypeId";
+            this.typeIdDataGridViewTextBoxColumn.HeaderText = "TypeId";
+            this.typeIdDataGridViewTextBoxColumn.Name = "typeIdDataGridViewTextBoxColumn";
+            this.typeIdDataGridViewTextBoxColumn.Visible = false;
             // 
-            // producerNameDataGridViewTextBoxColumn
+            // imgUrlDataGridViewTextBoxColumn
             // 
-            this.producerNameDataGridViewTextBoxColumn.DataPropertyName = "ProducerName";
-            this.producerNameDataGridViewTextBoxColumn.HeaderText = "ProducerName";
-            this.producerNameDataGridViewTextBoxColumn.Name = "producerNameDataGridViewTextBoxColumn";
-            this.producerNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.producerNameDataGridViewTextBoxColumn.Width = 150;
+            this.imgUrlDataGridViewTextBoxColumn.DataPropertyName = "ImgUrl";
+            this.imgUrlDataGridViewTextBoxColumn.HeaderText = "ImgUrl";
+            this.imgUrlDataGridViewTextBoxColumn.Name = "imgUrlDataGridViewTextBoxColumn";
+            this.imgUrlDataGridViewTextBoxColumn.Visible = false;
             // 
-            // quantityDataGridViewTextBoxColumn
+            // supplierIdDataGridViewTextBoxColumn
             // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.quantityDataGridViewTextBoxColumn.Width = 50;
+            this.supplierIdDataGridViewTextBoxColumn.DataPropertyName = "SupplierId";
+            this.supplierIdDataGridViewTextBoxColumn.HeaderText = "SupplierId";
+            this.supplierIdDataGridViewTextBoxColumn.Name = "supplierIdDataGridViewTextBoxColumn";
+            this.supplierIdDataGridViewTextBoxColumn.Visible = false;
             // 
-            // NewQuantity
+            // boxPriceDataGridViewTextBoxColumn
             // 
-            this.NewQuantity.DataPropertyName = "Id";
-            this.NewQuantity.HeaderText = "Nouvelle quantité";
-            this.NewQuantity.Name = "NewQuantity";
+            this.boxPriceDataGridViewTextBoxColumn.DataPropertyName = "BoxPrice";
+            this.boxPriceDataGridViewTextBoxColumn.HeaderText = "BoxPrice";
+            this.boxPriceDataGridViewTextBoxColumn.Name = "boxPriceDataGridViewTextBoxColumn";
+            this.boxPriceDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // producerIdDataGridViewTextBoxColumn
+            // 
+            this.producerIdDataGridViewTextBoxColumn.DataPropertyName = "ProducerId";
+            this.producerIdDataGridViewTextBoxColumn.HeaderText = "ProducerId";
+            this.producerIdDataGridViewTextBoxColumn.Name = "producerIdDataGridViewTextBoxColumn";
+            this.producerIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // unitPriceDataGridViewTextBoxColumn
+            // 
+            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
+            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+            this.unitPriceDataGridViewTextBoxColumn.Visible = false;
             // 
             // itemBindingSource
             // 
             this.itemBindingSource.DataSource = typeof(Negosud_Client.Models.Item);
             // 
-            // button1
+            // MessageLabel
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(633, 452);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 35);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Valider";
-            this.button1.UseVisualStyleBackColor = true;
+            this.MessageLabel.AutoSize = true;
+            this.MessageLabel.Location = new System.Drawing.Point(44, 473);
+            this.MessageLabel.Name = "MessageLabel";
+            this.MessageLabel.Size = new System.Drawing.Size(0, 13);
+            this.MessageLabel.TabIndex = 3;
             // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.MessageLabel);
+            this.Controls.Add(this.Validate);
             this.Controls.Add(this.InventoryView);
             this.Controls.Add(this.label1);
             this.Name = "Inventory";
@@ -223,21 +233,22 @@ namespace Negosud_Client
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView InventoryView;
+        private System.Windows.Forms.BindingSource itemBindingSource;
+        private System.Windows.Forms.Button Validate;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boxPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imgUrlDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn producerIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplierIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplierNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn producerNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NewQuantity;
-        private System.Windows.Forms.BindingSource itemBindingSource;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplierNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imgUrlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplierIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn boxPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn producerIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label MessageLabel;
     }
 }
