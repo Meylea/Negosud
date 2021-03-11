@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negosud_Client.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,7 @@ namespace Negosud_Client
         public SaleDetail()
         {
             InitializeComponent();
-            UpdateList();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,9 +26,31 @@ namespace Negosud_Client
 
         private async void UpdateList()
         {
-            dataGridView1.DataSource = await Item.GetItemsAsync();
+
+            StatutCommande.Text = Program.ClientCommandValue.ClientCommandValueStatus;
+            DateCommande.Text = Program.ClientCommandValue.ClientCommandValueDate;
+            IdCommande.Text = Program.ClientCommandValue.ClientCommandValueId;
+            ClientNom.Text = Program.ClientCommandValue.ClientCommandValueName;
+            dataGridView1.DataSource = await ClientCommandLine.GetClientCommandLinesAsync();
+            Program.ClientCommandValue.ClientCommandValueStatus = "";
+            Program.ClientCommandValue.ClientCommandValueDate = "";
+            Program.ClientCommandValue.ClientCommandValueId = "";
+            Program.ClientCommandValue.ClientCommandValueName = "";
         }
 
-       
+        private void btnsupprimerVente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IdCommande_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaleDetail_VisibleChanged(object sender, EventArgs e)
+        {
+            UpdateList();
+        }
     }
 }

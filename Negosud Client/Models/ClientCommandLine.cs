@@ -17,16 +17,24 @@ namespace Negosud_Client.Models
 
 
 
-        public static async Task<List<ClientCommandLine>> GetClientCommandLinesAsync(int id)
+        public static async Task<List<ClientCommandLine>> GetClientCommandLinesAsync()
         {
             List<ClientCommandLine> cliCommandLines = new List<ClientCommandLine>();
-            HttpResponseMessage response = await httpClient.GetAsync("https://localhost:44311/api/ClientCommandLines/" + id);
+            List<ClientCommandLine> clientLineMatch = new List<ClientCommandLine>();
+            HttpResponseMessage response = await httpClient.GetAsync("https://localhost:44311/api/ClientCommandLines" );
             if (response.IsSuccessStatusCode)
             {
                 string data = await response.Content.ReadAsStringAsync();
                 cliCommandLines = JsonConvert.DeserializeObject<List<ClientCommandLine>>(data);
+                foreach (ClientCommandLine match in cliCommandLines)
+                {
+                    if (match.CientCommandId.ToString() == Program.ClientCommandValue.ClientCommandValueId)
+                    {
+                        clientLineMatch.Add(match);
+                    }
+                }
             }
-            return cliCommandLines;
+            return clientLineMatch;
         }
 
     }

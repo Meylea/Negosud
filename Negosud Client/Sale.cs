@@ -58,6 +58,11 @@ namespace Negosud_Client
         {
             if (ClickBtn != null)
             {
+                Program.ClientCommandValue.ClientCommandValueId = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                Program.ClientCommandValue.ClientCommandValueDate = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                Program.ClientCommandValue.ClientCommandValueStatus = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                Program.ClientCommandValue.ClientCommandValueName = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+
                 ClickBtn(dataGridView1.Columns[e.ColumnIndex].HeaderText);
             }
         }

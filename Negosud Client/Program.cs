@@ -25,5 +25,14 @@ namespace Negosud_Client
             public static string ClientsId { get; set; }
             public static string SuppliersId { get; set; }
         }
+
+        public static class ClientCommandValue
+        {
+            public static string ClientCommandValueDate { get; set; }
+            public static string ClientCommandValueName { get; set; }
+            public static string ClientCommandValueId { get; set; }
+            public static string ClientCommandValueStatus { get; set; }
+
+        }
     }
 }
