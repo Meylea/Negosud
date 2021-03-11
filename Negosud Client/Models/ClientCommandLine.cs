@@ -13,7 +13,7 @@ namespace Negosud_Client.Models
         public double UnitPrice { get; set; }
         public double TotalPrice { get; set; }
         public int ItemId { get; set; }
-        public int CientCommandId { get; set; }
+        public int ClientCommandId { get; set; }
 
 
 
@@ -28,7 +28,7 @@ namespace Negosud_Client.Models
                 cliCommandLines = JsonConvert.DeserializeObject<List<ClientCommandLine>>(data);
                 foreach (ClientCommandLine match in cliCommandLines)
                 {
-                    if (match.CientCommandId.ToString() == Program.ClientCommandValue.ClientCommandValueId)
+                    if (match.ClientCommandId.ToString() == Program.ClientCommandValue.ClientCommandValueId)
                     {
                         clientLineMatch.Add(match);
                     }
