@@ -41,36 +41,6 @@ namespace Negosud_MVC.Controllers
         {
 
             SendMail(model.from, model.body);
-            /*if (id != item.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(item);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ItemExists(item.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["ProducerId"] = new SelectList(_context.Producers, "Id", "Name", item.ProducerId);
-            ViewData["SupplierId"] = new SelectList(_context.Suppliers, "Id", "BusinessName", item.SupplierId);
-            ViewData["TypeId"] = new SelectList(_context.Types, "Id", "Name", item.TypeId);
-            return View(item);*/
-
             return View("../Home/Contact");
 
         }
