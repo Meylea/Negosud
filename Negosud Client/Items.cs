@@ -24,7 +24,7 @@ namespace Negosud_Client
 
         public async void UpdateList()
         {
-            ItemsView.DataSource = await Item.GetItemsAsync();
+           // ItemsView.DataSource = await Item.GetItemsAsync();
         }
 
         private void ItemsView_CellContentClick(object sender, DataGridViewCellEventArgs e)

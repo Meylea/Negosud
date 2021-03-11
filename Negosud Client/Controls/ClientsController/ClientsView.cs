@@ -24,12 +24,12 @@ namespace Negosud_Client
 
         private async void updateList()
         {
-            GVCustomer.DataSource = await Client.GetClientsAsync();
+           // GVCustomer.DataSource = await Client.GetClientsAsync();
         }
 
         private async void updateList(string searchElement)
         {
-            GVCustomer.DataSource = await Client.GetClientsAsync(searchElement);
+           // GVCustomer.DataSource = await Client.GetClientsAsync(searchElement);
         }
 
         private void GVCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)

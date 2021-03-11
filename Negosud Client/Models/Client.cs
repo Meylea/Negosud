@@ -89,8 +89,6 @@ namespace Negosud_Client.Models
             
         }
 
-
-
         public static async Task<bool> CreateProductAsync(Client clients)
         {
             string clientJs = JsonConvert.SerializeObject(clients);

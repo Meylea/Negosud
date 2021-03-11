@@ -15,26 +15,47 @@ namespace Negosud_Client.Models
 
         public static async Task<List<Producer>> GetProducersAsync()
         {
+
             List<Producer> producers = new List<Producer>();
-            HttpResponseMessage response = await httpClient.GetAsync("https://localhost:44311/api/Producers");
-            if (response.IsSuccessStatusCode)
+            using (var httpClient = new HttpClient())
             {
-                string data = await response.Content.ReadAsStringAsync();
-                producers = JsonConvert.DeserializeObject<List<Producer>>(data);
+                HttpResponseMessage response = await httpClient.GetAsync("https://localhost:44311/api/Producers");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string data = await response.Content.ReadAsStringAsync();
+                    producers = JsonConvert.DeserializeObject<List<Producer>>(data);
+                }
             }
             return producers;
         }
 
         public static async Task<Producer> GetOneProducerAsync(int id)
+            {
+                Producer producer = new Producer();
+                using (var httpClient = new HttpClient())
+                {
+                    HttpResponseMessage response = await httpClient.GetAsync("https://localhost:44311/api/Producers/" + id);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string data = await response.Content.ReadAsStringAsync();
+                        producer = JsonConvert.DeserializeObject<Producer>(data);
+                    }
+                }
+                return producer;
+            }
+
+        public static async void DeleteRowAsync(string GetUrl)
         {
-            Producer producer = new Producer();
-            HttpResponseMessage response = await httpClient.GetAsync("https://localhost:44311/api/Producers/" + id);
+            string url = "https://localhost:44311/api/Clients";
+            url += "/" + GetUrl;
+            HttpResponseMessage response = await httpClient.DeleteAsync(url);
             if (response.IsSuccessStatusCode)
             {
                 string data = await response.Content.ReadAsStringAsync();
-                producer = JsonConvert.DeserializeObject<Producer>(data);
+
             }
-            return producer;
+
         }
     }
 }

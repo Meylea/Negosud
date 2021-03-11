@@ -21,7 +21,7 @@ namespace Negosud_Client
 
         public async void InitializeSelectBoxes()
         {
-            typeBox.DataSource = await Models.Type.GetTypesAsync();
+            /*typeBox.DataSource = await Models.Type.GetTypesAsync();
             typeBox.DisplayMember = "Name";
             typeBox.ValueMember = "Id";
 
@@ -44,7 +44,7 @@ namespace Negosud_Client
                 quantityBox.Text = item.Quantity.ToString();
                 unitPriceBox.Text = item.UnitPrice.ToString();
                 boxPriceBox.Text = item.BoxPrice.ToString();
-            }
+            }*/
         }
 
         private void QuantityLabel_Click(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace Negosud_Client
 
         private async void add_Click(object sender, EventArgs e)
         {
-            Item item  = new Item();
+            /*Item item  = new Item();
             string errorMessage = null;
 
             item.Name = nameBox.Text;
@@ -104,7 +104,7 @@ namespace Negosud_Client
             {
                 showMessage(errorMessage, true);
             }
-            errorMessage = String.Empty;
+            errorMessage = String.Empty;*/
         }
 
         private void showMessage(string message, bool error = false)
