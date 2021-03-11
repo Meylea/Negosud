@@ -22,5 +22,6 @@ namespace Negosud_MVC.Data
         public DbSet<SupplierCommand> SupplierCommands { get; set; }
         public DbSet<SupplierCommandLine> SupplierCommandLines { get; set; }
         public DbSet<Models.Type> Types { get; set; }
+        
     }
 }

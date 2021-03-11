@@ -87,5 +87,10 @@ namespace Negosud_Client
         {
 
         }
+
+        private void sale1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

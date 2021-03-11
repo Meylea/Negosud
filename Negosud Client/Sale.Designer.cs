@@ -1,8 +1,11 @@
 ﻿
+using Negosud_Client.Models;
+
 namespace Negosud_Client
 {
     partial class Sale
     {
+        
         /// <summary> 
         /// Variable nécessaire au concepteur.
         /// </summary>
@@ -21,6 +24,7 @@ namespace Negosud_Client
             base.Dispose(disposing);
         }
 
+       
         #region Code généré par le Concepteur de composants
 
         /// <summary> 
@@ -29,36 +33,128 @@ namespace Negosud_Client
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sale));
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientCommandLinesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editer = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Information = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clientCommandBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnRechercheVente = new System.Windows.Forms.Button();
             this.RechercheVente = new System.Windows.Forms.TextBox();
             this.CréerVente = new System.Windows.Forms.Button();
-            this.IdVente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Statut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EditeVente = new System.Windows.Forms.DataGridViewImageColumn();
-            this.SupprimerVente = new System.Windows.Forms.DataGridViewImageColumn();
-            this.InformationVente = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientCommandBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdVente,
-            this.Statut,
-            this.NomClient,
-            this.EditeVente,
-            this.SupprimerVente,
-            this.InformationVente});
+            this.idDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.ClientName,
+            this.statusDataGridViewTextBoxColumn,
+            this.clientIdDataGridViewTextBoxColumn,
+            this.clientCommandLinesDataGridViewTextBoxColumn,
+            this.Editer,
+            this.Information,
+            this.Supprimer});
+            this.dataGridView1.DataSource = this.clientCommandBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 66);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(795, 496);
+            this.dataGridView1.Size = new System.Drawing.Size(1090, 496);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ClientName
+            // 
+            this.ClientName.DataPropertyName = "ClientName";
+            this.ClientName.HeaderText = "ClientName";
+            this.ClientName.MinimumWidth = 6;
+            this.ClientName.Name = "ClientName";
+            this.ClientName.Width = 125;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // clientIdDataGridViewTextBoxColumn
+            // 
+            this.clientIdDataGridViewTextBoxColumn.DataPropertyName = "ClientId";
+            this.clientIdDataGridViewTextBoxColumn.HeaderText = "ClientId";
+            this.clientIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.clientIdDataGridViewTextBoxColumn.Name = "clientIdDataGridViewTextBoxColumn";
+            this.clientIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // clientCommandLinesDataGridViewTextBoxColumn
+            // 
+            this.clientCommandLinesDataGridViewTextBoxColumn.DataPropertyName = "ClientCommandLines";
+            this.clientCommandLinesDataGridViewTextBoxColumn.HeaderText = "ClientCommandLines";
+            this.clientCommandLinesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.clientCommandLinesDataGridViewTextBoxColumn.Name = "clientCommandLinesDataGridViewTextBoxColumn";
+            this.clientCommandLinesDataGridViewTextBoxColumn.Visible = false;
+            this.clientCommandLinesDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Editer
+            // 
+            this.Editer.HeaderText = "";
+            this.Editer.MinimumWidth = 6;
+            this.Editer.Name = "Editer";
+            this.Editer.Text = "Editer";
+            this.Editer.UseColumnTextForButtonValue = true;
+            this.Editer.Width = 125;
+            // 
+            // Information
+            // 
+            this.Information.HeaderText = "";
+            this.Information.MinimumWidth = 6;
+            this.Information.Name = "Information";
+            this.Information.Text = "Information";
+            this.Information.UseColumnTextForButtonValue = true;
+            this.Information.Width = 125;
+            // 
+            // Supprimer
+            // 
+            this.Supprimer.HeaderText = "";
+            this.Supprimer.MinimumWidth = 6;
+            this.Supprimer.Name = "Supprimer";
+            this.Supprimer.Text = "Supprimer";
+            this.Supprimer.UseColumnTextForButtonValue = true;
+            this.Supprimer.Width = 125;
+            // 
+            // clientCommandBindingSource
+            // 
+            this.clientCommandBindingSource.DataSource = typeof(Negosud_Client.Models.ClientCommand);
             // 
             // btnRechercheVente
             // 
@@ -71,6 +167,7 @@ namespace Negosud_Client
             this.btnRechercheVente.TabIndex = 1;
             this.btnRechercheVente.Text = "Recherche";
             this.btnRechercheVente.UseVisualStyleBackColor = false;
+            this.btnRechercheVente.Click += new System.EventHandler(this.btnRechercheVente_Click);
             // 
             // RechercheVente
             // 
@@ -90,64 +187,35 @@ namespace Negosud_Client
             this.CréerVente.TabIndex = 3;
             this.CréerVente.Text = "Créer Vente";
             this.CréerVente.UseVisualStyleBackColor = false;
+            this.CréerVente.Click += new System.EventHandler(this.CréerVente_Click);
             // 
-            // IdVente
+            // Update
             // 
-            this.IdVente.HeaderText = "Id";
-            this.IdVente.MinimumWidth = 6;
-            this.IdVente.Name = "IdVente";
-            this.IdVente.Width = 125;
-            // 
-            // Statut
-            // 
-            this.Statut.HeaderText = "Statut";
-            this.Statut.MinimumWidth = 6;
-            this.Statut.Name = "Statut";
-            this.Statut.Width = 125;
-            // 
-            // NomClient
-            // 
-            this.NomClient.HeaderText = "Date";
-            this.NomClient.MinimumWidth = 6;
-            this.NomClient.Name = "NomClient";
-            this.NomClient.Width = 125;
-            // 
-            // EditeVente
-            // 
-            this.EditeVente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.EditeVente.HeaderText = "Editer";
-            this.EditeVente.Image = ((System.Drawing.Image)(resources.GetObject("EditeVente.Image")));
-            this.EditeVente.MinimumWidth = 6;
-            this.EditeVente.Name = "EditeVente";
-            this.EditeVente.Width = 51;
-            // 
-            // SupprimerVente
-            // 
-            this.SupprimerVente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SupprimerVente.HeaderText = "Supprimer";
-            this.SupprimerVente.MinimumWidth = 6;
-            this.SupprimerVente.Name = "SupprimerVente";
-            this.SupprimerVente.Width = 79;
-            // 
-            // InformationVente
-            // 
-            this.InformationVente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.InformationVente.HeaderText = "Information";
-            this.InformationVente.MinimumWidth = 6;
-            this.InformationVente.Name = "InformationVente";
-            this.InformationVente.Width = 84;
+            this.Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(151)))), ((int)(((byte)(66)))));
+            this.Update.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update.ForeColor = System.Drawing.Color.Transparent;
+            this.Update.Location = new System.Drawing.Point(806, 22);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(165, 38);
+            this.Update.TabIndex = 4;
+            this.Update.Text = "Update";
+            this.Update.UseVisualStyleBackColor = false;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
             // Sale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Update);
             this.Controls.Add(this.CréerVente);
             this.Controls.Add(this.RechercheVente);
             this.Controls.Add(this.btnRechercheVente);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Sale";
-            this.Size = new System.Drawing.Size(801, 565);
+            this.Size = new System.Drawing.Size(1189, 565);
+            this.Load += new System.EventHandler(this.Sale_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientCommandBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,11 +227,16 @@ namespace Negosud_Client
         private System.Windows.Forms.Button btnRechercheVente;
         private System.Windows.Forms.TextBox RechercheVente;
         private System.Windows.Forms.Button CréerVente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdVente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Statut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomClient;
-        private System.Windows.Forms.DataGridViewImageColumn EditeVente;
-        private System.Windows.Forms.DataGridViewImageColumn SupprimerVente;
-        private System.Windows.Forms.DataGridViewImageColumn InformationVente;
+        private System.Windows.Forms.BindingSource clientCommandBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientCommandLinesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Editer;
+        private System.Windows.Forms.DataGridViewButtonColumn Information;
+        private System.Windows.Forms.DataGridViewButtonColumn Supprimer;
+        private System.Windows.Forms.Button Update;
     }
 }
