@@ -135,5 +135,6 @@ namespace Negosud_Client
                 Program.itemId = null;
             }
         }
+
     }
 }
