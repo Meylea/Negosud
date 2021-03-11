@@ -49,7 +49,7 @@ namespace Negosud_Client
             this.RechercheVente = new System.Windows.Forms.TextBox();
             this.CréerVente = new System.Windows.Forms.Button();
             this.Update = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientCommandBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -203,23 +203,23 @@ namespace Negosud_Client
             this.Update.UseVisualStyleBackColor = false;
             this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
-            // button1
+            // button12
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(151)))), ((int)(((byte)(66)))));
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(998, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 38);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(151)))), ((int)(((byte)(66)))));
+            this.button12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.ForeColor = System.Drawing.Color.Transparent;
+            this.button12.Location = new System.Drawing.Point(998, 22);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(165, 38);
+            this.button12.TabIndex = 5;
+            this.button12.Text = "button1";
+            this.button12.UseVisualStyleBackColor = false;
             // 
             // Sale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button12);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.CréerVente);
             this.Controls.Add(this.RechercheVente);
@@ -252,6 +252,6 @@ namespace Negosud_Client
         private System.Windows.Forms.DataGridViewButtonColumn Information;
         private System.Windows.Forms.DataGridViewButtonColumn Supprimer;
         private System.Windows.Forms.Button Update;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button12;
     }
 }
