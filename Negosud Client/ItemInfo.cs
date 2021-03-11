@@ -32,7 +32,7 @@ namespace Negosud_Client
         // Resets the itemId global variable as soon as the user leaves the page
         private void ItemInfo_VisibleChanged(object sender, EventArgs e)
         {
-            if (((CreateItems)sender).Visible == false)
+            if (((ItemInfo)sender).Visible == false)
             {
                 Program.itemId = null;
             }

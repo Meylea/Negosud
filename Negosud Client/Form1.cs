@@ -115,7 +115,6 @@ namespace Negosud_Client
         private void SuppliersView1_clickBtn(string touche)
         {
             clients1.Visible = false;
-            provider1.Visible = false;
             if(touche == "Client")
             {
 
@@ -133,14 +132,6 @@ namespace Negosud_Client
         private void Form1_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void createItems1_VisibleChanged(object sender, EventArgs e)
-        {
-            if (!items1.Visible)
-            {
-                Program.itemId = null;
-            }
         }
     }
 }
