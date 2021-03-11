@@ -49,24 +49,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\ClientsInformation.cs">
+    <Compile Include="Controls\ClientsController\ClientsInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ClientsInformation.Designer.cs">
+    <Compile Include="Controls\ClientsController\ClientsInformation.Designer.cs">
       <DependentUpon>ClientsInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ClientsView.cs">
+    <Compile Include="Controls\ClientsController\ClientsView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ClientsView.Designer.cs">
+    <Compile Include="Controls\ClientsController\ClientsView.Designer.cs">
       <DependentUpon>ClientsView.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\MainMenuStrip.cs" />
-    <Compile Include="Controls\ClientsInfo.cs">
+    <Compile Include="Controls\ClientsController\ClientsInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ClientsInfo.Designer.cs">
+    <Compile Include="Controls\ClientsController\ClientsInfo.Designer.cs">
       <DependentUpon>ClientsInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SuppliersController\SuppliersAddUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SuppliersController\SuppliersAddUpdate.Designer.cs">
+      <DependentUpon>SuppliersAddUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SuppliersController\SuppliersInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SuppliersController\SuppliersInfo.Designer.cs">
+      <DependentUpon>SuppliersInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SuppliersController\SuppliersView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SuppliersController\SuppliersView.Designer.cs">
+      <DependentUpon>SuppliersView.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -91,14 +109,23 @@
     <Compile Include="Controls\Suppliers.Designer.cs">
       <DependentUpon>Suppliers.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\ClientsInformation.resx">
+    <EmbeddedResource Include="Controls\ClientsController\ClientsInformation.resx">
       <DependentUpon>ClientsInformation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ClientsView.resx">
+    <EmbeddedResource Include="Controls\ClientsController\ClientsView.resx">
       <DependentUpon>ClientsView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ClientsInfo.resx">
+    <EmbeddedResource Include="Controls\ClientsController\ClientsInfo.resx">
       <DependentUpon>ClientsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SuppliersController\SuppliersAddUpdate.resx">
+      <DependentUpon>SuppliersAddUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SuppliersController\SuppliersInfo.resx">
+      <DependentUpon>SuppliersInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SuppliersController\SuppliersView.resx">
+      <DependentUpon>SuppliersView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -115,6 +142,7 @@
     <EmbeddedResource Include="Controls\Suppliers.resx">
       <DependentUpon>Suppliers.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Negosud_Client.Models.Supplier.datasource" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

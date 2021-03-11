@@ -38,15 +38,17 @@ namespace Negosud_Client
             this.label2 = new System.Windows.Forms.Label();
             this.clientsInfo1 = new Negosud_Client.Controls.ClientsInfo();
             this.clients1 = new Negosud_Client.ClientsView();
-            this.suppliers1 = new Negosud_Client.Provider();
             this.clientsInformation1 = new Negosud_Client.Controls.ClientsInformation();
+            this.suppliers1 = new Negosud_Client.Controls.SuppliersController.SuppliersView();
+            this.suppliersAddUpdate1 = new Negosud_Client.Controls.SuppliersController.SuppliersAddUpdate();
+            this.suppliersInfo1 = new Negosud_Client.Controls.SuppliersController.SuppliersInfo();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(92, 43);
+            this.label1.Location = new System.Drawing.Point(78, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 40);
             this.label1.TabIndex = 0;
@@ -131,41 +133,57 @@ namespace Negosud_Client
             // 
             // clientsInfo1
             // 
-            this.clientsInfo1.Location = new System.Drawing.Point(528, -3);
+            this.clientsInfo1.Location = new System.Drawing.Point(273, 64);
             this.clientsInfo1.Name = "clientsInfo1";
             this.clientsInfo1.Size = new System.Drawing.Size(755, 702);
             this.clientsInfo1.TabIndex = 11;
             // 
             // clients1
             // 
-            this.clients1.Location = new System.Drawing.Point(396, 82);
+            this.clients1.Location = new System.Drawing.Point(292, 179);
             this.clients1.Name = "clients1";
             this.clients1.Size = new System.Drawing.Size(1071, 402);
             this.clients1.TabIndex = 10;
             // 
-            // suppliers1
-            // 
-            this.suppliers1.Location = new System.Drawing.Point(416, 152);
-            this.suppliers1.Name = "suppliers1";
-            this.suppliers1.Size = new System.Drawing.Size(867, 487);
-            this.suppliers1.TabIndex = 8;
-            // 
             // clientsInformation1
             // 
-            this.clientsInformation1.Location = new System.Drawing.Point(510, 25);
+            this.clientsInformation1.Location = new System.Drawing.Point(357, 82);
             this.clientsInformation1.Name = "clientsInformation1";
             this.clientsInformation1.Size = new System.Drawing.Size(843, 660);
             this.clientsInformation1.TabIndex = 12;
+            // 
+            // suppliers1
+            // 
+            this.suppliers1.Location = new System.Drawing.Point(292, 119);
+            this.suppliers1.Name = "suppliers1";
+            this.suppliers1.Size = new System.Drawing.Size(1120, 597);
+            this.suppliers1.TabIndex = 13;
+            // 
+            // suppliersAddUpdate1
+            // 
+            this.suppliersAddUpdate1.Location = new System.Drawing.Point(337, 82);
+            this.suppliersAddUpdate1.Name = "suppliersAddUpdate1";
+            this.suppliersAddUpdate1.Size = new System.Drawing.Size(779, 708);
+            this.suppliersAddUpdate1.TabIndex = 14;
+            // 
+            // suppliersInfo1
+            // 
+            this.suppliersInfo1.Location = new System.Drawing.Point(384, 163);
+            this.suppliersInfo1.Name = "suppliersInfo1";
+            this.suppliersInfo1.Size = new System.Drawing.Size(559, 579);
+            this.suppliersInfo1.TabIndex = 15;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1585, 1060);
+            this.Controls.Add(this.suppliersInfo1);
+            this.Controls.Add(this.suppliersAddUpdate1);
+            this.Controls.Add(this.suppliers1);
             this.Controls.Add(this.clientsInformation1);
             this.Controls.Add(this.clientsInfo1);
             this.Controls.Add(this.clients1);
-            this.Controls.Add(this.suppliers1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnCatalogue);
             this.Controls.Add(this.BtnAchat);
@@ -191,11 +209,13 @@ namespace Negosud_Client
         private System.Windows.Forms.Button BtnAchat;
         private System.Windows.Forms.Button BtnCatalogue;
         private System.Windows.Forms.Label label2;
-        private Provider suppliers1;
       
         private ClientsView clients1;
         private Controls.ClientsInfo clientsInfo1;
         private Controls.ClientsInformation clientsInformation1;
+        private Controls.SuppliersController.SuppliersView suppliers1;
+        private Controls.SuppliersController.SuppliersAddUpdate suppliersAddUpdate1;
+        private Controls.SuppliersController.SuppliersInfo suppliersInfo1;
     }
 }
 

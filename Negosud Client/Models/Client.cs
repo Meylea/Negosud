@@ -74,10 +74,10 @@ namespace Negosud_Client.Models
                 client = JsonConvert.DeserializeObject<Client>(data);
             }
             return client;
-        } 
+        }
+        
         public static async void DeleteRowAsync(string GetUrl)
         {
-            
             string url = "https://localhost:44311/api/Clients";
             url += "/"+GetUrl;
             HttpResponseMessage response = await httpClient.DeleteAsync(url);
@@ -118,11 +118,11 @@ namespace Negosud_Client.Models
 
             using (var Client = new HttpClient())
             {
-                Client.BaseAddress = new Uri("https://localhost:44311/api/");
+                Client.BaseAddress = new Uri("https://localhost:44311/api/Clients/"+idUser);
                 Client.DefaultRequestHeaders.Accept.Clear();
                 Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await Client.PostAsync("Clients/"+idUser, data);
+                HttpResponseMessage response = await Client.PutAsync(idUser, data);
                 if (response.IsSuccessStatusCode)
                 {
                     return true;

@@ -7,42 +7,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Negosud_Client;
-using Negosud_Client.Models; 
-namespace Negosud_Client
+
+namespace Negosud_Client.Controls.SuppliersController
 {
-    public partial class ClientsView : UserControl
+    public partial class SuppliersView : UserControl
     {
 
         public delegate void DelegateClickBtn(string touche);
         public event DelegateClickBtn clickBtn;
 
-        public ClientsView()
+        public SuppliersView()
         {
             InitializeComponent();
-            updateList();
         }
 
         private async void updateList()
         {
-            GVCustomer.DataSource = await Client.GetClientsAsync();
+            //GVCustomer.DataSource = await Client.GetClientsAsync();
         }
 
         private async void updateList(string searchElement)
         {
-            GVCustomer.DataSource = await Client.GetClientsAsync(searchElement);
+            //GVCustomer.DataSource = await Client.GetClientsAsync(searchElement);
         }
 
         private void GVCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (clickBtn != null)
             {
-                object value = GVCustomer.Rows[e.RowIndex].Cells[0].Value;
-                
-                if(GVCustomer.Columns[e.ColumnIndex].HeaderText != "Supprimer")
+                object value = GVSuppliers.Rows[e.RowIndex].Cells[0].Value;
+
+                if (GVSuppliers.Columns[e.ColumnIndex].HeaderText != "Supprimer")
                 {
                     Program.FilterValue.ClientsId = value.ToString();
-                    clickBtn(GVCustomer.Columns[e.ColumnIndex].HeaderText);
+                    clickBtn(GVSuppliers.Columns[e.ColumnIndex].HeaderText);
                 }
                 else
                 {
@@ -53,15 +51,15 @@ namespace Negosud_Client
 
         private void DeletedRow(string idUser)
         {
-                Client.DeleteRowAsync(idUser);
-                updateList();
+            //Client.DeleteRowAsync(idUser);
+            updateList();
         }
 
-        private void BtnCustomer_Click(object sender, EventArgs e)
+        private void BTNAddSuppliers_Click(object sender, EventArgs e)
         {
             if (clickBtn != null)
             {
-                clickBtn("CreateClient");
+                clickBtn("CreateSuppliers");
             }
         }
 
@@ -72,7 +70,7 @@ namespace Negosud_Client
 
         private void BTNSearch_Click(object sender, EventArgs e)
         {
-            updateList(TBSearchCustomer.Text);
+            updateList(TBSearchSuppliers.Text);
         }
     }
 }

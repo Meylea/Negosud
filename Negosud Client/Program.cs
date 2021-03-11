@@ -22,6 +22,7 @@ namespace Negosud_Client
         public static class FilterValue
         {
             public static string ClientsId { get; set; }
+            public static string SuppliersId { get; set; }
         }
     }
 }
