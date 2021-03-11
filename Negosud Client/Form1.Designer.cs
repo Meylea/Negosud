@@ -186,7 +186,7 @@ namespace Negosud_Client
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(1585, 1060);
+            this.ClientSize = new System.Drawing.Size(1584, 761);
             this.Controls.Add(this.BtnCatalogue);
             this.Controls.Add(this.suppliersInfo1);
             this.Controls.Add(this.suppliersAddUpdate1);
