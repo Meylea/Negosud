@@ -13,7 +13,9 @@ namespace Negosud_MVC.Models
         public double UnitPrice { get; set; }
         public double TotalPrice { get; set; }
         public int ItemId { get; set; }
+        public int ClientCommandId { get; set; }
 
         public Item Item { get; set; }
+        public ClientCommand ClientCommand { get; set;}
     }
 }

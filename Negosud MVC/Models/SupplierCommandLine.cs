@@ -11,9 +11,8 @@ namespace Negosud_MVC.Models
         public int Id { get; set; }
         public int Quantity { get; set; }
         public int ItemId { get; set; }
-        public int CommandId { get; set; }
+        public int SupplierCommandId { get; set; }
 
-        [Required]
         public Item Item { get; set; }
         public SupplierCommand SupplierCommand { get; set; }
     }

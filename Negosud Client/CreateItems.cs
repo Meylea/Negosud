@@ -44,6 +44,7 @@ namespace Negosud_Client
                 quantityBox.Text = item.Quantity.ToString();
                 unitPriceBox.Text = item.UnitPrice.ToString();
                 boxPriceBox.Text = item.BoxPrice.ToString();
+                imageBox.Text = item.ImgUrl;
             }
         }
 
@@ -62,6 +63,7 @@ namespace Negosud_Client
             item.Year = yearBox.Text;
             item.ProducerId = int.Parse(producerBox.SelectedValue.ToString());
             item.SupplierId = int.Parse(supplierBox.SelectedValue.ToString());
+            item.ImgUrl = imageBox.Text;
 
             if (int.TryParse(quantityBox.Text, out int quantityResult))
             {
