@@ -21,7 +21,19 @@ namespace Negosud_Client
             client1.Visible = false;
             provider1.Visible = false;
             clickBtn += Form1_clickBtn;
-            
+            items1.ClickBtn += Items1_ClickBtn;
+        }
+
+        private void Items1_ClickBtn(string button)
+        {
+            if (button == "createItem" || button == "Edit")
+            {
+                client1.Visible = false;
+                provider1.Visible = false;
+                items1.Visible = false;
+                createItems1.Visible = true;
+                if (button == "Edit") createItems1.InitializeSelectBoxes();
+            }
         }
 
         private void BtnClient_Click(object sender, EventArgs e)
@@ -60,6 +72,7 @@ namespace Negosud_Client
         {
             client1.Visible = false;
             provider1.Visible = false;
+            createItems1.Visible = false;
             items1.Visible = true;
         }
 
@@ -80,6 +93,14 @@ namespace Negosud_Client
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void createItems1_VisibleChanged(object sender, EventArgs e)
+        {
+            if (!items1.Visible)
+            {
+                Program.itemId = null;
+            }
         }
     }
 }

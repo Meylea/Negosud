@@ -10,7 +10,7 @@ namespace Negosud_Client.Models
 {
     public class Item
     {
-        static HttpClient client = new HttpClient();
+        static HttpClient httpClient = new HttpClient();
         public int Id { get; set; }
         public string Name { get; set; }
         public int Quantity { get; set; }
@@ -27,30 +27,75 @@ namespace Negosud_Client.Models
         public ICollection<ClientCommandLine> ClientCommandLines { get; set; }
         public ICollection<SupplierCommandLine> SupplierCommandLines { get; set; }
 
+        public string SupplierName { get; set; }
+        public string TypeName { get; set; }
+        public string ProducerName { get; set; }
+
         public static async Task<List<Item>> GetItemsAsync()
         {
             List<Item> items = new List<Item>();
-            HttpResponseMessage response = await client.GetAsync("https://localhost:44369/api/Musics");
+            HttpResponseMessage response = await httpClient.GetAsync("https://localhost:44311/api/Items");
             if (response.IsSuccessStatusCode)
             {
                 string data = await response.Content.ReadAsStringAsync();
                 items = JsonConvert.DeserializeObject<List<Item>>(data);
+                foreach (Item item in items)
+                {
+                    Type type =  await Models.Type.GetOneTypeAsync(item.TypeId);
+                    item.TypeName = type.Name;
+                    Supplier supplier = await Supplier.GetOneSupplierAsync(item.SupplierId);
+                    item.SupplierName = supplier.BusinessName;
+                    Producer producer = await Producer.GetOneProducerAsync(item.ProducerId);
+                    item.ProducerName = producer.Name;
+                }
             }
             return items;
         }
 
-        public static async Task<bool> CreateProductAsync(Item item)
+        public static async Task<Item> GetOneItemAsync(int id)
         {
-            string musicJs = JsonConvert.SerializeObject(item);
-            StringContent data = new StringContent(musicJs, Encoding.UTF8, "application/json");
-
-            using (var Client = new HttpClient())
+            Item item = new Item();
+            HttpResponseMessage response = await httpClient.GetAsync("https://localhost:44311/api/items/" + id);
+            if (response.IsSuccessStatusCode)
             {
-                Client.BaseAddress = new Uri("https://localhost:44369/api/");
-                Client.DefaultRequestHeaders.Accept.Clear();
-                Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                string data = await response.Content.ReadAsStringAsync();
+                item = JsonConvert.DeserializeObject<Item>(data);
+            }
+            return item;
+        }
 
-                HttpResponseMessage response = await Client.PostAsync("Items", data);
+        public static async Task<bool> CreateItemAsync(Item item)
+        {
+            string itemJs = JsonConvert.SerializeObject(item);
+            StringContent data = new StringContent(itemJs, Encoding.UTF8, "application/json");
+
+            using (var htttpClient = new HttpClient())
+            {
+                httpClient.BaseAddress = new Uri("https://localhost:44311/api/");
+                httpClient.DefaultRequestHeaders.Accept.Clear();
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = await httpClient.PostAsync("Items", data);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }  
+            }
+            return false;
+        }
+
+        public static async Task<bool> UpdateItemAsync(Item item)
+        {
+            string itemJs = JsonConvert.SerializeObject(item);
+            StringContent data = new StringContent(itemJs, Encoding.UTF8, "application/json");
+
+            using (var htttpClient = new HttpClient())
+            {
+                httpClient.BaseAddress = new Uri("https://localhost:44311/api/");
+                httpClient.DefaultRequestHeaders.Accept.Clear();
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = await httpClient.PutAsync("Items/" + item.Id, data);
                 if (response.IsSuccessStatusCode)
                 {
                     return true;

@@ -23,6 +23,7 @@ namespace Negosud_MVC.Models
         [Required]
         [Display(Name = "Année")]
         public string Year { get; set; }
+        public string ImgUrl { get; set; }
         public int ProducerId { get; set; }
         public int TypeId { get; set; }
         public int SupplierId { get; set; }

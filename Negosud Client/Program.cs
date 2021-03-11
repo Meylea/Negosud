@@ -8,6 +8,7 @@ namespace Negosud_Client
 {
     static class Program
     {
+        public static int? itemId = null;
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
