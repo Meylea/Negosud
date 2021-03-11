@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Negosud_MVC.Models
 {
@@ -23,6 +20,7 @@ namespace Negosud_MVC.Models
         [Required]
         [Display(Name = "Année")]
         public string Year { get; set; }
+        public string ImgUrl { get; set; }
         public int ProducerId { get; set; }
         public int TypeId { get; set; }
         public int SupplierId { get; set; }
@@ -33,4 +31,5 @@ namespace Negosud_MVC.Models
         public ICollection<ClientCommandLine> ClientCommandLines { get; set; }
         public ICollection<SupplierCommandLine> SupplierCommandLines { get; set; }
     }
+
 }

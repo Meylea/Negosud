@@ -8,6 +8,7 @@ namespace Negosud_Client
 {
     static class Program
     {
+        public static int? itemId = null;
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
@@ -17,6 +18,12 @@ namespace Negosud_Client
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+        }
+
+        public static class FilterValue
+        {
+            public static string ClientsId { get; set; }
+            public static string SuppliersId { get; set; }
         }
     }
 }
