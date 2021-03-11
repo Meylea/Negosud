@@ -68,11 +68,11 @@
       <DependentUpon>ClientsView.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\MainMenuStrip.cs" />
-    <Compile Include="Controls\ClientsController\ClientsInfo.cs">
+    <Compile Include="Controls\ClientsController\ClientsAddUpdate.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ClientsController\ClientsInfo.Designer.cs">
-      <DependentUpon>ClientsInfo.cs</DependentUpon>
+    <Compile Include="Controls\ClientsController\ClientsAddUpdate.Designer.cs">
+      <DependentUpon>ClientsAddUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\SuppliersController\SuppliersAddUpdate.cs">
       <SubType>UserControl</SubType>
@@ -127,8 +127,8 @@
     <EmbeddedResource Include="Controls\ClientsController\ClientsView.resx">
       <DependentUpon>ClientsView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ClientsController\ClientsInfo.resx">
-      <DependentUpon>ClientsInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\ClientsController\ClientsAddUpdate.resx">
+      <DependentUpon>ClientsAddUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SuppliersController\SuppliersAddUpdate.resx">
       <DependentUpon>SuppliersAddUpdate.cs</DependentUpon>

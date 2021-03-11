@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Negosud_Client.Models;
 namespace Negosud_Client.Controls.SuppliersController
 {
     public partial class SuppliersView : UserControl
@@ -19,39 +19,23 @@ namespace Negosud_Client.Controls.SuppliersController
         public SuppliersView()
         {
             InitializeComponent();
+            updateList();
         }
 
         private async void updateList()
         {
-            //GVCustomer.DataSource = await Client.GetClientsAsync();
+            GVSuppliers.DataSource = await Supplier.GetSuppliersAsync();
         }
 
         private async void updateList(string searchElement)
         {
-            //GVCustomer.DataSource = await Client.GetClientsAsync(searchElement);
+            //GVSuppliers.DataSource = await Supplier.UpdateSupplierAsync(searchElement);
         }
 
-        private void GVCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (clickBtn != null)
-            {
-                object value = GVSuppliers.Rows[e.RowIndex].Cells[0].Value;
-
-                if (GVSuppliers.Columns[e.ColumnIndex].HeaderText != "Supprimer")
-                {
-                    Program.FilterValue.ClientsId = value.ToString();
-                    clickBtn(GVSuppliers.Columns[e.ColumnIndex].HeaderText);
-                }
-                else
-                {
-                    DeletedRow(value.ToString());
-                }
-            }
-        }
 
         private void DeletedRow(string idUser)
         {
-            //Client.DeleteRowAsync(idUser);
+            Supplier.DeleteSupplierAsync(idUser);
             updateList();
         }
 
@@ -63,14 +47,37 @@ namespace Negosud_Client.Controls.SuppliersController
             }
         }
 
-        private void ClientsView_VisibleChanged(object sender, EventArgs e)
+        private void BTNSearch_Click(object sender, EventArgs e)
+        {
+            //updateList(TBSearchSuppliers.Text);
+        }
+
+        private void SuppliersView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SuppliersView_VisibleChanged(object sender, EventArgs e)
         {
             updateList();
         }
 
-        private void BTNSearch_Click(object sender, EventArgs e)
+        private void GVSuppliers_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            updateList(TBSearchSuppliers.Text);
+            if (clickBtn != null)
+            {
+                object value = GVSuppliers.Rows[e.RowIndex].Cells[0].Value;
+                Program.FilterValue.SuppliersId = value.ToString();
+                if (GVSuppliers.Columns[e.ColumnIndex].HeaderText != "Supprimer")
+                {
+                    
+                    clickBtn(GVSuppliers.Columns[e.ColumnIndex].HeaderText);
+                }
+                else
+                {
+                    DeletedRow(value.ToString());
+                }
+            }
         }
     }
 }
