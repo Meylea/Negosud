@@ -32,6 +32,12 @@ namespace Negosud_Client
                 createItems1.Visible = true;
                 if (button == "Edit") createItems1.InitializeSelectBoxes();
             }
+            if (button == "Info")
+            {
+                AllVisibleFalse();
+                itemInfo1.Visible = true;
+                itemInfo1.UpdateInfo();
+            }
         }
 
         //Display page Client
@@ -78,6 +84,7 @@ namespace Negosud_Client
             suppliersInfo1.Visible = false;
             items1.Visible = false;
             createItems1.Visible = false;
+            itemInfo1.Visible = false;
         }
 
         //Fonction récupération page 
