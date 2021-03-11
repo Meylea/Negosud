@@ -79,7 +79,6 @@ namespace Negosud_Client.Controls.SuppliersController
             this.GVSuppliers.RowTemplate.Height = 28;
             this.GVSuppliers.Size = new System.Drawing.Size(902, 235);
             this.GVSuppliers.TabIndex = 0;
-            this.GVSuppliers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GVSuppliers_CellContentClick_1);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -94,7 +93,6 @@ namespace Negosud_Client.Controls.SuppliersController
             this.BTNGVModifier.HeaderText = "Modifier";
             this.BTNGVModifier.MinimumWidth = 8;
             this.BTNGVModifier.Name = "BTNGVModifier";
-            this.BTNGVModifier.Visible = false;
             this.BTNGVModifier.Width = 150;
             // 
             // businessNameDataGridViewTextBoxColumn
@@ -135,7 +133,6 @@ namespace Negosud_Client.Controls.SuppliersController
             this.contactLastNameDataGridViewTextBoxColumn.HeaderText = "ContactLastName";
             this.contactLastNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.contactLastNameDataGridViewTextBoxColumn.Name = "contactLastNameDataGridViewTextBoxColumn";
-            this.contactLastNameDataGridViewTextBoxColumn.Visible = false;
             this.contactLastNameDataGridViewTextBoxColumn.Width = 150;
             // 
             // contactFirstNameDataGridViewTextBoxColumn
@@ -144,7 +141,6 @@ namespace Negosud_Client.Controls.SuppliersController
             this.contactFirstNameDataGridViewTextBoxColumn.HeaderText = "ContactFirstName";
             this.contactFirstNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.contactFirstNameDataGridViewTextBoxColumn.Name = "contactFirstNameDataGridViewTextBoxColumn";
-            this.contactFirstNameDataGridViewTextBoxColumn.Visible = false;
             this.contactFirstNameDataGridViewTextBoxColumn.Width = 150;
             // 
             // contactPhoneDataGridViewTextBoxColumn
@@ -153,7 +149,6 @@ namespace Negosud_Client.Controls.SuppliersController
             this.contactPhoneDataGridViewTextBoxColumn.HeaderText = "ContactPhone";
             this.contactPhoneDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.contactPhoneDataGridViewTextBoxColumn.Name = "contactPhoneDataGridViewTextBoxColumn";
-            this.contactPhoneDataGridViewTextBoxColumn.Visible = false;
             this.contactPhoneDataGridViewTextBoxColumn.Width = 150;
             // 
             // contactMailDataGridViewTextBoxColumn
@@ -162,7 +157,6 @@ namespace Negosud_Client.Controls.SuppliersController
             this.contactMailDataGridViewTextBoxColumn.HeaderText = "ContactMail";
             this.contactMailDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.contactMailDataGridViewTextBoxColumn.Name = "contactMailDataGridViewTextBoxColumn";
-            this.contactMailDataGridViewTextBoxColumn.Visible = false;
             this.contactMailDataGridViewTextBoxColumn.Width = 150;
             // 
             // itemsDataGridViewTextBoxColumn
@@ -171,7 +165,6 @@ namespace Negosud_Client.Controls.SuppliersController
             this.itemsDataGridViewTextBoxColumn.HeaderText = "Items";
             this.itemsDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
-            this.itemsDataGridViewTextBoxColumn.Visible = false;
             this.itemsDataGridViewTextBoxColumn.Width = 150;
             // 
             // GVBTNInfo
@@ -243,8 +236,6 @@ namespace Negosud_Client.Controls.SuppliersController
             this.Controls.Add(this.GVSuppliers);
             this.Name = "SuppliersView";
             this.Size = new System.Drawing.Size(1118, 678);
-            this.Load += new System.EventHandler(this.SuppliersView_Load);
-            this.VisibleChanged += new System.EventHandler(this.SuppliersView_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.GVSuppliers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -255,10 +246,6 @@ namespace Negosud_Client.Controls.SuppliersController
         #endregion
 
         private System.Windows.Forms.DataGridView GVSuppliers;
-        private System.Windows.Forms.BindingSource supplierBindingSource;
-        private System.Windows.Forms.Button BTNAddSuppliers;
-        private System.Windows.Forms.TextBox TBSearchSuppliers;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn BTNGVModifier;
         private System.Windows.Forms.DataGridViewTextBoxColumn businessNameDataGridViewTextBoxColumn;
@@ -273,5 +260,9 @@ namespace Negosud_Client.Controls.SuppliersController
         private System.Windows.Forms.DataGridViewButtonColumn GVBTNInfo;
         private System.Windows.Forms.DataGridViewButtonColumn GVBTNDelete;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.BindingSource supplierBindingSource;
+        private System.Windows.Forms.Button BTNAddSuppliers;
+        private System.Windows.Forms.TextBox TBSearchSuppliers;
+        private System.Windows.Forms.Button button2;
     }
 }

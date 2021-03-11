@@ -20,7 +20,7 @@ namespace Negosud_Client
             AllVisibleFalse();
 
             clients1.clickBtn += new DelegateClickBtn(Clients1_clickBtn);
-            suppliers1.clickBtn += SuppliersView1_clickBtn;
+            //suppliers1.clickBtn += new DelegateClickBtn(SuppliersView1_clickBtn);
             items1.ClickBtn += Items1_ClickBtn;
         }
 
@@ -107,17 +107,18 @@ namespace Negosud_Client
 
         private void SuppliersView1_clickBtn(string touche)
         {
-            AllVisibleFalse();
-            if (touche == "Info")
+            clients1.Visible = false;
+            provider1.Visible = false;
+            if(touche == "Client")
             {
-                suppliersInfo1.Visible = true;
+
+                AllVisibleFalse();
+                clientsInfo1.Visible = true;
             }            
             if (touche == "CreateSuppliers")
             {
-                suppliersAddUpdate1.Visible = true;
-            }
-            if (touche == "Modifier")
-            {
+
+                AllVisibleFalse();
                 suppliersAddUpdate1.Visible = true;
             }
         }

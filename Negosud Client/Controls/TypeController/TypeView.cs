@@ -12,9 +12,22 @@ namespace Negosud_Client.Controls.TypeController
 {
     public partial class TypeView : UserControl
     {
+        public delegate void DelegateClickBtn(string touche);
+        public event DelegateClickBtn clickBtn;
+
         public TypeView()
         {
             InitializeComponent();
+        }
+
+        private void GVType_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            object value = GVType.Rows[e.RowIndex].Cells[0].Value;
+
+            if (clickBtn != null)
+            {
+                    //DeletedRow(value.ToString());
+            }
         }
     }
 }

@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\TypeController\TypeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TypeController\TypeView.Designer.cs">
+      <DependentUpon>TypeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateItems.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -68,11 +74,11 @@
       <DependentUpon>ClientsView.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\MainMenuStrip.cs" />
-    <Compile Include="Controls\ClientsController\ClientsAddUpdate.cs">
+    <Compile Include="Controls\ClientsController\ClientsInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ClientsController\ClientsAddUpdate.Designer.cs">
-      <DependentUpon>ClientsAddUpdate.cs</DependentUpon>
+    <Compile Include="Controls\ClientsController\ClientsInfo.Designer.cs">
+      <DependentUpon>ClientsInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\SuppliersController\SuppliersAddUpdate.cs">
       <SubType>UserControl</SubType>
@@ -127,14 +133,17 @@
     <EmbeddedResource Include="Controls\ClientsController\ClientsView.resx">
       <DependentUpon>ClientsView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ClientsController\ClientsAddUpdate.resx">
-      <DependentUpon>ClientsAddUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\ClientsController\ClientsInfo.resx">
+      <DependentUpon>ClientsInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SuppliersController\SuppliersAddUpdate.resx">
       <DependentUpon>SuppliersAddUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SuppliersController\SuppliersInfo.resx">
       <DependentUpon>SuppliersInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TypeController\TypeView.resx">
+      <DependentUpon>TypeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateItems.resx">
       <DependentUpon>CreateItems.cs</DependentUpon>
@@ -163,6 +172,7 @@
     <None Include="Negosud_Client.Models.Supplier.datasource" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Negosud_Client.Models.Item.datasource" />
+    <None Include="Properties\DataSources\Negosud_Client.Models.Type.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

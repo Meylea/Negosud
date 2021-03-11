@@ -60,7 +60,6 @@ namespace Negosud_Client
         {
             if (clickBtn != null)
             {
-                Program.FilterValue.ClientsId = "";
                 clickBtn("CreateClient");
             }
         }

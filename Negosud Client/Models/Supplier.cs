@@ -64,7 +64,7 @@ namespace Negosud_Client.Models
 
         public static async void DeleteSupplierAsync(string id)
         {
-            string url = "https://localhost:44311/api/Suppliers";
+            string url = "https://localhost:44311/api/Supplier";
             url += "/" + id;
             HttpResponseMessage response = await httpClient.DeleteAsync(url);
             if (response.IsSuccessStatusCode)
@@ -96,14 +96,14 @@ namespace Negosud_Client.Models
             return false;
         }
 
-        public static async Task<bool> UpdateSupplierAsync(Supplier supplier)
+        public static async Task<bool> UpdateProductAsync(Supplier supplier)
         {
             string clientJs = JsonConvert.SerializeObject(supplier);
             StringContent data = new StringContent(clientJs, Encoding.UTF8, "application/json");
 
             using (var Client = new HttpClient())
             {
-                Client.BaseAddress = new Uri("https://localhost:44311/api/Suppliers/" + supplier.Id.ToString());
+                Client.BaseAddress = new Uri("https://localhost:44311/api/Clients/" + supplier.Id.ToString());
                 Client.DefaultRequestHeaders.Accept.Clear();
                 Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
