@@ -27,9 +27,9 @@ namespace Negosud_Client
             GVCustomer.DataSource = await Client.GetClientsAsync();
         }
 
-        private async void updateList(string searchElement)
+        private async void searchList(string searchElement)
         {
-            GVCustomer.DataSource = await Client.GetClientsAsync(searchElement);
+            GVCustomer.DataSource = await Client.GetClientsByDataAsync(searchElement);
         }
 
         private void GVCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -52,7 +52,7 @@ namespace Negosud_Client
 
         private void DeletedRow(string idUser)
         {
-                Client.DeleteRowAsync(idUser);
+                Client.DeleteClientAsync(idUser);
                 updateList();
         }
 
@@ -71,7 +71,7 @@ namespace Negosud_Client
 
         private void BTNSearch_Click(object sender, EventArgs e)
         {
-            updateList(TBSearchCustomer.Text);
+            searchList(TBSearchCustomer.Text);
         }
     }
 }

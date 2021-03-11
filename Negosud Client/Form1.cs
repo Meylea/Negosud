@@ -110,7 +110,6 @@ namespace Negosud_Client
         private void SuppliersView1_clickBtn(string touche)
         {
             clients1.Visible = false;
-            provider1.Visible = false;
             if(touche == "Client")
             {
 

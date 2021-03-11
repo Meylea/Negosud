@@ -24,7 +24,7 @@ namespace Negosud_Client.Controls
             if (Program.FilterValue.ClientsId != "")
             {
                 Client clients = new Client();
-                clients = await Client.GetOneClientsAsync(Program.FilterValue.ClientsId);
+                clients = await Client.GetOneClientAsync(int.Parse(Program.FilterValue.ClientsId));
                 TBCity.Text = clients.City;
                 TBCP.Text = clients.PostalCode;
                 TBRue.Text = clients.StreetAddress;
@@ -47,7 +47,7 @@ namespace Negosud_Client.Controls
                 client.StreetAddress = TBRue.Text;
                 client.Email = TBMail.Text;
                 client.Phone = TBTelephone.Text;
-                bool valider = await Client.CreateProductAsync(client);
+                bool valider = await Client.CreateClientAsync(client);
 
                 if (valider) { MessageBox.Show("Entré validé avec succés"); }
                 else if (!valider) { MessageBox.Show("Modification refusé vérifiez les champs"); }
@@ -62,7 +62,7 @@ namespace Negosud_Client.Controls
                 client.StreetAddress = TBRue.Text;
                 client.Email = TBMail.Text;
                 client.Phone = TBTelephone.Text;
-                bool valider = await Client.UpdateProductAsync(client, Program.FilterValue.ClientsId);
+                bool valider = await Client.UpdateClientAsync(client);
 
                 if (valider) { MessageBox.Show("Modification validé avec succés"); }
                 else if (!valider) { MessageBox.Show("Modification refusé vérifiez les champs"); }

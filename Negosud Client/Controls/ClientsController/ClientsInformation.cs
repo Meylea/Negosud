@@ -23,7 +23,7 @@ namespace Negosud_Client.Controls
             if (Program.FilterValue.ClientsId != "")
             {
                 Client clients = new Client();
-                clients = await Client.GetOneClientsAsync(Program.FilterValue.ClientsId);
+                clients = await Client.GetOneClientAsync(int.Parse(Program.FilterValue.ClientsId));
                 NameUser.Text = clients.FirstName;
                 SurnameUser.Text = clients.LastName;
                 MailUser.Text = clients.Email;

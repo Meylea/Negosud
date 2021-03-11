@@ -181,6 +181,7 @@
     <None Include="Negosud_Client.Models.ClientCommand.datasource" />
     <None Include="Negosud_Client.Models.Supplier.datasource" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Negosud_Client.Models.ClientCommandLine.datasource" />
     <None Include="Properties\DataSources\Negosud_Client.Models.Item.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

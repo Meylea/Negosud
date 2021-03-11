@@ -63,7 +63,7 @@ namespace Negosud_Client.Controls.SuppliersController
                 client.StreetAddress = TBStreetAddress.Text;
                 client.Email = TBContactMail.Text;
                 client.Phone = TBContactPhone.Text;
-                bool valider = await Client.UpdateProductAsync(client, Program.FilterValue.SuppliersId);
+                bool valider = await Client.UpdateClientAsync(client);
 
                 if (valider) { MessageBox.Show("Modification validé avec succés"); }
                 else if (!valider) { MessageBox.Show("Modification refusé vérifiez les champs"); }

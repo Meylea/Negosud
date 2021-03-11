@@ -240,7 +240,6 @@ namespace Negosud_Client
         private Items items1;
         private CreateItems createItems1;
         private System.Windows.Forms.Label label2;
-        private Provider provider1;
         private Sale sale1;
         private System.Windows.Forms.Button BtnCatalogue;
     }
