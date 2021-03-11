@@ -29,10 +29,6 @@ namespace Negosud_Client
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         
         private async void Update_Click(object sender, EventArgs e)
         {
@@ -54,6 +50,11 @@ namespace Negosud_Client
                 dataGridView1.DataSource = await ClientCommand.GetOneClientCommandAsync(recherche);
                 RechercheVente.Text = "";
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
     

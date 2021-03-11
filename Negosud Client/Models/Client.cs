@@ -120,11 +120,14 @@ namespace Negosud_Client.Models
         public static async Task<Client> GetOneClientAsync(int id)
         {
             Client client = new Client();
-            HttpResponseMessage response = await httpClient.GetAsync("https://localhost:44311/api/Clients/" + id );
-            if (response.IsSuccessStatusCode)
+            using (var Client = new HttpClient())
             {
-                string data = await response.Content.ReadAsStringAsync();
-                client = JsonConvert.DeserializeObject<Client>(data);
+                HttpResponseMessage response = await Client.GetAsync("https://localhost:44311/api/Clients/" + id);
+                if (response.IsSuccessStatusCode)
+                {
+                    string data = await response.Content.ReadAsStringAsync();
+                    client = JsonConvert.DeserializeObject<Client>(data);
+                }
             }
             return client;
         }
