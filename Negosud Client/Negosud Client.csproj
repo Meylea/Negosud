@@ -104,6 +104,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Inventory.Designer.cs">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemInfo.Designer.cs">
+      <DependentUpon>ItemInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Items.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,6 +166,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventory.resx">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemInfo.resx">
+      <DependentUpon>ItemInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Items.resx">
       <DependentUpon>Items.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +204,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controls\ItemsControls\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>

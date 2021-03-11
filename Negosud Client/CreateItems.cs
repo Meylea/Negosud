@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negosud_Client.Models;
 
@@ -21,7 +15,7 @@ namespace Negosud_Client
 
         public async void InitializeSelectBoxes()
         {
-            /*typeBox.DataSource = await Models.Type.GetTypesAsync();
+            typeBox.DataSource = await Models.Type.GetTypesAsync();
             typeBox.DisplayMember = "Name";
             typeBox.ValueMember = "Id";
 
@@ -44,7 +38,8 @@ namespace Negosud_Client
                 quantityBox.Text = item.Quantity.ToString();
                 unitPriceBox.Text = item.UnitPrice.ToString();
                 boxPriceBox.Text = item.BoxPrice.ToString();
-            }*/
+                imageBox.Text = item.ImgUrl;
+            }
         }
 
         private void QuantityLabel_Click(object sender, EventArgs e)
@@ -54,7 +49,7 @@ namespace Negosud_Client
 
         private async void add_Click(object sender, EventArgs e)
         {
-            /*Item item  = new Item();
+            Item item  = new Item();
             string errorMessage = null;
 
             item.Name = nameBox.Text;
@@ -62,6 +57,7 @@ namespace Negosud_Client
             item.Year = yearBox.Text;
             item.ProducerId = int.Parse(producerBox.SelectedValue.ToString());
             item.SupplierId = int.Parse(supplierBox.SelectedValue.ToString());
+            item.ImgUrl = imageBox.Text;
 
             if (int.TryParse(quantityBox.Text, out int quantityResult))
             {
@@ -104,7 +100,7 @@ namespace Negosud_Client
             {
                 showMessage(errorMessage, true);
             }
-            errorMessage = String.Empty;*/
+            errorMessage = String.Empty;
         }
 
         private void showMessage(string message, bool error = false)
@@ -119,6 +115,15 @@ namespace Negosud_Client
             }
             messageLabel.Text = message;
              
+        }
+
+        // Resets the itemId global variable as soon as the user leaves the page
+        private void CreateItems_VisibleChanged(object sender, EventArgs e)
+        {
+            if (((CreateItems)sender).Visible == false)
+            {
+                Program.itemId = null;
+            }
         }
     }
 }

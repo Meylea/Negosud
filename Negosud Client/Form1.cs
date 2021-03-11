@@ -1,5 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negosud_Client;
 using static Negosud_Client.ClientsView;
 
 namespace Negosud_Client
@@ -23,6 +31,18 @@ namespace Negosud_Client
                 AllVisibleFalse();
                 createItems1.Visible = true;
                 if (button == "Edit") createItems1.InitializeSelectBoxes();
+            }
+            if (button == "Info")
+            {
+                AllVisibleFalse();
+                itemInfo1.Visible = true;
+                itemInfo1.UpdateInfo();
+            }
+            if (button == "InventoryBtn")
+            {
+                AllVisibleFalse();
+                inventory1.Visible = true;
+                inventory1.UpdateList();
             }
         }
 
@@ -75,6 +95,8 @@ namespace Negosud_Client
             suppliersInfo1.Visible = false;
             items1.Visible = false;
             createItems1.Visible = false;
+            itemInfo1.Visible = false;
+            inventory1.Visible = false;
         }
 
         //Fonction récupération page 
@@ -105,7 +127,6 @@ namespace Negosud_Client
         private void SuppliersView1_clickBtn(string touche)
         {
             clients1.Visible = false;
-            provider1.Visible = false;
             if(touche == "Client")
             {
 
@@ -124,14 +145,5 @@ namespace Negosud_Client
         {
 
         }
-
-        private void createItems1_VisibleChanged(object sender, EventArgs e)
-        {
-            if (!items1.Visible)
-            {
-                Program.itemId = null;
-            }
-        }
-
     }
 }
