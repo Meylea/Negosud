@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CreateItems.Designer.cs">
+      <DependentUpon>CreateItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ClientsController\ClientsInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,6 +98,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Items.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Items.Designer.cs">
+      <DependentUpon>Items.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\ClientCommand.cs" />
     <Compile Include="Models\ClientCommandLine.cs" />
@@ -124,11 +136,17 @@
     <EmbeddedResource Include="Controls\SuppliersController\SuppliersInfo.resx">
       <DependentUpon>SuppliersInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateItems.resx">
+      <DependentUpon>CreateItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\SuppliersController\SuppliersView.resx">
       <DependentUpon>SuppliersView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items.resx">
+      <DependentUpon>Items.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -144,6 +162,7 @@
     </EmbeddedResource>
     <None Include="Negosud_Client.Models.Supplier.datasource" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Negosud_Client.Models.Item.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

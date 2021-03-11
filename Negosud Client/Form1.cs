@@ -19,8 +19,19 @@ namespace Negosud_Client
             InitializeComponent();
             AllVisibleFalse();
 
-            clients1.clickBtn += new DelegateClickBtn(Form1_clickBtn);
-            //suppliers1.clickBtn += new DelegateClickBtn(Form1_clickBtn);
+            clients1.clickBtn += new DelegateClickBtn(Clients1_clickBtn);
+            //suppliers1.clickBtn += new DelegateClickBtn(SuppliersView1_clickBtn);
+            items1.ClickBtn += Items1_ClickBtn;
+        }
+
+        private void Items1_ClickBtn(string button)
+        {
+            if (button == "createItem" || button == "Edit")
+            {
+                AllVisibleFalse();
+                createItems1.Visible = true;
+                if (button == "Edit") createItems1.InitializeSelectBoxes();
+            }
         }
 
         //Display page Client
@@ -53,7 +64,8 @@ namespace Negosud_Client
         //Display page Catalogue
         private void BtnCatalogue_Click(object sender, EventArgs e)
         {
-
+            AllVisibleFalse();
+            items1.Visible = true;
         }
 
         private void AllVisibleFalse()
@@ -64,10 +76,12 @@ namespace Negosud_Client
             clientsInformation1.Visible = false;
             suppliersAddUpdate1.Visible = false;
             suppliersInfo1.Visible = false;
+            items1.Visible = false;
+            createItems1.Visible = false;
         }
 
         //Fonction récupération page 
-        private void Form1_clickBtn(string touche)
+        private void Clients1_clickBtn(string touche)
         {
             if (touche == "Supprimer")
             {
@@ -86,6 +100,17 @@ namespace Negosud_Client
             }
             if (touche == "Modifier")
             {
+                AllVisibleFalse();
+                clientsInfo1.Visible = true;
+            }
+        }
+
+        private void SuppliersView1_clickBtn(string touche)
+        {
+            clients1.Visible = false;
+            provider1.Visible = false;
+            if(touche == "Client")
+            {
 
                 AllVisibleFalse();
                 clientsInfo1.Visible = true;
@@ -100,7 +125,15 @@ namespace Negosud_Client
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void createItems1_VisibleChanged(object sender, EventArgs e)
+        {
+            if (!items1.Visible)
+            {
+                Program.itemId = null;
+            }
         }
     }
 }

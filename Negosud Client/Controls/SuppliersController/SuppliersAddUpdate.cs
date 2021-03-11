@@ -48,7 +48,7 @@ namespace Negosud_Client.Controls.SuppliersController
                 suppliers.StreetAddress = TBStreetAddress.Text;
                 suppliers.ContactFirstName = TBContactFirstName.Text;
                 suppliers.City = TBCity.Text;
-                bool valider = await Supplier.CreateProductAsync(suppliers);
+                bool valider = await Supplier.CreateSupplierAsync(suppliers);
 
                 if (valider) { MessageBox.Show("Entré validé avec succés"); }
                 else if (!valider) { MessageBox.Show("Modification refusé vérifiez les champs"); }

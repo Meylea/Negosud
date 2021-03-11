@@ -55,7 +55,7 @@ namespace Negosud_MVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}");
+                    pattern: "{controller=Items}/{action=Index}");
             });
         }
     }
