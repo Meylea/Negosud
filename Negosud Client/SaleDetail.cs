@@ -52,5 +52,21 @@ namespace Negosud_Client
         {
             UpdateList();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (clickBtn != null)
+            {
+                object value = dataGridView1.Rows[e.RowIndex].Cells[0].Value;
+
+                if (dataGridView1.Columns[e.ColumnIndex].HeaderText = "Supprimer")
+                {
+                    DeletedRow(value.ToString());
+                }
+
+
+            }
+        }
     }
 }
