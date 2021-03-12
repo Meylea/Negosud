@@ -157,10 +157,10 @@ namespace Negosud_Client
 
         
 
-        private void BtnVente_Click(object sender, EventArgs e)
+/*        private void BtnVente_Click(object sender, EventArgs e)
         {
                 AllVisibleFalse();
                 sale1.Visible = true;
-        }
+        }*/
     }
 }
