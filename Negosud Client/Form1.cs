@@ -127,11 +127,6 @@ namespace Negosud_Client
                 AllVisibleFalse();
                 clientsInfo1.Visible = true;
             }
-            if (touche == "Info")
-            {
-                AllVisibleFalse();
-                clientsInformation1.Visible = true;
-            }
             if (touche == "Modifier") 
             {
                 AllVisibleFalse();

@@ -21,26 +21,32 @@ namespace Negosud_Client.Controls
         }
 
 
-        private void BtnCustomer_Click(object sender, EventArgs e)
+        private async void BtnCustomer_Click(object sender, EventArgs e)
         {
-
+            Producer producer = new Producer();
+            producer.Name = TBProducer.Text;
+            await Producer.CreateProducerAsync(producer);
+            updateList();
         }
 
-        private void GVProducers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async void GVProducers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (clickBtn != null)
             {
                 object value = GVProducers.Rows[e.RowIndex].Cells[0].Value;
 
-                if (GVProducers.Columns[e.ColumnIndex].HeaderText != "Supprimer")
+                if (GVProducers.Columns[e.ColumnIndex].HeaderText == "Modifier")
                 {
-                    Program.FilterValue.ProducersId = value.ToString();
-                    clickBtn(GVProducers.Columns[e.ColumnIndex].HeaderText);
+                    object NewValue = GVProducers.Rows[e.RowIndex].Cells[3].Value;
+                    Producer ProducerToUpdate= await Producer.GetOneProducerAsync(Int32.Parse(value.ToString()));
+                    ProducerToUpdate.Name = NewValue.ToString();
+                    await Producer.UpdateProducerAsync(ProducerToUpdate,value.ToString());
                 }
                 else
                 {
                     DeletedRow(value.ToString());
                 }
+                updateList();
             }
         }
 
@@ -50,6 +56,9 @@ namespace Negosud_Client.Controls
             updateList();
         }
 
-
+        private void ProducerUC_VisibleChanged(object sender, EventArgs e)
+        {
+            updateList();
+        }
     }
 }

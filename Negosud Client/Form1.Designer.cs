@@ -245,12 +245,12 @@ namespace Negosud_Client
             // 
             this.producerInfo1.Location = new System.Drawing.Point(384, 119);
             this.producerInfo1.Name = "producerInfo1";
-            this.producerInfo1.Size = new System.Drawing.Size(541, 172);
+            this.producerInfo1.Size = new System.Drawing.Size(541, 279);
             this.producerInfo1.TabIndex = 20;
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(1585, 1060);
+            this.ClientSize = new System.Drawing.Size(1585, 1055);
             this.Controls.Add(this.producerInfo1);
             this.Controls.Add(this.ProducerControll);
             this.Controls.Add(this.inventory1);
