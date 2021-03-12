@@ -59,6 +59,13 @@ namespace Negosud_Client.Models
                 {
                     string data = await response.Content.ReadAsStringAsync();
                     item = JsonConvert.DeserializeObject<Item>(data);
+
+                    Type type = await Models.Type.GetOneTypeAsync(item.TypeId);
+                    item.TypeName = type.Name;
+                    Supplier supplier = await Supplier.GetOneSupplierAsync(item.SupplierId);
+                    item.SupplierName = supplier.BusinessName;
+                    Producer producer = await Producer.GetOneProducerAsync(item.ProducerId);
+                    item.ProducerName = producer.Name;
                 }
             }
             return item;
@@ -71,13 +78,7 @@ namespace Negosud_Client.Models
 
             using (var httpClient = new HttpClient())
             {
-                try
-                {
-                    httpClient.BaseAddress = new Uri("https://localhost:44311/api/");
-                } catch (Exception e)
-                {
-
-                }
+                httpClient.BaseAddress = new Uri("https://localhost:44311/api/");
                 httpClient.DefaultRequestHeaders.Accept.Clear();
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -102,6 +103,19 @@ namespace Negosud_Client.Models
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 HttpResponseMessage response = await httpClient.PutAsync("Items/" + item.Id, data);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static async Task<bool> DeleteItemAsync(int id)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                HttpResponseMessage response = await httpClient.DeleteAsync("https://localhost:44311/api/Items/" + id);
                 if (response.IsSuccessStatusCode)
                 {
                     return true;

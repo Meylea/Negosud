@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateCmd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CreateCmd.Designer.cs">
+      <DependentUpon>CreateCmd.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateItems.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,6 +103,18 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Inventory.Designer.cs">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemInfo.Designer.cs">
+      <DependentUpon>ItemInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Items.cs">
       <SubType>UserControl</SubType>
@@ -148,6 +166,9 @@
     <EmbeddedResource Include="Controls\SuppliersController\SuppliersInfo.resx">
       <DependentUpon>SuppliersInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateCmd.resx">
+      <DependentUpon>CreateCmd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateItems.resx">
       <DependentUpon>CreateItems.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +177,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory.resx">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemInfo.resx">
+      <DependentUpon>ItemInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Items.resx">
       <DependentUpon>Items.cs</DependentUpon>
@@ -197,6 +224,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controls\ItemsControls\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
