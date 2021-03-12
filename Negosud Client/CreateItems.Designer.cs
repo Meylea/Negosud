@@ -145,7 +145,7 @@ namespace Negosud_Client
             // 
             this.nameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameBox.Location = new System.Drawing.Point(228, 34);
-            this.nameBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(827, 30);
             this.nameBox.TabIndex = 8;
@@ -154,7 +154,7 @@ namespace Negosud_Client
             // 
             this.yearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yearBox.Location = new System.Drawing.Point(228, 142);
-            this.yearBox.Margin = new System.Windows.Forms.Padding(4);
+            this.yearBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.yearBox.Name = "yearBox";
             this.yearBox.Size = new System.Drawing.Size(827, 30);
             this.yearBox.TabIndex = 10;
@@ -163,7 +163,7 @@ namespace Negosud_Client
             // 
             this.quantityBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantityBox.Location = new System.Drawing.Point(228, 194);
-            this.quantityBox.Margin = new System.Windows.Forms.Padding(4);
+            this.quantityBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.quantityBox.Name = "quantityBox";
             this.quantityBox.Size = new System.Drawing.Size(827, 30);
             this.quantityBox.TabIndex = 11;
@@ -172,7 +172,7 @@ namespace Negosud_Client
             // 
             this.unitPriceBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unitPriceBox.Location = new System.Drawing.Point(228, 245);
-            this.unitPriceBox.Margin = new System.Windows.Forms.Padding(4);
+            this.unitPriceBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.unitPriceBox.Name = "unitPriceBox";
             this.unitPriceBox.Size = new System.Drawing.Size(827, 30);
             this.unitPriceBox.TabIndex = 12;
@@ -181,7 +181,7 @@ namespace Negosud_Client
             // 
             this.boxPriceBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxPriceBox.Location = new System.Drawing.Point(228, 298);
-            this.boxPriceBox.Margin = new System.Windows.Forms.Padding(4);
+            this.boxPriceBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.boxPriceBox.Name = "boxPriceBox";
             this.boxPriceBox.Size = new System.Drawing.Size(827, 30);
             this.boxPriceBox.TabIndex = 13;
@@ -191,7 +191,7 @@ namespace Negosud_Client
             this.producerBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.producerBox.FormattingEnabled = true;
             this.producerBox.Location = new System.Drawing.Point(228, 356);
-            this.producerBox.Margin = new System.Windows.Forms.Padding(4);
+            this.producerBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.producerBox.Name = "producerBox";
             this.producerBox.Size = new System.Drawing.Size(827, 33);
             this.producerBox.TabIndex = 14;
@@ -201,7 +201,7 @@ namespace Negosud_Client
             this.supplierBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supplierBox.FormattingEnabled = true;
             this.supplierBox.Location = new System.Drawing.Point(228, 416);
-            this.supplierBox.Margin = new System.Windows.Forms.Padding(4);
+            this.supplierBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.supplierBox.Name = "supplierBox";
             this.supplierBox.Size = new System.Drawing.Size(827, 33);
             this.supplierBox.TabIndex = 15;
@@ -210,7 +210,7 @@ namespace Negosud_Client
             // 
             this.validateItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validateItem.Location = new System.Drawing.Point(52, 556);
-            this.validateItem.Margin = new System.Windows.Forms.Padding(4);
+            this.validateItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.validateItem.Name = "validateItem";
             this.validateItem.Size = new System.Drawing.Size(160, 37);
             this.validateItem.TabIndex = 16;
@@ -223,7 +223,7 @@ namespace Negosud_Client
             this.typeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.typeBox.FormattingEnabled = true;
             this.typeBox.Location = new System.Drawing.Point(228, 89);
-            this.typeBox.Margin = new System.Windows.Forms.Padding(4);
+            this.typeBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.typeBox.Name = "typeBox";
             this.typeBox.Size = new System.Drawing.Size(827, 33);
             this.typeBox.TabIndex = 17;
@@ -234,7 +234,7 @@ namespace Negosud_Client
             this.messageLabel.Location = new System.Drawing.Point(341, 498);
             this.messageLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(37, 17);
+            this.messageLabel.Size = new System.Drawing.Size(0, 17);
             this.messageLabel.TabIndex = 18;
             this.messageLabel.Text = "Truc";
             // 
@@ -253,7 +253,7 @@ namespace Negosud_Client
             // 
             this.imageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.imageBox.Location = new System.Drawing.Point(228, 486);
-            this.imageBox.Margin = new System.Windows.Forms.Padding(4);
+            this.imageBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.imageBox.Name = "imageBox";
             this.imageBox.Size = new System.Drawing.Size(827, 30);
             this.imageBox.TabIndex = 20;
@@ -291,7 +291,7 @@ namespace Negosud_Client
             this.Controls.Add(this.unitPriceLabel);
             this.Controls.Add(this.QuantityLabel);
             this.Controls.Add(this.nameLabel);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CreateItems";
             this.Size = new System.Drawing.Size(1273, 626);
             this.VisibleChanged += new System.EventHandler(this.CreateItems_VisibleChanged);

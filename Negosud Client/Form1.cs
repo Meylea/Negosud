@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Negosud_Client;
 using static Negosud_Client.ClientsView;
 
 namespace Negosud_Client
@@ -22,6 +14,7 @@ namespace Negosud_Client
             clients1.clickBtn += new DelegateClickBtn(Clients1_clickBtn);
             //suppliers1.clickBtn += new DelegateClickBtn(SuppliersView1_clickBtn);
             items1.ClickBtn += Items1_ClickBtn;
+            ProducerControll.clickBtn += ProducerControll_ClickBtn;
             sale1.ClickBtn += Sale1_clickBtn;
             createCmd1.ClickBtn += CreateCmd1_ClickBtn;
         }
@@ -88,6 +81,11 @@ namespace Negosud_Client
             AllVisibleFalse();
             items1.Visible = true;
         }
+        private void BtnProducer_Click(object sender, EventArgs e)
+        {
+            AllVisibleFalse();
+            items1.Visible = true;
+        }
 
         private void AllVisibleFalse()
         {
@@ -105,6 +103,9 @@ namespace Negosud_Client
             saleDetail1.Visible = false;
             createCmd1.Visible = false;
 
+            ProducerControll.Visible = false;
+            producerInfo1.Visible = false;      
+            
         }
 
         //Fonction récupération page 
@@ -126,6 +127,20 @@ namespace Negosud_Client
                 clientsInformation1.Visible = true;
             }
             if (touche == "Modifier")
+            {
+                AllVisibleFalse();
+                clientsInfo1.Visible = true;
+            }
+        }
+
+        private void ProducerControll_ClickBtn(string touche)
+        {
+            if (touche == "CreateProducer")
+            {
+                AllVisibleFalse();
+                clientsInfo1.Visible = true;
+            }
+            if (touche == "Modifier") 
             {
                 AllVisibleFalse();
                 clientsInfo1.Visible = true;
@@ -166,6 +181,12 @@ namespace Negosud_Client
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnProducer_Click_1(object sender, EventArgs e)
+        {
+            AllVisibleFalse();
+            ProducerControll.Visible = true;
         }
     }
 }

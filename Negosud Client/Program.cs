@@ -26,6 +26,7 @@ namespace Negosud_Client
         {
             public static string ClientsId { get; set; }
             public static string SuppliersId { get; set; }
+            public static string ProducersId { get; set; }
         }
 
         public static class ClientCommandValue

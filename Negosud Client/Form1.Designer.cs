@@ -46,6 +46,9 @@ namespace Negosud_Client
             this.items1 = new Negosud_Client.Items();
             this.clients1 = new Negosud_Client.ClientsView();
             this.inventory1 = new Negosud_Client.Inventory();
+            this.BtnProducer = new System.Windows.Forms.Button();
+            this.ProducerControll = new Negosud_Client.Controls.ProducerUC();
+            this.producerInfo1 = new Negosud_Client.Controls.ProducerControll.ProducerInfo();
             this.saleDetail1 = new Negosud_Client.SaleDetail();
             this.createCmd1 = new Negosud_Client.CreateCmd();
             this.SuspendLayout();
@@ -183,7 +186,7 @@ namespace Negosud_Client
             // createItems1
             // 
             this.createItems1.Location = new System.Drawing.Point(337, 64);
-            this.createItems1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.createItems1.Margin = new System.Windows.Forms.Padding(4);
             this.createItems1.Name = "createItems1";
             this.createItems1.Size = new System.Drawing.Size(857, 509);
             this.createItems1.TabIndex = 10;
@@ -215,6 +218,33 @@ namespace Negosud_Client
             this.inventory1.TabIndex = 18;
             this.inventory1.Visible = false;
             // 
+            // BtnProducer
+            // 
+            this.BtnProducer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(21)))), ((int)(((byte)(33)))));
+            this.BtnProducer.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.BtnProducer.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnProducer.Location = new System.Drawing.Point(72, 609);
+            this.BtnProducer.Name = "BtnProducer";
+            this.BtnProducer.Size = new System.Drawing.Size(181, 58);
+            this.BtnProducer.TabIndex = 18;
+            this.BtnProducer.Text = "Domaine";
+            this.BtnProducer.UseVisualStyleBackColor = false;
+            this.BtnProducer.Click += new System.EventHandler(this.BtnProducer_Click_1);
+            // 
+            // ProducerControll
+            // 
+            this.ProducerControll.Location = new System.Drawing.Point(315, 69);
+            this.ProducerControll.Name = "ProducerControll";
+            this.ProducerControll.Size = new System.Drawing.Size(812, 438);
+            this.ProducerControll.TabIndex = 19;
+            // 
+            // producerInfo1
+            // 
+            this.producerInfo1.Location = new System.Drawing.Point(384, 119);
+            this.producerInfo1.Name = "producerInfo1";
+            this.producerInfo1.Size = new System.Drawing.Size(541, 279);
+            this.producerInfo1.TabIndex = 20;
+            // 
             // saleDetail1
             // 
             this.saleDetail1.Location = new System.Drawing.Point(315, 44);
@@ -232,11 +262,14 @@ namespace Negosud_Client
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1585, 1055);
+            this.Controls.Add(this.producerInfo1);
+            this.Controls.Add(this.ProducerControll);
             this.Controls.Add(this.createCmd1);
             this.Controls.Add(this.inventory1);
             this.Controls.Add(this.itemInfo1);
             this.Controls.Add(this.saleDetail1);
             this.Controls.Add(this.sale1);
+            this.Controls.Add(this.BtnProducer);
             this.Controls.Add(this.BtnCatalogue);
             this.Controls.Add(this.suppliersInfo1);
             this.Controls.Add(this.suppliersAddUpdate1);
@@ -281,6 +314,9 @@ namespace Negosud_Client
         private System.Windows.Forms.Button BtnCatalogue;
         private ItemInfo itemInfo1;
         private Inventory inventory1;
+        private System.Windows.Forms.Button BtnProducer;
+        private Controls.ProducerUC ProducerControll;
+        private Controls.ProducerControll.ProducerInfo producerInfo1;
         private SaleDetail saleDetail1;
         private CreateCmd createCmd1;
     }

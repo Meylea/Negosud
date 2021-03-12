@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Negosud_Client;
-using Negosud_Client.Models; 
+using Negosud_Client.Models;
 namespace Negosud_Client
 {
     public partial class ClientsView : UserControl
@@ -24,7 +16,7 @@ namespace Negosud_Client
 
         private async void updateList()
         {
-            GVCustomer.DataSource = await Client.GetClientsAsync();
+           GVCustomer.DataSource = await Client.GetClientsAsync();
         }
 
         private async void searchList(string searchElement)

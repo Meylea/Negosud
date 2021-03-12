@@ -35,7 +35,7 @@ namespace Negosud_Client.Controls.SuppliersController
             }
         }
 
-        private async void BTNVal_Click(object sender, EventArgs e)
+        /*private async void BTNVal_Click(object sender, EventArgs e)
         {
             if (Program.FilterValue.SuppliersId == "" || Program.FilterValue.SuppliersId == null)
             {
@@ -68,7 +68,7 @@ namespace Negosud_Client.Controls.SuppliersController
                 if (valider) { MessageBox.Show("Modification validé avec succés"); }
                 else if (!valider) { MessageBox.Show("Modification refusé vérifiez les champs"); }
             }
-        }
+        }*/
 
         private void ClientsInfo_VisibleChanged(object sender, EventArgs e)
         {
