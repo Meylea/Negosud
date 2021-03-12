@@ -64,7 +64,7 @@ namespace Negosud_Client.Models
 
         public static async void DeleteSupplierAsync(string id)
         {
-            string url = "https://localhost:44311/api/Supplier";
+            string url = "https://localhost:44311/api/Suppliers";
             url += "/" + id;
             HttpResponseMessage response = await httpClient.DeleteAsync(url);
             if (response.IsSuccessStatusCode)
@@ -81,13 +81,13 @@ namespace Negosud_Client.Models
             string supplierJs = JsonConvert.SerializeObject(supplier);
             StringContent data = new StringContent(supplierJs, Encoding.UTF8, "application/json");
 
-            using (var Client = new HttpClient())
+            using (var Supplier = new HttpClient())
             {
-                Client.BaseAddress = new Uri("https://localhost:44311/api/");
-                Client.DefaultRequestHeaders.Accept.Clear();
-                Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                Supplier.BaseAddress = new Uri("https://localhost:44311/api/");
+                Supplier.DefaultRequestHeaders.Accept.Clear();
+                Supplier.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await Client.PostAsync("Suppliers", data);
+                HttpResponseMessage response = await Supplier.PostAsync("Suppliers", data);
                 if (response.IsSuccessStatusCode)
                 {
                     return true;
@@ -96,18 +96,18 @@ namespace Negosud_Client.Models
             return false;
         }
 
-        public static async Task<bool> UpdateProductAsync(Supplier supplier)
+        public static async Task<bool> UpdateSupplierAsync(Supplier supplier)
         {
             string clientJs = JsonConvert.SerializeObject(supplier);
             StringContent data = new StringContent(clientJs, Encoding.UTF8, "application/json");
 
-            using (var Client = new HttpClient())
+            using (var Supplier = new HttpClient())
             {
-                Client.BaseAddress = new Uri("https://localhost:44311/api/Clients/" + supplier.Id.ToString());
-                Client.DefaultRequestHeaders.Accept.Clear();
-                Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                Supplier.BaseAddress = new Uri("https://localhost:44311/api/Suppliers/" + supplier.Id.ToString());
+                Supplier.DefaultRequestHeaders.Accept.Clear();
+                Supplier.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await Client.PutAsync(supplier.Id.ToString(), data);
+                HttpResponseMessage response = await Supplier.PutAsync(supplier.Id.ToString(), data);
                 if (response.IsSuccessStatusCode)
                 {
                     return true;

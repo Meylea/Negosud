@@ -58,8 +58,10 @@ namespace Negosud_Client
 
         private void BtnCustomer_Click(object sender, EventArgs e)
         {
+
             if (clickBtn != null)
             {
+                Program.FilterValue.ClientsId = "";
                 clickBtn("CreateClient");
             }
         }
@@ -71,7 +73,7 @@ namespace Negosud_Client
 
         private void BTNSearch_Click(object sender, EventArgs e)
         {
-            updateList(TBSearchCustomer.Text);
+            
         }
     }
 }

@@ -21,6 +21,13 @@ namespace Negosud_Client.Controls
 
         private async void updateList()
         {
+            TBCity.Text = "";
+            TBCP.Text = "";
+            TBRue.Text = "";
+            TBMail.Text = "";
+            TBSurname.Text = "";
+            TBTelephone.Text = "";
+            TBName.Text = "";
             if (Program.FilterValue.ClientsId != "")
             {
                 Client clients = new Client();

@@ -31,13 +31,13 @@ namespace Negosud_Client.Controls.TypeController
         {
             this.components = new System.ComponentModel.Container();
             this.GVType = new System.Windows.Forms.DataGridView();
-            this.typeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.BtnAjouterType = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GVBtnSupprimer = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.typeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BtnAjouterType = new System.Windows.Forms.Button();
+            this.TBAddType = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GVType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -59,26 +59,6 @@ namespace Negosud_Client.Controls.TypeController
             this.GVType.Size = new System.Drawing.Size(366, 204);
             this.GVType.TabIndex = 0;
             this.GVType.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GVType_CellContentClick);
-            // 
-            // typeBindingSource
-            // 
-            this.typeBindingSource.DataSource = typeof(Negosud_Client.Models.Type);
-            // 
-            // BtnAjouterType
-            // 
-            this.BtnAjouterType.Location = new System.Drawing.Point(93, 135);
-            this.BtnAjouterType.Name = "BtnAjouterType";
-            this.BtnAjouterType.Size = new System.Drawing.Size(153, 59);
-            this.BtnAjouterType.TabIndex = 1;
-            this.BtnAjouterType.Text = "Ajouter";
-            this.BtnAjouterType.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(286, 151);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(374, 26);
-            this.textBox1.TabIndex = 2;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -113,15 +93,37 @@ namespace Negosud_Client.Controls.TypeController
             this.GVBtnSupprimer.Name = "GVBtnSupprimer";
             this.GVBtnSupprimer.Width = 150;
             // 
+            // typeBindingSource
+            // 
+            this.typeBindingSource.DataSource = typeof(Negosud_Client.Models.Type);
+            // 
+            // BtnAjouterType
+            // 
+            this.BtnAjouterType.Location = new System.Drawing.Point(93, 135);
+            this.BtnAjouterType.Name = "BtnAjouterType";
+            this.BtnAjouterType.Size = new System.Drawing.Size(153, 59);
+            this.BtnAjouterType.TabIndex = 1;
+            this.BtnAjouterType.Text = "Ajouter";
+            this.BtnAjouterType.UseVisualStyleBackColor = true;
+            this.BtnAjouterType.Click += new System.EventHandler(this.BtnAjouterType_Click);
+            // 
+            // TBAddType
+            // 
+            this.TBAddType.Location = new System.Drawing.Point(286, 151);
+            this.TBAddType.Name = "TBAddType";
+            this.TBAddType.Size = new System.Drawing.Size(374, 26);
+            this.TBAddType.TabIndex = 2;
+            // 
             // TypeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TBAddType);
             this.Controls.Add(this.BtnAjouterType);
             this.Controls.Add(this.GVType);
             this.Name = "TypeView";
             this.Size = new System.Drawing.Size(830, 610);
+            this.VisibleChanged += new System.EventHandler(this.TypeView_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.GVType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -138,6 +140,6 @@ namespace Negosud_Client.Controls.TypeController
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn GVBtnSupprimer;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TBAddType;
     }
 }

@@ -20,13 +20,21 @@ namespace Negosud_Client.Controls.SuppliersController
 
         private async void updateList()
         {
+            TBCity.Text = "";
+            TBBusinessName.Text = "";
+            TBContactFirstName.Text = "";
+            TBContactLastName.Text = "";
+            TBContactMail.Text = "";
+            TBContactPhone.Text = "";
+            TBStreetAddress.Text = "";
+            TBPostCode.Text = "";
             if (Program.FilterValue.SuppliersId != "")
             {
                 Supplier suppliers = new Supplier();
-                //clients = await Client.GetOneClientsAsync(Program.FilterValue.ClientsId);
+                suppliers = await Supplier.GetOneSupplierAsync(Int32.Parse(Program.FilterValue.SuppliersId));
                 TBCity.Text = suppliers.City;
-                TBBusinessName.Text = suppliers.ContactFirstName;
-                TBContactFirstName.Text = suppliers.StreetAddress;
+                TBBusinessName.Text = suppliers.BusinessName;
+                TBContactFirstName.Text = suppliers.ContactFirstName;
                 TBContactLastName.Text = suppliers.ContactLastName;
                 TBContactMail.Text = suppliers.ContactMail;
                 TBContactPhone.Text = suppliers.ContactPhone;
@@ -35,17 +43,17 @@ namespace Negosud_Client.Controls.SuppliersController
             }
         }
 
-        private async void BTNVal_Click(object sender, EventArgs e)
+        private async void BTNValider_Click(object sender, EventArgs e)
         {
             if (Program.FilterValue.SuppliersId == "" || Program.FilterValue.SuppliersId == null)
             {
                 Supplier suppliers = new Supplier();
+                suppliers.BusinessName = TBBusinessName.Text;
                 suppliers.PostCode = TBPostCode.Text;
                 suppliers.StreetAddress = TBStreetAddress.Text;
                 suppliers.ContactPhone = TBContactPhone.Text;
-                suppliers.ContactMail= TBContactMail.Text;
+                suppliers.ContactMail = TBContactMail.Text;
                 suppliers.ContactLastName = TBContactLastName.Text;
-                suppliers.StreetAddress = TBStreetAddress.Text;
                 suppliers.ContactFirstName = TBContactFirstName.Text;
                 suppliers.City = TBCity.Text;
                 bool valider = await Supplier.CreateSupplierAsync(suppliers);
@@ -55,27 +63,30 @@ namespace Negosud_Client.Controls.SuppliersController
             }
             else
             {
-                Client client = new Client();
-                client.FirstName = TBContactFirstName.Text;
-                client.LastName = TBContactLastName.Text;
-                client.City = TBCity.Text;
-                client.PostalCode = TBPostCode.Text;
-                client.StreetAddress = TBStreetAddress.Text;
-                client.Email = TBContactMail.Text;
-                client.Phone = TBContactPhone.Text;
-                bool valider = await Client.UpdateProductAsync(client, Program.FilterValue.SuppliersId);
+                Supplier suppliers = new Supplier();
+                suppliers.BusinessName = TBBusinessName.Text;
+                suppliers.Id = Int32.Parse(Program.FilterValue.SuppliersId);
+                suppliers.PostCode = TBPostCode.Text;
+                suppliers.StreetAddress = TBStreetAddress.Text;
+                suppliers.ContactPhone = TBContactPhone.Text;
+                suppliers.ContactMail = TBContactMail.Text;
+                suppliers.ContactLastName = TBContactLastName.Text;
+                suppliers.StreetAddress = TBStreetAddress.Text;
+                suppliers.ContactFirstName = TBContactFirstName.Text;
+                suppliers.City = TBCity.Text;
+
+                bool valider = await Supplier.UpdateSupplierAsync(suppliers);
 
                 if (valider) { MessageBox.Show("Modification validé avec succés"); }
                 else if (!valider) { MessageBox.Show("Modification refusé vérifiez les champs"); }
             }
         }
 
-        private void ClientsInfo_VisibleChanged(object sender, EventArgs e)
+        private void SuppliersAddUpdate_VisibleChanged(object sender, EventArgs e)
         {
             if (Program.FilterValue.SuppliersId != null)
             {
                 updateList();
-
             }
         }
     }

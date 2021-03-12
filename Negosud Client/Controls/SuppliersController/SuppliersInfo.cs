@@ -20,10 +20,10 @@ namespace Negosud_Client.Controls.SuppliersController
 
         private async void updateList()
         {
-            if (Program.FilterValue.ClientsId != "")
+            if (Program.FilterValue.SuppliersId != "")
             {
                 Supplier suppliers = new Supplier();
-                //clients = await Client.GetOneClientsAsync(Program.FilterValue.ClientsId);
+                suppliers = await Supplier.GetOneSupplierAsync(Int32.Parse(Program.FilterValue.SuppliersId));
                 LBusinessName.Text = suppliers.BusinessName;
                 LCity.Text = suppliers.City;
                 LContactLastName.Text = suppliers.ContactLastName;
@@ -35,9 +35,9 @@ namespace Negosud_Client.Controls.SuppliersController
             }
         }
 
-        private void ClientsInformation_VisibleChanged(object sender, EventArgs e)
+        private void SuppliersInfo_VisibleChanged(object sender, EventArgs e)
         {
-            if (Program.FilterValue.ClientsId != null)
+            if (Program.FilterValue.SuppliersId != null)
             {
                 updateList();
             }

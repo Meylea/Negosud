@@ -20,7 +20,7 @@ namespace Negosud_Client
             AllVisibleFalse();
 
             clients1.clickBtn += new DelegateClickBtn(Clients1_clickBtn);
-            //suppliers1.clickBtn += new DelegateClickBtn(SuppliersView1_clickBtn);
+            suppliers1.clickBtn += SuppliersView1_clickBtn;
             items1.ClickBtn += Items1_ClickBtn;
         }
 
@@ -78,6 +78,7 @@ namespace Negosud_Client
             suppliersInfo1.Visible = false;
             items1.Visible = false;
             createItems1.Visible = false;
+            typeView1.Visible = false;
         }
 
         //Fonction récupération page 
@@ -108,10 +109,8 @@ namespace Negosud_Client
         private void SuppliersView1_clickBtn(string touche)
         {
             clients1.Visible = false;
-            provider1.Visible = false;
             if(touche == "Client")
             {
-
                 AllVisibleFalse();
                 clientsInfo1.Visible = true;
             }            
@@ -120,6 +119,16 @@ namespace Negosud_Client
 
                 AllVisibleFalse();
                 suppliersAddUpdate1.Visible = true;
+            }
+            if (touche == "Modifier")
+            {
+                AllVisibleFalse();
+                suppliersAddUpdate1.Visible = true;
+            }
+            if (touche == "Info")
+            {
+                AllVisibleFalse();
+                suppliersInfo1.Visible = true;
             }
         }
 
@@ -134,6 +143,12 @@ namespace Negosud_Client
             {
                 Program.itemId = null;
             }
+        }
+
+        private void BtnType_Click(object sender, EventArgs e)
+        {
+            AllVisibleFalse();
+            typeView1.Visible = true;
         }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Negosud_Client.Models
@@ -35,6 +38,37 @@ namespace Negosud_Client.Models
                 type = JsonConvert.DeserializeObject<Type>(data);
             }
             return type;
+        }
+
+        public static async Task<bool> CreateTypeAsync(Type type)
+        {
+            string supplierJs = JsonConvert.SerializeObject(type);
+            StringContent data = new StringContent(supplierJs, Encoding.UTF8, "application/json");
+
+            using (var Type = new HttpClient())
+            {
+                Type.BaseAddress = new Uri("https://localhost:44311/api/");
+                Type.DefaultRequestHeaders.Accept.Clear();
+                Type.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = await Type.PostAsync("types", data);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static async void DeleteTypeAsync(string id)
+        {
+            string url = "https://localhost:44311/api/types";
+            url += "/" + id;
+            HttpResponseMessage response = await httpClient.DeleteAsync(url);
+            if (response.IsSuccessStatusCode)
+            {
+                await response.Content.ReadAsStringAsync();
+            }
         }
     }
 }
