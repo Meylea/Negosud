@@ -33,6 +33,18 @@ namespace Negosud_Client
                 createItems1.Visible = true;
                 if (button == "Edit") createItems1.InitializeSelectBoxes();
             }
+            if (button == "Info")
+            {
+                AllVisibleFalse();
+                itemInfo1.Visible = true;
+                itemInfo1.UpdateInfo();
+            }
+            if (button == "InventoryBtn")
+            {
+                AllVisibleFalse();
+                inventory1.Visible = true;
+                inventory1.UpdateList();
+            }
         }
 
         //Display page Client
@@ -51,7 +63,10 @@ namespace Negosud_Client
         }
 
         //Display page Vente
-        
+        private void BtnVente_Click(object sender, EventArgs e)
+        {
+ 
+        }
 
         //Display page Achat
         private void BtnAchat_Click(object sender, EventArgs e)
@@ -76,6 +91,8 @@ namespace Negosud_Client
             suppliersInfo1.Visible = false;
             items1.Visible = false;
             createItems1.Visible = false;
+            itemInfo1.Visible = false;
+            inventory1.Visible = false;
             sale1.Visible = false;
             saleDetail1.Visible = false;
 
@@ -131,7 +148,6 @@ namespace Negosud_Client
                 AllVisibleFalse();
                 suppliersAddUpdate1.Visible = true;
             }
-            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -139,18 +155,7 @@ namespace Negosud_Client
 
         }
 
-        private void createItems1_VisibleChanged(object sender, EventArgs e)
-        {
-            if (!items1.Visible)
-            {
-                Program.itemId = null;
-            }
-        }
-
-        private void sale1_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void BtnVente_Click(object sender, EventArgs e)
         {

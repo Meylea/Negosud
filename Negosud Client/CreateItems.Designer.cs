@@ -262,6 +262,7 @@ namespace Negosud_Client
             this.Controls.Add(this.nameLabel);
             this.Name = "CreateItems";
             this.Size = new System.Drawing.Size(955, 509);
+            this.VisibleChanged += new System.EventHandler(this.CreateItems_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

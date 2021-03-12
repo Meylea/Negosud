@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negosud_Client.Models;
 
@@ -121,6 +115,15 @@ namespace Negosud_Client
             }
             messageLabel.Text = message;
              
+        }
+
+        // Resets the itemId global variable as soon as the user leaves the page
+        private void CreateItems_VisibleChanged(object sender, EventArgs e)
+        {
+            if (((CreateItems)sender).Visible == false)
+            {
+                Program.itemId = null;
+            }
         }
     }
 }
