@@ -23,6 +23,13 @@ namespace Negosud_Client
             //suppliers1.clickBtn += new DelegateClickBtn(SuppliersView1_clickBtn);
             items1.ClickBtn += Items1_ClickBtn;
             sale1.ClickBtn += Sale1_clickBtn;
+            createCmd1.ClickBtn += CreateCmd1_ClickBtn;
+        }
+
+        private void CreateCmd1_ClickBtn(string button)
+        {
+            AllVisibleFalse();
+            sale1.Visible = true;
         }
 
         private void Items1_ClickBtn(string button)
@@ -65,7 +72,8 @@ namespace Negosud_Client
         //Display page Vente
         private void BtnVente_Click(object sender, EventArgs e)
         {
- 
+            AllVisibleFalse();
+            sale1.Visible = true;
         }
 
         //Display page Achat
@@ -95,6 +103,7 @@ namespace Negosud_Client
             inventory1.Visible = false;
             sale1.Visible = false;
             saleDetail1.Visible = false;
+            createCmd1.Visible = false;
 
         }
 
@@ -128,9 +137,13 @@ namespace Negosud_Client
             if (touche == "Information")
             {
                 AllVisibleFalse();
-                saleDetail1.Visible = true;           
+                saleDetail1.Visible = true;
             }
-
+            if (touche == "CreateCommand")
+            {
+                AllVisibleFalse();
+                createCmd1.Visible = true;
+            }
         }
 
         private void SuppliersView1_clickBtn(string touche)
@@ -154,13 +167,5 @@ namespace Negosud_Client
         {
 
         }
-
-        
-
-/*        private void BtnVente_Click(object sender, EventArgs e)
-        {
-                AllVisibleFalse();
-                sale1.Visible = true;
-        }*/
     }
 }

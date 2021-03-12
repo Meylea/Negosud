@@ -37,9 +37,9 @@ namespace Negosud_Client
             dataGridView1.DataSource = await ClientCommand.GetClientCommandsAsync();
         }
 
-        private void CréerVente_Click(object sender, EventArgs e)
+        private void CreateCommand_Click(object sender, EventArgs e)
         {
-            
+            ClickBtn(((Button)sender).Name);
         }
 
         private async void btnRechercheVente_Click(object sender, EventArgs e)
@@ -48,7 +48,6 @@ namespace Negosud_Client
 
             if (success)
             {
-                
                 dataGridView1.DataSource = await ClientCommand.GetOneClientCommandAsync(recherche);
                 RechercheVente.Text = "";
             }
@@ -64,6 +63,14 @@ namespace Negosud_Client
                 Program.ClientCommandValue.ClientCommandValueName = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
 
                 ClickBtn(dataGridView1.Columns[e.ColumnIndex].HeaderText);
+            }
+        }
+
+        private void Sale_VisibleChanged(object sender, EventArgs e)
+        {
+            if (((Sale)sender).Visible == true)
+            {
+                updateList();
             }
         }
     }

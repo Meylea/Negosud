@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negosud_Client.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -35,5 +36,7 @@ namespace Negosud_Client
             public static string ClientCommandValueStatus { get; set; }
 
         }
+
+       
     }
 }

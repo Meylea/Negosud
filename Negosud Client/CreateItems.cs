@@ -27,6 +27,13 @@ namespace Negosud_Client
             supplierBox.DisplayMember = "BusinessName";
             supplierBox.ValueMember = "Id";
 
+            nameBox.Text = String.Empty;
+            yearBox.Text = String.Empty;
+            imageBox.Text = String.Empty;
+            quantityBox.Text = String.Empty;
+            unitPriceBox.Text = String.Empty;
+            boxPriceBox.Text = String.Empty;
+
             if (Program.itemId != null)
             {
                 Item item = await Item.GetOneItemAsync(Program.itemId ?? default);
@@ -100,20 +107,19 @@ namespace Negosud_Client
             {
                 showMessage(errorMessage, true);
             }
-            errorMessage = String.Empty;
         }
 
         private void showMessage(string message, bool error = false)
         {
             if (error)
             {
-                messageLabel.ForeColor = Color.FromArgb(255, 0, 0);
+                msgLabel.ForeColor = Color.FromArgb(255, 0, 0);
             }
             else
             {
-                messageLabel.ForeColor = Color.FromArgb(0, 0, 0);
+                msgLabel.ForeColor = Color.FromArgb(0, 0, 0);
             }
-            messageLabel.Text = message;
+            msgLabel.Text = message;
              
         }
 
@@ -123,6 +129,7 @@ namespace Negosud_Client
             if (((CreateItems)sender).Visible == false)
             {
                 Program.itemId = null;
+                InitializeSelectBoxes();
             }
         }
     }

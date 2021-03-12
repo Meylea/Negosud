@@ -3,6 +3,7 @@ namespace Negosud_Client
 {
     partial class SaleDetail
     {
+        
         /// <summary> 
         /// Variable nécessaire au concepteur.
         /// </summary>
@@ -73,8 +74,7 @@ namespace Negosud_Client
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(927, 290);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
+            
             // btnsupprimerVente
             // 
             this.btnsupprimerVente.BackColor = System.Drawing.Color.Red;

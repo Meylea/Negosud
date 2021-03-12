@@ -13,6 +13,8 @@ namespace Negosud_Client
 {
     public partial class SaleDetail : UserControl
     {
+        public delegate void DelegateClickBtn(string button);
+        public event DelegateClickBtn ClickBtn;
         public SaleDetail()
         {
             InitializeComponent();
@@ -53,20 +55,20 @@ namespace Negosud_Client
             UpdateList();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        /*private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
             if (clickBtn != null)
             {
                 object value = dataGridView1.Rows[e.RowIndex].Cells[0].Value;
 
-                if (dataGridView1.Columns[e.ColumnIndex].HeaderText = "Supprimer")
+                if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "Supprimer")
                 {
                     DeletedRow(value.ToString());
                 }
 
 
             }
-        }
+        }*/
     }
 }

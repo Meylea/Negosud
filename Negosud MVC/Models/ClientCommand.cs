@@ -16,7 +16,7 @@ namespace Negosud_MVC.Models
         public string Status { get; set; }
         public int ClientId { get; set; }
 
-        public ICollection<ClientCommandLine> ClientCommandLines { get; set; }
+        public List<ClientCommandLine> ClientCommandLines { get; set; }
         public Client Client { get; set; }
     }
 }

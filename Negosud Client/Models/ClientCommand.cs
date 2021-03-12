@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 
 
@@ -58,6 +60,24 @@ namespace Negosud_Client.Models
             return cliCommand;
         }
 
+        public static async Task<bool> CreateClientCommandAsync(ClientCommand clientCommand)
+        {
+            string clientCommandJs = JsonConvert.SerializeObject(clientCommand);
+            StringContent data = new StringContent(clientCommandJs, Encoding.UTF8, "application/json");
 
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.BaseAddress = new Uri("https://localhost:44311/api/");
+                httpClient.DefaultRequestHeaders.Accept.Clear();
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = await httpClient.PostAsync("ClientCommands", data);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
