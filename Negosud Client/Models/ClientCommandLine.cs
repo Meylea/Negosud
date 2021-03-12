@@ -38,6 +38,11 @@ namespace Negosud_Client.Models
                         clientLineMatch.Add(match);
                     }
                 }
+                foreach (ClientCommandLine clientCommandLine in clientLineMatch)
+                {
+                    Item item = await Item.GetOneItemAsync(clientCommandLine.ItemId);
+                    clientCommandLine.ItemName = item.Name;
+                }
             }
             return clientLineMatch;
         }

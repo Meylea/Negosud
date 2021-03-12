@@ -32,6 +32,7 @@ namespace Negosud_Client
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clientCommandLineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnsupprimerVente = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -43,8 +44,8 @@ namespace Negosud_Client
             this.StatutCommande = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ClientNom = new System.Windows.Forms.TextBox();
-            this.clientCommandLineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.IdArticle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +62,7 @@ namespace Negosud_Client
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdArticle,
+            this.ItemName,
             this.idDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn,
             this.unitPriceDataGridViewTextBoxColumn,
@@ -74,7 +76,11 @@ namespace Negosud_Client
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(927, 290);
             this.dataGridView1.TabIndex = 0;
-            
+            // 
+            // clientCommandLineBindingSource
+            // 
+            this.clientCommandLineBindingSource.DataSource = typeof(Negosud_Client.Models.ClientCommandLine);
+            // 
             // btnsupprimerVente
             // 
             this.btnsupprimerVente.BackColor = System.Drawing.Color.Red;
@@ -173,16 +179,22 @@ namespace Negosud_Client
             this.ClientNom.Size = new System.Drawing.Size(163, 22);
             this.ClientNom.TabIndex = 11;
             // 
-            // clientCommandLineBindingSource
-            // 
-            this.clientCommandLineBindingSource.DataSource = typeof(Negosud_Client.Models.ClientCommandLine);
-            // 
             // IdArticle
             // 
             this.IdArticle.HeaderText = "Id Article";
             this.IdArticle.MinimumWidth = 6;
             this.IdArticle.Name = "IdArticle";
+            this.IdArticle.Visible = false;
             this.IdArticle.Width = 125;
+            // 
+            // ItemName
+            // 
+            this.ItemName.DataPropertyName = "ItemName";
+            this.ItemName.HeaderText = "ItemName";
+            this.ItemName.MinimumWidth = 6;
+            this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
+            this.ItemName.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -275,6 +287,7 @@ namespace Negosud_Client
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox ClientNom;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdArticle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
